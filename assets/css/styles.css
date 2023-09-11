@@ -143,6 +143,9 @@ h4 {
   padding-bottom: 1rem;
 }
 
+.underline {
+  text-decoration: underline;
+}
 /* mobile */
 
 @media screen and (max-width: 767px) {

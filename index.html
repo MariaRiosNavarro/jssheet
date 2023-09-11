@@ -58,9 +58,27 @@
                 <h4>The Console</h4>
                 <ul>
                   <li>
-                    <code>console.log("Hello World!")</code> -> logs into
-                    console
+                    <p>
+                      <code>console.log("Hello World!")</code> -> logs into
+                      console
+                    </p>
+                    <ul>
+                      Use console.log:
+                      <li>
+                        <code> let number = 33;</code> <br />
+                        <code>console.log("number is", number)</code>
+                        ->with a expresion-help before ("number is") to
+                        orientation in the console<br />
+                        <code>console.log("the number is" + number)</code> ->
+                        concatenation <br />
+                        <code>console.log({number})</code>-> destruckturing to
+                        see the object in the console <br />
+                        <code>console.log(`the number is ${number}`)</code> ->
+                        string literal
+                      </li>
+                    </ul>
                   </li>
+                  <li>Others:</li>
                   <li><code>console.clear()</code> -> clears console</li>
                   <li>
                     <code>console.error("Error!")</code> -> logs as error into
@@ -161,46 +179,127 @@
       </section>
       <!-- ! -->
       <section>
-        <h2 class="heading-section">Lorem, ipsum dolor.</h2>
+        <h2 class="heading-section">Variables and Numbers</h2>
         <article>
           <ul>
             <li>
               <article class="subarticle">
-                <h4>Lorem, ipsum dolor.</h4>
+                <h4>Variable Declarations</h4>
                 <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                  <li>
+                    <code>const</code> -> declares a constant, the value can't
+                    be changed. Default way to declare variables
+                  </li>
 
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                  <li>
+                    <code>let</code> -> declares a variable, the value can be
+                    changed. Only used when reassigning a new value is
+                    necessary.
+                  </li>
 
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                  <li><code>var</code> -> outdated, not used anymore.</li>
+
+                  <li>
+                    IMPORTANT Assignation with <code>=</code> <br />
+                    <code>let counter = 0;</code>
+                  </li>
                 </ul>
               </article>
             </li>
             <li>
               <article class="subarticle">
-                <h4>Lorem, ipsum dolor.</h4>
+                <h4>Primitive Data Types(7)</h4>
+                <p>
+                  IMPORTANT: JS is case sensitiv
+                  <span class="underline">let a != let A</span>
+                </p>
                 <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                  <li>
+                    <code>string</code> -> a sequence of characters: "abcd"
+                    (with " ")
+                  </li>
 
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                  <li><code>number</code> -> a number: 1234 (without " ")</li>
 
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                  <li>
+                    <code>boolean</code> -> a binary statement, can be
+                    <code>true</code> or <code>false</code> (without " ")
+                  </li>
+                  <li>
+                    <code>null</code> -> represents "nothing", is typically set
+                    by developers
+                  </li>
+                  <li>
+                    <code>undefined</code> -> represents the state of "not
+                    existing". Anything not specified or not found in JavaScript
+                    defaults to the value undefined
+                  </li>
+                  <li>
+                    <code>BigInt</code> -> uncommon, used for integers larger
+                    than 9007199254740991
+                  </li>
+                  <li>
+                    <code>Symbol</code> -> uncommon, used for creating unique
+                    elements
+                  </li>
                 </ul>
               </article>
             </li>
             <li>
               <article class="subarticle">
-                <h4>lorem</h4>
+                <h4>Variable Naming</h4>
                 <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                  <li>
+                    <code>let myFirstVariable = "hello"</code> -> use camel case
+                  </li>
 
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <code>lorem</code>
-                  -> Lorem, ipsum dolor.
+                  <li>
+                    be very specific, longer names are better than shorter:
+                    <code>updatedFollowerCounter</code> instead of
+                    <code>counter</code>
+                  </li>
+                </ul>
+              </article>
+              <article class="subarticle">
+                <h4>Numbers</h4>
+                <p>let a = 1; let b = 2 ; let c = 3; let result = 0</p>
+                <ul>
+                  <li>
+                    <code>+</code> -><code
+                      >console.log ("a + b =", (a += b)) ;
+                    </code>
+                    // or use = a+b
+                  </li>
+                  <li>
+                    <code>-</code> -><code
+                      >console.log("a - b =", (a -= b));
+                    </code>
+                    // or use = a-b
+                  </li>
+                  <li>
+                    <code>*</code> -><code
+                      >console.log("a * b =", (a *= b));</code
+                    >
+                    // or use = a*b
+                  </li>
+                  <li>
+                    <code>/</code> -><code
+                      >console.log("a / b =", (a /= b));</code
+                    >
+                    // or use = a/b
+                  </li>
+                  <li>
+                    <code>%</code> -><code
+                      >console.log("a % b =", (a %= b));</code
+                    >// or use = a%b
+                  </li>
+                  <li>
+                    <code>**</code> ->
+                    <code>console.log("a ** b =", (a **= b));</code> //or use
+                    a**b;
+                  </li>
+                  <li>Incrementation (1) <code>a++</code></li>
+                  <li>Decrementation (1) <code>a- -</code></li>
                 </ul>
               </article>
             </li>
