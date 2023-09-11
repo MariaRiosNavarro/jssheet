@@ -36,21 +36,21 @@ ul {
 a {
   cursor: pointer;
   text-decoration: none;
-  color: rgb(141, 68, 68);
+  color: rgb(240, 175, 11);
   font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
 }
 
 a:hover,
 .nav-link:hover {
-  text-decoration: underline rgb(141, 68, 68);
+  text-decoration: underline rgb(240, 175, 11);
   font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
   border-radius: 8px;
 }
 
 code {
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  background-color: rgb(171, 72, 72);
-  color: white;
+  background-color: rgb(240, 175, 11);
+  color: black;
   padding: 0.1rem 0.3rem;
   border-radius: 5px;
   margin-bottom: 0.2rem;
@@ -67,8 +67,8 @@ header {
   margin: 0 auto;
   width: 100%;
   top: 0;
-  background-color: rgb(224, 221, 221);
-  box-shadow: -1px 1px 10px gray;
+  background-color: rgb(226, 221, 208);
+  box-shadow: -1px 1px 10px rgb(182, 182, 175);
 }
 
 .nav-list {
@@ -106,7 +106,7 @@ main {
 section {
   width: 30%;
   /* min-height: 9rem; */
-  box-shadow: -1px 1px 10px gray;
+  box-shadow: -1px 1px 10px rgb(182, 182, 175);
   border-radius: 8px;
   font-size: 12px;
   font-family: Roboto, Arial, Helvetica, sans-serif;
@@ -116,7 +116,7 @@ section {
   font-size: 14px;
   text-align: center;
   padding: 0.1rem 0.3rem;
-  background-color: rgb(237, 229, 229);
+  background-color: rgb(237, 234, 229);
 }
 
 article {
@@ -130,8 +130,8 @@ li {
 .subarticle {
   padding-left: 0.5rem;
   padding-bottom: 1rem;
-  -webkit-box-shadow: -1px -1px 10px -5px #850505;
-  box-shadow: -1px -1px 10px -5px #850505;
+  -webkit-box-shadow: -1px -1px 10px -5px rgb(240, 175, 11);
+  box-shadow: -1px -1px 10px -5px rgb(240, 175, 11);
   border-radius: 8px;
 }
 

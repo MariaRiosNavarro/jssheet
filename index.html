@@ -13,71 +13,106 @@
       <nav>
         <ul class="nav-list">
           <li class="nav-list-item">
-            <a class="nav-link" href="#setup">Variables</a>
+            <a class="nav-link" href="#basic">Basic</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#make-change">Functions</a>
+            <a class="nav-link" href="#">Functions</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#branches">Lorem</a>
+            <a class="nav-link" href="#">Lorem</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#mergin">Lorem</a>
+            <a class="nav-link" href="#">Lorem</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#review">Lorem</a>
+            <a class="nav-link" href="#">Lorem</a>
           </li>
         </ul>
       </nav>
     </header>
     <main>
-      <!-- !SETUP -->
-      <section id="setup" class="setup-section">
-        <h2 class="heading-section">Lorem</h2>
+      <!-- !Basic -->
+      <section id="basic">
+        <h2 class="heading-section">Basic</h2>
         <article>
           <ul>
-            <li class="setup-section-list-item">
+            <li>
               <article class="subarticle">
-                <h4>Lorem</h4>
+                <h4>
+                  Connect a JavaScript file with &lt;script&gt;&lt;/script&gt;
+                </h4>
                 <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
-              </article>
-            </li>
-            <li class="setup-section-list-item">
-              <article class="subarticle">
-                <h4>Lorem, ipsum dolor.</h4>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                  <li>
+                    <code>script</code> -> two attributes:
+                    <code>src="./index.js</code> and <code>defer</code> (tells
+                    the browser to delay the loading of the script until all
+                    HTML elements are loaded. Alternative: script tag at the end
+                    of the body element, so defer attribute is not necessary.
+                    Less modern.)
+                  </li>
                 </ul>
               </article>
             </li>
             <li>
               <article class="subarticle">
-                <h4>Lorem ipsum dolor sit.</h4>
+                <h4>The Console</h4>
                 <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                  <li>
+                    <code>console.log("Hello World!")</code> -> logs into
+                    console
+                  </li>
+                  <li><code>console.clear()</code> -> clears console</li>
+                  <li>
+                    <code>console.error("Error!")</code> -> logs as error into
+                    console
+                  </li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="subarticle">
+                <h4>Selecting HTML Elements: <code>.querySelector()</code></h4>
+                <ul>
+                  <li>
+                    Before we can add interactivity, we need to select the
+                    necessary HTML-Elements. A good practice is to use a data-*
+                    attribute, like that:
+                  </li>
+                  <li>
+                    <code>
+                      const mainElement =
+                      document.querySelector('[data-js="main"]');
+                    </code>
+                    <p></p>
+                  </li>
+                  <li>
+                    Other css selectors work as well, but the data-* attribute
+                    selectors should be preferred.
+                  </li>
+                  <li>
+                    <code
+                      >const mainElement = document.querySelector("main");</code
+                    >
+                    ->tag as identifier
+                  </li>
+                  <li>
+                    <code
+                      >const mainElement =
+                      document.querySelector(".main");</code
+                    >->class as identifier
+                  </li>
+                  <li>
+                    <code
+                      >const mainElement =
+                      document.querySelector("#main");</code
+                    >-> id as identifier
+                  </li>
                 </ul>
               </article>
             </li>
             <li class="setup-section-list-item">
               <article class="subarticle">
-                <h4>Lorem ipsum dolor sit.</h4>
+                <h4>Add Interaction: <code>.addEventListener()</code></h4>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
                 </ul>
