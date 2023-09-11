@@ -114,7 +114,45 @@
               <article class="subarticle">
                 <h4>Add Interaction: <code>.addEventListener()</code></h4>
                 <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                  <li>
+                    The method addEventListener is used to react to events.
+                    There different events you can listen to:
+                    <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/Events#event_listing"
+                      >List</a
+                    >
+                  </li>
+                  <li>
+                    First you specify the kind of event, e.g. click, then you
+                    define what code should be executed when the event is
+                    triggered. You write that code between the {} brackets, e.g.
+                    a console.log.
+                  </li>
+                  <li>
+                    <code
+                      >const button =
+                      document.querySelector('[data-js="button"]');
+                      button.addEventListener("click", () => {
+                      console.log("Yeah"); });</code
+                    >
+                  </li>
+                  <li>Add/remove & toggle classes: <code>.classList</code></li>
+                  <li>
+                    Add (add a style(class) to main, when button is clicked):
+                    <br />
+                    <code
+                      >const main = document.querySelector('[data-js="main"]'); </code
+                    ><br /><code>
+                      const button =
+                      document.querySelector('[data-js="button"]');</code
+                    ><br />
+                    <code>button.addEventListener("click", () => { </code><br />
+                    <code>main.classList.add("page--primary"); });</code><br />
+                    Toggle: <br />
+                    <code>main.classList.toggle("page--primary");</code><br />
+                    Remove: <br />
+                    <code>main.classList.toggle("page--primary");</code>
+                  </li>
                 </ul>
               </article>
             </li>
