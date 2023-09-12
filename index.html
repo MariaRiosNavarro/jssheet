@@ -16,16 +16,16 @@
             <a class="nav-link" href="#basic">Basic</a>
           </li>
           <li class="nav-list-item">
+            <a class="nav-link" href="#">Variables and Numbers</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-link" href="#">DOM Manipulation</a>
+          </li>
+          <li class="nav-list-item">
             <a class="nav-link" href="#">Functions</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Lorem</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#">Lorem</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#">Lorem</a>
+            <a class="nav-link" href="#"></a>
           </li>
         </ul>
       </nav>
@@ -258,18 +258,6 @@
                   </li>
                   <li>Incrementation (1) <code>a++</code></li>
                   <li>Decrementation (1) <code>a- -</code></li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>lorem3</h3>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
                 </ul>
               </article>
             </li>
@@ -532,51 +520,109 @@
       </section>
       <!-- ! -->
       <section>
-        <h2 class="heading-section">Lorem ipsum dolor sit.</h2>
-        <article>
-          <ul>
-            <li>
-              <article class="subarticle">
-                <h3>Lorem, ipsum dolor.</h3>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>lorem3</h3>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Lorem ipsum dolor sit.</h3>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Lorem ipsum dolor sit.</h3>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
-              </article>
-            </li>
-          </ul>
+          <h2 class="heading-section">Conditions and Booleans</h2>
+          <article class="subarticle">
+            <h4>Truthy and Falsy Values</h4>
+            <p>
+              Sometimes you want to have a condition depending on another
+              type of value. JavaScript can transform any value into a
+              boolean with type coercion. That means that some values act
+              as if they were true and others as if they were false:
+              Truthy values become true, falsy values become false.
+            </p>
+            <p><code>truthy </code>values:</p>
+            <ul>
+              <li>non zero numbers: 1, 2, -3, etc.</li>
+              <li>non empty strings: "hello"</li>
+              <li>true</li>
+            </ul>
+            <p><code>falsy </code>values:</p>
+            <ul>
+              <li>0 / -0</li>
+              <li>null</li>
+              <li>false</li>
+              <li>undefined</li>
+              <li>empty string: ""</li>
+            </ul>
+          </article>
+          <article class="subarticle">
+            <h4>Comparison Operators</h4>
+            <ul>
+              <li>
+                <code>A === B</code><br />->strict equal: is true if both
+                values are equal (including their type).
+              </li>
+              <li>
+                <code>A !== B</code><br />->strict not equal: is true if
+                both values are not equal (including their type).
+              </li>
+              <li>
+                <code>A > B</code><br />->strictly greater than: is true
+                if A is greater than B.
+              </li>
+              <li>
+                <code>A < B</code><br />->strictly less than: is true if A
+                is less than B.
+              </li>
+              <li>
+                <code>A >= B</code><br />->greater than or equal: is true
+                if A is greater than or equal B.
+              </li>
+              <li>
+                <code>A <= B</code><br />-> less than or equal: is true if
+                A is less than or equal B.
+              </li>
+              <li>
+                IMPORTANT: === and !== are strict equality operators. This
+                is what you need almost always. Strict equality checks if
+                type and value are the same: "3" === 3 is false.
+              </li>
+            </ul>
+          </article>
+          <article class="subarticle">
+            <h4>Logical Operators</h4>
+            You can combine logical operators with brackets to define
+            which operator should be evaluated first.
+            <ul>
+              <li>
+                <code>!A</code><br />->not: flips a true value to false
+                and vice versa.
+              </li>
+              <li>
+                <code>A || B</code><br />->or: is true if either A or B is
+                true.
+              </li>
+              <li>
+                <code>A && B</code><br />->and: is true if both A and B is
+                true.
+              </li>
+            </ul>
+          </article>
+          <article class="subarticle">
+            <h4>Control Flow: if / (else if) else </h4>
+            <p>With an if statement we can control whether a part of our code
+              is executed or not, based on a condition. The <code>else</code> block is executed only if the condition is false.</p>
+            <code>
+              if (hour < 12) { <br>
+                console.log("Good Morning."); <br>
+              } else if (hour < 18) { <br>
+                console.log("Good afternoon.");<br>
+              } else if (hour === 24) { <br>
+                console.log("Good night."); <br>
+              } else { <br>
+                console.log("Good evening."); <br>
+              }
+            </code>
+            <p>If the condition is not a boolean, it is converted into one by type coercion. This can be used to check whether a value is not 0 or an empty string:</p>
+              <code>
+              const name = "Alex";<br>
+              if (name) {<br>
+                console.log("Hi " + name + "!");
+                <br>
+              } // only executed if name is not an empty string 
+              </code>
+            </ul>
+          </article>
         </article>
       </section>
       <!-- ! -->
