@@ -635,45 +635,62 @@
       <section>
         <h2 class="heading-section">FUNCTIONS.</h2>
         <article>
+          <p>They contain a set of statements - in other words: They contain JavaScript code. Functions have to be defined. When a function is defined it can be called an arbitrary number of times.</p>
           <ul>
             <li>
               <article class="subarticle">
-                <h3>Lorem, ipsum dolor.</h3>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
+                <h3>Function Declarations</h3>
+                <p>Declaration which consists of:<br>
+                  -the function keyword <br>
+                  -the function name <br>
+                  -the function body (JavaScript statements / JavaScript code)</p>
+                  <code>function greet() {<br>
+                    console.log("Hi Friends!");<br>
+                    console.log("Nice to be here.");<br>
+                  }</code>
+                  
+                
               </article>
             </li>
             <li>
               <article class="subarticle">
-                <h3>lorem3</h3>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
+                <h3>Function Parameters</h3>
+                <p>Functions can accept parameters. Parameters can be used like predefined variables inside the function body. When declaring a function we are free to choose a name for the parameters, but descriptive, short names should be chosen.</p>
+                <code>function printLetter(name) { <br>
+                  console.log("Hi " + name + ", hope you are fine. Love, Johnny");<br>
+                }</code><br><br>
+                <code>
+                function printSum(first, second, third) {<br>
+                  const sum = first + second + third;<br>
+                  console.log("The sum of your numbers is: " + sum);<br>
+                }</code>
               </article>
             </li>
             <li>
               <article class="subarticle">
-                <h3>Lorem ipsum dolor sit.</h3>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
+                <h3>Function Calls</h3>
+                <p>When functions are defined you can call them by writing their name, followed by parentheses ("round brackets").</p>
+                <code>greet();</code><br><br>
+                <code>
+                  printLetter("Max");<br>
+                  printLetter("Jordan");</code><br><br>
+                <code>printSum(1, 2, 3);<br>
+                  printSum(3, 4, 5);</code><br>
               </article>
             </li>
             <li>
               <article class="subarticle">
-                <h3>Lorem ipsum dolor sit.</h3>
+                <h3>Scope</h3>
+                <p>The scope defines where variables are visible and where they can be referenced: global scope vs function scope</p>
                 <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                  <li><span class="bold">Function scope </span> -> Variables defined inside a function are not accessible from outside. But all variables outside of the function can be accessed from inside the function body</li>
+                  <code>function myFunction() { <br>
+                    const localVariable = true;<br>
+                    console.log(localVariable);<br>
+                  } <br>
+                  myFunction() // true
+                  console.log(localVariable); // Error! Variable not available outside of function</code> 
+                  <li><span class="bold">Global scope </span> ->  A variable is in the global scope when it is declared outside of any function, in a JavaScript file. Global variables are visible and can be accessed from anywhere in that JavaScript file after declaration.</li>
                 </ul>
               </article>
             </li>
