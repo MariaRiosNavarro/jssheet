@@ -131,7 +131,15 @@ li {
   border-radius: 8px;
 }
 
-h4 {
+.small-subarticle {
+  padding-left: 0.3rem;
+  padding-bottom: 0.5rem;
+  -webkit-box-shadow: -1px -1px 10px -5px #f0720b;
+  box-shadow: -1px -1px 10px -5px #f0720b;
+  border-radius: 8px;
+}
+
+h3 {
   font-size: 12px;
   font-weight: 700;
   font-family: Roboto-Bold;

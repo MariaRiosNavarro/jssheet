@@ -38,24 +38,24 @@
           <ul>
             <li>
               <article class="subarticle">
-                <h4>
+                <h3>
                   Connect a JavaScript file with &lt;script&gt;&lt;/script&gt;
-                </h4>
+                </h3>
                 <ul>
                   <li>
                     <code>script</code> -> two attributes:
-                    <code>src="./index.js</code> and <code>defer</code> (tells
-                    the browser to delay the loading of the script until all
-                    HTML elements are loaded. Alternative: script tag at the end
-                    of the body element, so defer attribute is not necessary.
-                    Less modern.)
+                    <code>src="./index.js</code> and <code>defer</code>
+                    <br />(tells the browser to delay the loading of the script
+                    until all HTML elements are loaded. Alternative: script tag
+                    at the end of the body element, so defer attribute is not
+                    necessary. Less modern.)
                   </li>
                 </ul>
               </article>
             </li>
             <li>
               <article class="subarticle">
-                <h4>The Console</h4>
+                <h3>The Console</h3>
                 <ul>
                   <li>
                     <p>
@@ -88,129 +88,6 @@
                 </ul>
               </article>
             </li>
-            <li>
-              <article class="subarticle">
-                <h4>Selecting HTML Elements: <code>.querySelector()</code></h4>
-                <ul>
-                  <li>
-                    Before we can add interactivity, we need to select the
-                    necessary HTML-Elements. A good practice is to use a data-*
-                    attribute, like that:
-                  </li>
-                  <li>
-                    <code>
-                      const mainElement =
-                      document.querySelector('[data-js="main"]');
-                    </code>
-                    <p></p>
-                  </li>
-                  <li>
-                    Other css selectors work as well, but the data-* attribute
-                    selectors should be preferred.
-                  </li>
-                  <li>
-                    <code
-                      >const mainElement = document.querySelector("main");</code
-                    >
-                    ->tag as identifier
-                  </li>
-                  <li>
-                    <code
-                      >const mainElement =
-                      document.querySelector(".main");</code
-                    >->class as identifier
-                  </li>
-                  <li>
-                    <code
-                      >const mainElement =
-                      document.querySelector("#main");</code
-                    >-> id as identifier
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h4>Add Interaction: <code>.addEventListener()</code></h4>
-                <ul>
-                  <li>
-                    The method addEventListener is used to react to events.
-                    There different events you can listen to:
-                    <a
-                      href="https://developer.mozilla.org/en-US/docs/Web/Events#event_listing"
-                      >List</a
-                    >
-                  </li>
-                  <li>
-                    First you specify the kind of event, e.g. click, then you
-                    define what code should be executed when the event is
-                    triggered. You write that code between the {} brackets, e.g.
-                    a console.log.
-                  </li>
-                  <li>
-                    <code
-                      >const button =
-                      document.querySelector('[data-js="button"]');
-                      button.addEventListener("click", () => {
-                      console.log("Yeah"); });</code
-                    >
-                  </li>
-                  <li>Add/remove & toggle classes: <code>.classList</code></li>
-                  <li>
-                    Add (add a style(class) to main, when button is clicked):
-                    <br />
-                    <code
-                      >const main = document.querySelector('[data-js="main"]'); </code
-                    ><br /><code>
-                      const button =
-                      document.querySelector('[data-js="button"]');</code
-                    ><br />
-                    <code>button.addEventListener("click", () => { </code><br />
-                    <code>main.classList.add("page--primary"); });</code><br />
-                    Toggle: <br />
-                    <code>main.classList.toggle("page--primary");</code><br />
-                    Remove: <br />
-                    <code>main.classList.toggle("page--primary");</code>
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h4>Output in HTML</h4>
-                <ul>
-                  <li>
-                    <code>document.write("Hallo People!")</code> -> Add text at
-                    the End of our HTML
-                  </li>
-
-                  <li>
-                    <code
-                      >document.write("&lt;h2 class="test" style="color:
-                      red"&gt;Warning&lt;/h2&gt;")</code
-                    >
-                    -> we can also write html directly (and delete the existing
-                    code!!)
-                  </li>
-                  <li>POP UPS:</li>
-                  <li><code>window.alert()</code> ->only text</li>
-                  <li>
-                    <code>window.prompt()</code>
-                    ->text with input (and placeholder). e.g:
-                    <br />
-                    let windowInput = window.prompt("What´s is yout name?",
-                    "please, write here your name")
-                  </li>
-                  <li>
-                    <code>window.confirm()</code>-> text with 2 buttons yes/no
-                    <br />
-                    let confirmStatus = window.confirm("Agree to the
-                    cookies?);<br />
-                    // console.log(confirmStatus);
-                  </li>
-                </ul>
-              </article>
-            </li>
           </ul>
         </article>
       </section>
@@ -221,7 +98,7 @@
           <ul>
             <li>
               <article class="subarticle">
-                <h4>Variable Declarations</h4>
+                <h3>Variable Declarations</h3>
                 <ul>
                   <li>
                     <code>const</code> -> declares a constant, the value can't
@@ -245,7 +122,7 @@
             </li>
             <li>
               <article class="subarticle">
-                <h4>Primitive Data Types(7)</h4>
+                <h3>Primitive Data Types(7)</h3>
                 <p>
                   IMPORTANT: JS is case sensitiv
                   <span class="underline">let a != let A</span>
@@ -297,7 +174,7 @@
             </li>
             <li>
               <article class="subarticle">
-                <h4>Variable Naming</h4>
+                <h3>Variable Naming</h3>
                 <ul>
                   <li>
                     <code>let myFirstVariable = "hello"</code> -> use camel case
@@ -311,7 +188,7 @@
                 </ul>
               </article>
               <article class="subarticle">
-                <h4>Strings methods</h4>
+                <h3>Strings methods</h3>
                 <ul>
                   <li>
                     <code>length</code> -> let firstName = "John";
@@ -342,7 +219,7 @@
                 </ul>
               </article>
               <article class="subarticle">
-                <h4>Numbers</h4>
+                <h3>Numbers</h3>
                 <p>let a = 1; let b = 2 ; let c = 3; let result = 0</p>
                 <ul>
                   <li>
@@ -386,10 +263,204 @@
             </li>
             <li>
               <article class="subarticle">
-                <h4>lorem3</h4>
+                <h3>lorem3</h3>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
 
+                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+
+                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                </ul>
+              </article>
+            </li>
+          </ul>
+        </article>
+      </section>
+      <!-------------------------------------------! DOM MANIPULATION -->
+      <section>
+        <h2 class="heading-section">DOM Manipulation</h2>
+        <article>
+          <ul>
+            <li>
+              <article class="subarticle">
+                <h3>Selecting HTML Elements: <code>.querySelector()</code></h3>
+                <ul>
+                  <li>
+                    Before we can add interactivity, we need to select the
+                    necessary HTML-Elements. A good practice is to use a data-*
+                    attribute, like that:
+                  </li>
+                  <li>
+                    <code>
+                      const mainElement =
+                      document.querySelector('[data-js="main"]');
+                    </code>
+                    <p></p>
+                  </li>
+                  <li>
+                    Other css selectors work as well, but the data-* attribute
+                    selectors should be preferred.
+                  </li>
+                  <li>
+                    <code
+                      >const mainElement = document.querySelector("main");</code
+                    >
+                    ->tag as identifier
+                  </li>
+                  <li>
+                    <code
+                      >const mainElement =
+                      document.querySelector(".main");</code
+                    >->class as identifier
+                  </li>
+                  <li>
+                    <code
+                      >const mainElement =
+                      document.querySelector("#main");</code
+                    >-> id as identifier
+                  </li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="subarticle">
+                <h3>Add Interaction: <code>.addEventListener()</code></h3>
+                <ul>
+                  <li>
+                    The method addEventListener is used to react to events.
+                    There different events you can listen to:
+                    <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/Events#event_listing"
+                      >List</a
+                    >
+                  </li>
+                  <li>
+                    First you specify the kind of event, e.g. click, then you
+                    define what code should be executed when the event is
+                    triggered. You write that code between the {} brackets, e.g.
+                    a console.log.
+                  </li>
+                  <li>
+                    <code
+                      >const button =
+                      document.querySelector('[data-js="button"]');
+                      button.addEventListener("click", () => {
+                      console.log("Yeah"); });</code
+                    >
+                  </li>
+                  <li>Add/remove & toggle classes: <code>.classList</code></li>
+                  <li>
+                    Add (add a style(class) to main, when button is clicked):
+                    <br />
+                    <code
+                      >const main = document.querySelector('[data-js="main"]'); </code
+                    ><br /><code>
+                      const button =
+                      document.querySelector('[data-js="button"]');</code
+                    ><br />
+                    <code>button.addEventListener("click", () => { </code><br />
+                    <code>main.classList.add("page--primary"); });</code><br />
+                    Toggle: <br />
+                    <code>main.classList.toggle("page--primary");</code><br />
+                    Remove: <br />
+                    <code>main.classList.toggle("page--primary");</code>
+                  </li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="subarticle">
+                <h3>Output in HTML</h3>
+                <ul>
+                  <li>
+                    <p class="bold" style="text-align: center">
+                      document.write
+                    </p>
+                    <div class="small-subarticle">
+                      <p>
+                        <code>document.write("Hallo People!")</code> -> Add text
+                        at the <span class="underline">END</span> of our HTML
+                      </p>
+                      <p>
+                        <code
+                          >document.write("&lt;h2 class="test" style="color:
+                          red"&gt;Warning&lt;/h2&gt;")</code
+                        >
+                        -> we can also write html directly (and delete the
+                        existing code!!)
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="bold" style="text-align: center">POP UPS</p>
+                    <div class="small-subarticle">
+                      <div>
+                        <code>window.prompt()</code>
+                        ->text with input (and placeholder). e.g:
+                        <br />
+                        let windowInput = window.prompt("What´s is yout name?",
+                        "please, write here your name")
+                      </div>
+                      <div>
+                        <code>window.confirm()</code>-> text with 2 buttons
+                        yes/no
+                        <br />
+                        let confirmStatus = window.confirm("Agree to the
+                        cookies?);<br />
+                        // console.log(confirmStatus);
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <p class="bold" style="text-align: center">innerHTML</p>
+                    <div class="small-subarticle">
+                      <div>
+                        <code></code>
+                      </div>
+                      <div>
+                        <code></code>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </article>
+            </li>
+            <!-- -------------! -->
+            <li>
+              <article class="subarticle">
+                <h3>Lorem, ipsum dolor.</h3>
+                <ul>
+                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="subarticle">
+                <h3>lorem3</h3>
+                <ul>
+                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+
+                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+
+                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="subarticle">
+                <h3>Lorem ipsum dolor sit.</h3>
+                <ul>
+                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+
+                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="subarticle">
+                <h3>Lorem ipsum dolor sit.</h3>
+                <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
 
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
@@ -406,7 +477,7 @@
           <ul>
             <li>
               <article class="subarticle">
-                <h4>Lorem, ipsum dolor.</h4>
+                <h3>Lorem, ipsum dolor.</h3>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
@@ -415,56 +486,7 @@
             </li>
             <li>
               <article class="subarticle">
-                <h4>lorem3</h4>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h4>Lorem ipsum dolor sit.</h4>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h4>Lorem ipsum dolor sit.</h4>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
-              </article>
-            </li>
-          </ul>
-        </article>
-      </section>
-      <!-- ! -->
-      <section>
-        <h2 class="heading-section">Lorem ipsum dolor sit.</h2>
-        <article>
-          <ul>
-            <li>
-              <article class="subarticle">
-                <h4>Lorem, ipsum dolor.</h4>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h4>lorem3</h4>
+                <h3>lorem3</h3>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
 
@@ -476,7 +498,7 @@
             </li>
             <li>
               <article class="subarticle">
-                <h4>Lorem ipsum dolor sit.</h4>
+                <h3>Lorem ipsum dolor sit.</h3>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
 
@@ -486,7 +508,7 @@
             </li>
             <li>
               <article class="subarticle">
-                <h4>Lorem ipsum dolor sit.</h4>
+                <h3>Lorem ipsum dolor sit.</h3>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
 
@@ -504,7 +526,7 @@
           <ul>
             <li>
               <article class="subarticle">
-                <h4>Lorem, ipsum dolor.</h4>
+                <h3>Lorem, ipsum dolor.</h3>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
@@ -513,7 +535,7 @@
             </li>
             <li>
               <article class="subarticle">
-                <h4>lorem3</h4>
+                <h3>lorem3</h3>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
 
@@ -525,7 +547,7 @@
             </li>
             <li>
               <article class="subarticle">
-                <h4>Lorem ipsum dolor sit.</h4>
+                <h3>Lorem ipsum dolor sit.</h3>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
 
@@ -535,7 +557,7 @@
             </li>
             <li>
               <article class="subarticle">
-                <h4>Lorem ipsum dolor sit.</h4>
+                <h3>Lorem ipsum dolor sit.</h3>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
 
@@ -553,7 +575,7 @@
           <ul>
             <li>
               <article class="subarticle">
-                <h4>Lorem, ipsum dolor.</h4>
+                <h3>Lorem, ipsum dolor.</h3>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
@@ -562,7 +584,7 @@
             </li>
             <li>
               <article class="subarticle">
-                <h4>lorem3</h4>
+                <h3>lorem3</h3>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
 
@@ -574,7 +596,7 @@
             </li>
             <li>
               <article class="subarticle">
-                <h4>Lorem ipsum dolor sit.</h4>
+                <h3>Lorem ipsum dolor sit.</h3>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
 
@@ -584,7 +606,7 @@
             </li>
             <li>
               <article class="subarticle">
-                <h4>Lorem ipsum dolor sit.</h4>
+                <h3>Lorem ipsum dolor sit.</h3>
                 <ul>
                   <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
 
