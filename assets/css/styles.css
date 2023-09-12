@@ -57,10 +57,6 @@ code {
   display: inline-block;
 }
 
-strong {
-  font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
-}
-
 /* Header */
 
 header {
@@ -145,6 +141,10 @@ h4 {
 
 .underline {
   text-decoration: underline;
+}
+
+.bold {
+  font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
 }
 /* mobile */
 
