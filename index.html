@@ -520,178 +520,346 @@
       </section>
       <!-- ! -->
       <section>
-          <h2 class="heading-section">Conditions and Booleans</h2>
-          <article class="subarticle">
-            <h4>Truthy and Falsy Values</h4>
-            <p>
-              Sometimes you want to have a condition depending on another
-              type of value. JavaScript can transform any value into a
-              boolean with type coercion. That means that some values act
-              as if they were true and others as if they were false:
-              Truthy values become true, falsy values become false.
-            </p>
-            <p><code>truthy </code>values:</p>
-            <ul>
-              <li>non zero numbers: 1, 2, -3, etc.</li>
-              <li>non empty strings: "hello"</li>
-              <li>true</li>
-            </ul>
-            <p><code>falsy </code>values:</p>
-            <ul>
-              <li>0 / -0</li>
-              <li>null</li>
-              <li>false</li>
-              <li>undefined</li>
-              <li>empty string: ""</li>
-            </ul>
-          </article>
-          <article class="subarticle">
-            <h4>Comparison Operators</h4>
-            <ul>
-              <li>
-                <code>A === B</code><br />->strict equal: is true if both
-                values are equal (including their type).
-              </li>
-              <li>
-                <code>A !== B</code><br />->strict not equal: is true if
-                both values are not equal (including their type).
-              </li>
-              <li>
-                <code>A > B</code><br />->strictly greater than: is true
-                if A is greater than B.
-              </li>
-              <li>
-                <code>A < B</code><br />->strictly less than: is true if A
-                is less than B.
-              </li>
-              <li>
-                <code>A >= B</code><br />->greater than or equal: is true
-                if A is greater than or equal B.
-              </li>
-              <li>
-                <code>A <= B</code><br />-> less than or equal: is true if
-                A is less than or equal B.
-              </li>
-              <li>
-                IMPORTANT: === and !== are strict equality operators. This
-                is what you need almost always. Strict equality checks if
-                type and value are the same: "3" === 3 is false.
-              </li>
-            </ul>
-          </article>
-          <article class="subarticle">
-            <h4>Logical Operators</h4>
-            You can combine logical operators with brackets to define
-            which operator should be evaluated first.
-            <ul>
-              <li>
-                <code>!A</code><br />->not: flips a true value to false
-                and vice versa.
-              </li>
-              <li>
-                <code>A || B</code><br />->or: is true if either A or B is
-                true.
-              </li>
-              <li>
-                <code>A && B</code><br />->and: is true if both A and B is
-                true.
-              </li>
-            </ul>
-          </article>
-          <article class="subarticle">
-            <h4>Control Flow: if / (else if) else </h4>
-            <p>With an if statement we can control whether a part of our code
-              is executed or not, based on a condition. The <code>else</code> block is executed only if the condition is false.</p>
-            <code>
-              if (hour < 12) { <br>
-                console.log("Good Morning."); <br>
-              } else if (hour < 18) { <br>
-                console.log("Good afternoon.");<br>
-              } else if (hour === 24) { <br>
-                console.log("Good night."); <br>
-              } else { <br>
-                console.log("Good evening."); <br>
-              }
-            </code>
-            <p>If the condition is not a boolean, it is converted into one by type coercion. This can be used to check whether a value is not 0 or an empty string:</p>
-              <code>
-              const name = "Alex";<br>
-              if (name) {<br>
-                console.log("Hi " + name + "!");
-                <br>
-              } // only executed if name is not an empty string 
-              </code>
-            </ul>
-          </article>
-          <article class="subarticle">
-            <h4>Ternary Operator: ? :</h4>
-            <p>With if / else statements whole blocks of code can be controlled. The ternary operator can be used if you want to decide between two expressions, e.g. which value should be stored in a variable:</p>
-            <code>condition ? expressionIfTrue : expressionIfFalse;</code> <br> ->If the condition is true, the first expression is evaluated, otherwise the second expression. 
+        <h2 class="heading-section">Conditions and Booleans</h2>
+        <article>
+          <ul>
+            <li>
+              <article class="subarticle">
+                <h4>Truthy and Falsy Values</h4>
+                <p>
+                  Sometimes you want to have a condition depending on another
+                  type of value. JavaScript can transform any value into a
+                  boolean with type coercion. That means that some values act as
+                  if they were true and others as if they were false: Truthy
+                  values become true, falsy values become false.
+                </p>
+                <p><code>truthy </code>values:</p>
+                <ul>
+                  <li>non zero numbers: 1, 2, -3, etc.</li>
+                  <li>non empty strings: "hello"</li>
+                  <li>true</li>
+                </ul>
+                <p><code>falsy </code>values:</p>
+                <ul>
+                  <li>0 / -0</li>
+                  <li>null</li>
+                  <li>false</li>
+                  <li>undefined</li>
+                  <li>empty string: ""</li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="subarticle">
+                <h4>Comparison Operators</h4>
+                <ul>
+                  <li>
+                    <code>A === B</code><br />->strict equal: is true if both
+                    values are equal (including their type).
+                  </li>
+                  <li>
+                    <code>A !== B</code><br />->strict not equal: is true if
+                    both values are not equal (including their type).
+                  </li>
+                  <li>
+                    <code>A > B</code><br />->strictly greater than: is true if
+                    A is greater than B.
+                  </li>
+                  <li>
+                    <code>A < B</code><br />->strictly less than: is true if A
+                    is less than B.
+                  </li>
+                  <li>
+                    <code>A >= B</code><br />->greater than or equal: is true if
+                    A is greater than or equal B.
+                  </li>
+                  <li>
+                    <code>A <= B</code><br />-> less than or equal: is true if A
+                    is less than or equal B.
+                  </li>
+                  <li>
+                    IMPORTANT: === and !== are strict equality operators. This
+                    is what you need almost always. Strict equality checks if
+                    type and value are the same: "3" === 3 is false.
+                  </li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="subarticle">
+                <h4>Logical Operators</h4>
+                <p>
+                  You can combine logical operators with brackets to define
+                  which operator should be evaluated first.
+                </p>
+                <ul>
+                  <li>
+                    <code>!A</code><br />->not: flips a true value to false and
+                    vice versa.
+                  </li>
+                  <li>
+                    <code>A || B</code><br />->or: is true if either A or B is
+                    true.
+                  </li>
+                  <li>
+                    <code>A && B</code><br />->and: is true if both A and B is
+                    true.
+                  </li>
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="subarticle">
+                <h4>Control Flow: if / (else if) else</h4>
+                <p>
+                  With an if statement we can control whether a part of our code
+                  is executed or not, based on a condition. The
+                  <code>else</code> block is executed only if the condition is
+                  false.
+                </p>
+                <code>
+                  if (hour < 12) { <br />
+                  console.log("Good Morning."); <br />
+                  } else if (hour < 18) { <br />
+                  console.log("Good afternoon.");<br />
+                  } else if (hour === 24) { <br />
+                  console.log("Good night."); <br />
+                  } else { <br />
+                  console.log("Good evening."); <br />
+                  }
+                </code>
+                <p>
+                  If the condition is not a boolean, it is converted into one by
+                  type coercion. This can be used to check whether a value is
+                  not 0 or an empty string:
+                </p>
+                <code>
+                  const name = "Alex";<br />
+                  if (name) {<br />
+                  console.log("Hi " + name + "!");
+                  <br />
+                  } // only executed if name is not an empty string
+                </code>
+              </article>
+            </li>
+            <li>
+              <article class="subarticle">
+                <h4>Ternary Operator: ? :</h4>
+                <p>
+                  With if / else statements whole blocks of code can be
+                  controlled. The ternary operator can be used if you want to
+                  decide between two expressions, e.g. which value should be
+                  stored in a variable:
+                </p>
+                <code>condition ? expressionIfTrue : expressionIfFalse;</code>
+                <br />
+                ->If the condition is true, the first expression is evaluated,
+                otherwise the second expression.
 
-            <code>const greetingText = time < 12 ? "Good morning." : "Good afternoon.";</code>
-          </article>
+                <code
+                  >const greetingText = time < 12 ? "Good morning." : "Good
+                  afternoon.";</code
+                >
+              </article>
+            </li>
+          </ul>
+        </article>
       </section>
       <!-- ! -->
       <section>
         <h2 class="heading-section">FUNCTIONS.</h2>
         <article>
-          <p>They contain a set of statements - in other words: They contain JavaScript code. Functions have to be defined. When a function is defined it can be called an arbitrary number of times.</p>
+          <p>
+            They contain a set of statements - in other words: They contain
+            JavaScript code. Functions have to be defined. When a function is
+            defined it can be called an arbitrary number of times.
+          </p>
           <ul>
             <li>
               <article class="subarticle">
                 <h3>Function Declarations</h3>
-                <p>Declaration which consists of:<br>
-                  -the function keyword <br>
-                  -the function name <br>
-                  -the function body (JavaScript statements / JavaScript code)</p>
-                  <code>function greet() {<br>
-                    console.log("Hi Friends!");<br>
-                    console.log("Nice to be here.");<br>
-                  }</code>
-                  
-                
+                <p>
+                  Declaration which consists of:<br />
+                  -the function keyword <br />
+                  -the function name <br />
+                  -the function body (JavaScript statements / JavaScript code)
+                </p>
+                <code
+                  >function greet() {<br />
+                  console.log("Hi Friends!");<br />
+                  console.log("Nice to be here.");<br />
+                  }</code
+                >
               </article>
             </li>
             <li>
               <article class="subarticle">
                 <h3>Function Parameters</h3>
-                <p>Functions can accept parameters. Parameters can be used like predefined variables inside the function body. When declaring a function we are free to choose a name for the parameters, but descriptive, short names should be chosen.</p>
-                <code>function printLetter(name) { <br>
-                  console.log("Hi " + name + ", hope you are fine. Love, Johnny");<br>
-                }</code><br><br>
+                <p>
+                  Functions can accept parameters. Parameters can be used like
+                  predefined variables inside the function body. When declaring
+                  a function we are free to choose a name for the parameters,
+                  but descriptive, short names should be chosen.
+                </p>
+                <code
+                  >function printLetter(name) { <br />
+                  console.log("Hi " + name + ", hope you are fine. Love,
+                  Johnny");<br />
+                  }</code
+                ><br /><br />
                 <code>
-                function printSum(first, second, third) {<br>
-                  const sum = first + second + third;<br>
-                  console.log("The sum of your numbers is: " + sum);<br>
-                }</code>
+                  function printSum(first, second, third) {<br />
+                  const sum = first + second + third;<br />
+                  console.log("The sum of your numbers is: " + sum);<br />
+                  }</code
+                >
               </article>
             </li>
             <li>
               <article class="subarticle">
                 <h3>Function Calls</h3>
-                <p>When functions are defined you can call them by writing their name, followed by parentheses ("round brackets").</p>
-                <code>greet();</code><br><br>
+                <p>
+                  When functions are defined you can call them by writing their
+                  name, followed by parentheses ("round brackets").
+                </p>
+                <code>greet();</code><br /><br />
                 <code>
-                  printLetter("Max");<br>
-                  printLetter("Jordan");</code><br><br>
-                <code>printSum(1, 2, 3);<br>
-                  printSum(3, 4, 5);</code><br>
+                  printLetter("Max");<br />
+                  printLetter("Jordan");</code
+                ><br /><br />
+                <code
+                  >printSum(1, 2, 3);<br />
+                  printSum(3, 4, 5);</code
+                ><br />
               </article>
             </li>
             <li>
               <article class="subarticle">
                 <h3>Scope</h3>
-                <p>The scope defines where variables are visible and where they can be referenced: global scope vs function scope</p>
+                <p>
+                  The scope defines where variables are visible and where they
+                  can be referenced: global scope vs function scope
+                </p>
                 <ul>
-                  <li><span class="bold">Function scope </span> -> Variables defined inside a function are not accessible from outside. But all variables outside of the function can be accessed from inside the function body</li>
-                  <code>function myFunction() { <br>
-                    const localVariable = true;<br>
-                    console.log(localVariable);<br>
-                  } <br>
-                  myFunction() // true
-                  console.log(localVariable); // Error! Variable not available outside of function</code> 
-                  <li><span class="bold">Global scope </span> ->  A variable is in the global scope when it is declared outside of any function, in a JavaScript file. Global variables are visible and can be accessed from anywhere in that JavaScript file after declaration.</li>
+                  <li>
+                    <span class="bold">Function scope </span> -> Variables
+                    defined inside a function are not accessible from outside.
+                    But all variables outside of the function can be accessed
+                    from inside the function body
+                  </li>
+                  <code
+                    >function myFunction() { <br />
+                    const localVariable = true;<br />
+                    console.log(localVariable);<br />
+                    } <br />
+                    myFunction() // true console.log(localVariable); // Error!
+                    Variable not available outside of function</code
+                  >
+                  <li>
+                    <span class="bold">Global scope </span> -> A variable is in
+                    the global scope when it is declared outside of any
+                    function, in a JavaScript file. Global variables are visible
+                    and can be accessed from anywhere in that JavaScript file
+                    after declaration.
+                  </li>
                 </ul>
+              </article>
+            </li>
+            <li>
+              <article class="subarticle">
+                <h3>Return Statements</h3>
+                <p>
+                  A function can return a value back to the place where it was
+                  called. This is done via a return statement. A function can
+                  return only one expression value, but can have multiple return
+                  statements, in combination with if else statements for
+                </p>
+                <code
+                  >function add3Numbers(first, second, third) <br />{ const sum
+                  = first + second + third; <br />
+                  return sum;<br />
+                  } <br />
+                  const firstSum = add3Numbers(1, 2, 3); // the return value is
+                  stored in "firstSum", namely 6</code
+                >
+                <br /><br />
+                <code
+                  >function checkInputLength(inputString) { <br />if
+                  (inputString.length > 3) { <br />
+                  return true; <br />
+                  } else { <br />
+                  return false;<br />
+                  } <br />}</code
+                >
+
+                <article class="small-subarticle">
+                  <h3>Early Return Statements</h3>
+                  <p>
+                    As soon as a return statement is reached in a function call,
+                    the function execution is ended.This behavior can be used to
+                    our advantage as early return statements (A return statement
+                    can be left empty, the returned value is then undefined).
+                  </p>
+                  <code
+                    >function setBackgroundColor(color) { <br />
+                    <span class="bold">// first condition</span><br />
+                    if(typeOf color !== 'String') { <br />return; <br />}<br />
+                    <span class="bold">// second condition </span><br />
+                    if(!color.startsWith('#')) {<br />
+                    return; <br />} <br /><span class="bold"
+                      >// only if all 2 conditions are passed the final line of
+                      code is executed.</span
+                    ><br />
+                    body.style.backgroundColor = color; <br />}</code
+                  >
+                </article>
+                <article class="small-subarticle">
+                  <h3>Arrow Function Expressions</h3>
+                  <code
+                    >const addNumbers = (first, second) => { <br />
+                    return first + second;<br />
+                    };</code
+                  >
+                </article>
+                <article class="small-subarticle">
+                  <h3>Implicit Return Statements</h3>
+                  <p>
+                    The advantage of arrow functions are possible shorter
+                    notations when certain criteria apply
+                  </p>
+                  <ul>
+                    <li>
+                      <p>
+                        1.-Omit the round brackets around the parameters: This
+                        is possible, if there is only one input
+                      </p>
+                      <code
+                        >const addOne = (number) => { <br />return number + 1;
+                        <br />
+                        };</code
+                      >
+                      <p>can be rewrite as:</p>
+                      <code>const addOne = number => number + 1;</code>
+                    </li>
+                    <li>
+                      <p>
+                        2.-Implicit return statements: If the function consists
+                        only of a return statement, the curly brackets and the
+                        return keyword can be omitted
+                      </p>
+
+                      <code
+                        >const addNumbers = (first, second) => { <br />
+                        return first + second; };</code
+                      >
+                      <p>can be rewrite as:</p>
+                      <code
+                        >const addNumbers = (first, second) => first +
+                        second;</code
+                      >
+                    </li>
+                  </ul>
+                </article>
               </article>
             </li>
           </ul>
