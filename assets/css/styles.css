@@ -53,7 +53,7 @@ code {
   color: black;
   padding: 0.1rem 0.3rem;
   border-radius: 5px;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
   display: inline-block;
 }
 
@@ -121,6 +121,7 @@ article {
 
 li {
   padding: 0.3rem;
+  margin-bottom: 1rem;
 }
 
 .subarticle {
