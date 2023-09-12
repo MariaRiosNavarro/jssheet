@@ -262,13 +262,17 @@
                     <code>true</code> or <code>false</code> (without " ")
                   </li>
                   <li>
-                    <code>null</code> -> represents "nothing", is typically set
-                    by developers
+                    <code>null</code> -> represents "nothing", is a value used
+                    in JavaScript to indicate that a variable has been
+                    deliberately set to "no value". It is an explicit value that
+                    you can assign to a variable to show that it is empty or has
+                    no value.
                   </li>
                   <li>
                     <code>undefined</code> -> represents the state of "not
-                    existing". Anything not specified or not found in JavaScript
-                    defaults to the value undefined
+                    existing". means that a variable has been declared, but no
+                    value has been assigned to it yet. If you access an
+                    uninitialised variable, it is set to undefined by default.
                   </li>
                   <li>
                     <code>BigInt</code> -> uncommon, used for integers larger
@@ -277,6 +281,15 @@
                   <li>
                     <code>Symbol</code> -> uncommon, used for creating unique
                     elements
+                  </li>
+                  <hr />
+                  <li>Other (not PDT!!):</li>
+                  <li>
+                    <code>NaN</code> -> occurs when you perform mathematical
+                    operations on values that do not represent valid numbers.
+                    For example, if you try to divide a number by a string or
+                    perform an invalid mathematical calculation, you will get
+                    NaN as the result.
                   </li>
                 </ul>
               </article>
