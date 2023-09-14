@@ -424,10 +424,68 @@
       <!-- * ---------------------------------functions ------------------------------------------------------>
       <section id="functions">
         <h2 class="heading-section">Functions</h2>
+        <p class="intro"> They contain a set of statements - in other words: They contain
+          JavaScript code. Functions have to be defined. When a function is
+          defined it can be called an arbitrary number of times.</p>
         <article class="subarticle">
           <h3>Declarationa and expression</h3>
           <div class="small-subarticle">
-            <h4></h4>
+            <h4>Function Declarations</h4>
+            <div class="xsm-container">
+              <p>
+                Declaration which consists of:<br />
+                -the function keyword <br />
+                -the function name <br />
+                -the function body (JavaScript statements / JavaScript code)
+              </p>
+              <code
+                >function greet() {<br />
+                console.log("Hi Friends!");<br />
+                console.log("Nice to be here.");<br />
+                }</code
+              >
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Function Parameters</h4>
+            <div class="xsm-container">
+              <p>
+                Functions can accept parameters. Parameters can be used like
+                predefined variables inside the function body. When declaring
+                a function we are free to choose a name for the parameters,
+                but descriptive, short names should be chosen.
+              </p>
+              <code
+                >function printLetter(name) { <br />
+                console.log("Hi " + name + ", hope you are fine. Love,
+                Johnny");<br />
+                }</code
+              ><br /><br />
+              <code>
+                function printSum(first, second, third) {<br />
+                const sum = first + second + third;<br />
+                console.log("The sum of your numbers is: " + sum);<br />
+                }</code
+              >
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Function Calls</h4>
+            <div class="xsm-container">
+              <p>
+                When functions are defined you can call them by writing their
+                name, followed by parentheses ("round brackets").
+              </p>
+              <code>greet();</code><br /><br />
+              <code>
+                printLetter("Max");<br />
+                printLetter("Jordan");</code
+              ><br /><br />
+              <code
+                >printSum(1, 2, 3);<br />
+                printSum(3, 4, 5);</code
+              ><br />
+            </div>
           </div>
         </article>
         <article class="subarticle">
@@ -911,67 +969,25 @@
         <h2 class="heading-section">FUNCTIONS.</h2>
         <article>
           <p>
-            They contain a set of statements - in other words: They contain
-            JavaScript code. Functions have to be defined. When a function is
-            defined it can be called an arbitrary number of times.
+
           </p>
           <ul>
             <li>
               <article class="subarticle">
                 <h3>Function Declarations</h3>
-                <p>
-                  Declaration which consists of:<br />
-                  -the function keyword <br />
-                  -the function name <br />
-                  -the function body (JavaScript statements / JavaScript code)
-                </p>
-                <code
-                  >function greet() {<br />
-                  console.log("Hi Friends!");<br />
-                  console.log("Nice to be here.");<br />
-                  }</code
-                >
+
               </article>
             </li>
             <li>
               <article class="subarticle">
                 <h3>Function Parameters</h3>
-                <p>
-                  Functions can accept parameters. Parameters can be used like
-                  predefined variables inside the function body. When declaring
-                  a function we are free to choose a name for the parameters,
-                  but descriptive, short names should be chosen.
-                </p>
-                <code
-                  >function printLetter(name) { <br />
-                  console.log("Hi " + name + ", hope you are fine. Love,
-                  Johnny");<br />
-                  }</code
-                ><br /><br />
-                <code>
-                  function printSum(first, second, third) {<br />
-                  const sum = first + second + third;<br />
-                  console.log("The sum of your numbers is: " + sum);<br />
-                  }</code
-                >
+
               </article>
             </li>
             <li>
               <article class="subarticle">
                 <h3>Function Calls</h3>
-                <p>
-                  When functions are defined you can call them by writing their
-                  name, followed by parentheses ("round brackets").
-                </p>
-                <code>greet();</code><br /><br />
-                <code>
-                  printLetter("Max");<br />
-                  printLetter("Jordan");</code
-                ><br /><br />
-                <code
-                  >printSum(1, 2, 3);<br />
-                  printSum(3, 4, 5);</code
-                ><br />
+
               </article>
             </li>
             <li>
