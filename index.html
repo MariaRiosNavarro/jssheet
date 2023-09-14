@@ -487,11 +487,100 @@
               ><br />
             </div>
           </div>
+          <div class="small-subarticle">
+            <h4>Return Statements</h4>
+            <p>
+              A function can return a value back to the place where it was
+              called. This is done via a return statement. A function can
+              return only one expression value, but can have multiple return
+              statements, in combination with if else statements for
+            </p>
+            <code
+              >function add3Numbers(first, second, third) <br />{ const sum
+              = first + second + third; <br />
+              return sum;<br />
+              } <br />
+              const firstSum = add3Numbers(1, 2, 3); // the return value is
+              stored in "firstSum", namely 6</code
+            >
+            <br /><br />
+            <code
+              >function checkInputLength(inputString) { <br />if
+              (inputString.length > 3) { <br />
+              return true; <br />
+              } else { <br />
+              return false;<br />
+              } <br />}</code
+            >
+            <div class="xsm-container">
+              <h4 class="sub">Early Return Statements</h4>
+              <p>
+                As soon as a return statement is reached in a function call,
+                the function execution is ended.This behavior can be used to
+                our advantage as early return statements (A return statement
+                can be left empty, the returned value is then undefined).
+              </p>
+              <code
+                >function setBackgroundColor(color) { <br />
+                <span class="bold">// first condition</span><br />
+                if(typeOf color !== 'String') { <br />return; <br />}<br />
+                <span class="bold">// second condition </span><br />
+                if(!color.startsWith('#')) {<br />
+                return; <br />} <br /><span class="bold"
+                  >// only if all 2 conditions are passed the final line of
+                  code is executed.</span
+                ><br />
+                body.style.backgroundColor = color; <br />}</code
+              >
+            </div>
+          </div>
         </article>
         <article class="subarticle">
-          <h3>Arrow syntax</h3>
+          <h3>Arrow Function Expression</h3>
+          <code>const addNumbers = (first, second) => { <br />
+          return first + second;<br />
+          };</code
+        >
           <div class="small-subarticle">
-            <h4></h4>
+            <h4>Implicit Return Statements</h4>
+            <div class="xsm-container">
+              <p>
+                The advantage of arrow functions are possible shorter
+                notations when certain criteria apply
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    1.-Omit the round brackets around the parameters: This
+                    is possible, if there is only one input
+                  </p>
+                  <code
+                    >const addOne = (number) => { <br />return number + 1;
+                    <br />
+                    };</code
+                  >
+                  <p>can be rewrite as:</p>
+                  <code>const addOne = number => number + 1;</code>
+                </li>
+                <li>
+                  <p>
+                    2.-Implicit return statements: If the function consists
+                    only of a return statement, the curly brackets and the
+                    return keyword can be omitted
+                  </p>
+
+                  <code
+                    >const addNumbers = (first, second) => { <br />
+                    return first + second; };</code
+                  >
+                  <p>can be rewrite as:</p>
+                  <code
+                    >const addNumbers = (first, second) => first +
+                    second;</code
+                  >
+                </li>
+              </ul>
+            </div>
           </div>
         </article>
       </section>
@@ -516,8 +605,37 @@
         <h2 class="heading-section">Scope and closures</h2>
         <article class="subarticle">
           <h3>Scope</h3>
+          <p class="intro">
+            The scope defines where variables are visible and where they
+            can be referenced: global scope vs function scope
+          </p>
           <div class="small-subarticle">
-            <h4></h4>
+            <h4>Function scope</h4>
+            <div class="xsm-container">
+                <span class="bold">Function scope </span>
+                <p>-> Variables
+                  defined inside a function are not accessible from outside.
+                  But all variables outside of the function can be accessed
+                  from inside the function body</p> 
+                <code>function myFunction() { <br />
+                const localVariable = true;<br />
+                console.log(localVariable);<br />
+                } <br />
+                myFunction() // true console.log(localVariable); // Error!
+                Variable not available outside of function</code
+              >
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Global scope</h4>
+            <div class="xsm-container">
+              <span class="bold">Global scope </span>
+              <p>-> A variable is in
+                the global scope when it is declared outside of any
+                function, in a JavaScript file. Global variables are visible
+                and can be accessed from anywhere in that JavaScript file
+                after declaration.</p> 
+            </div>
           </div>
         </article>
         <article class="subarticle">
@@ -941,83 +1059,14 @@
           </ul>
         </article>
       </section>
-      <!-- ! -->
-      <section>
-        <h2 class="heading-section">Conditions and Booleans</h2>
-        <article>
-          <ul>
-   
-              <article class="subarticle">
-                <h4>Control Flow: if / (else if) else</h4>
 
-
-
-
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h4>Ternary Operator: ? :</h4>
-
-              </article>
-            </li>
-          </ul>
-        </article>
-      </section>
-      <!-- ! -->
-      <section>
-        <h2 class="heading-section">FUNCTIONS.</h2>
-        <article>
-          <p>
-
-          </p>
-          <ul>
-            <li>
-              <article class="subarticle">
-                <h3>Function Declarations</h3>
-
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Function Parameters</h3>
-
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Function Calls</h3>
-
-              </article>
-            </li>
-            <li>
               <article class="subarticle">
                 <h3>Scope</h3>
-                <p>
-                  The scope defines where variables are visible and where they
-                  can be referenced: global scope vs function scope
-                </p>
+
                 <ul>
+
                   <li>
-                    <span class="bold">Function scope </span> -> Variables
-                    defined inside a function are not accessible from outside.
-                    But all variables outside of the function can be accessed
-                    from inside the function body
-                  </li>
-                  <code
-                    >function myFunction() { <br />
-                    const localVariable = true;<br />
-                    console.log(localVariable);<br />
-                    } <br />
-                    myFunction() // true console.log(localVariable); // Error!
-                    Variable not available outside of function</code
-                  >
-                  <li>
-                    <span class="bold">Global scope </span> -> A variable is in
-                    the global scope when it is declared outside of any
-                    function, in a JavaScript file. Global variables are visible
-                    and can be accessed from anywhere in that JavaScript file
-                    after declaration.
+
                   </li>
                 </ul>
               </article>
@@ -1025,95 +1074,19 @@
             <li>
               <article class="subarticle">
                 <h3>Return Statements</h3>
-                <p>
-                  A function can return a value back to the place where it was
-                  called. This is done via a return statement. A function can
-                  return only one expression value, but can have multiple return
-                  statements, in combination with if else statements for
-                </p>
-                <code
-                  >function add3Numbers(first, second, third) <br />{ const sum
-                  = first + second + third; <br />
-                  return sum;<br />
-                  } <br />
-                  const firstSum = add3Numbers(1, 2, 3); // the return value is
-                  stored in "firstSum", namely 6</code
-                >
-                <br /><br />
-                <code
-                  >function checkInputLength(inputString) { <br />if
-                  (inputString.length > 3) { <br />
-                  return true; <br />
-                  } else { <br />
-                  return false;<br />
-                  } <br />}</code
-                >
+
 
                 <article class="small-subarticle">
                   <h3>Early Return Statements</h3>
-                  <p>
-                    As soon as a return statement is reached in a function call,
-                    the function execution is ended.This behavior can be used to
-                    our advantage as early return statements (A return statement
-                    can be left empty, the returned value is then undefined).
-                  </p>
-                  <code
-                    >function setBackgroundColor(color) { <br />
-                    <span class="bold">// first condition</span><br />
-                    if(typeOf color !== 'String') { <br />return; <br />}<br />
-                    <span class="bold">// second condition </span><br />
-                    if(!color.startsWith('#')) {<br />
-                    return; <br />} <br /><span class="bold"
-                      >// only if all 2 conditions are passed the final line of
-                      code is executed.</span
-                    ><br />
-                    body.style.backgroundColor = color; <br />}</code
-                  >
+
                 </article>
                 <article class="small-subarticle">
                   <h3>Arrow Function Expressions</h3>
-                  <code
-                    >const addNumbers = (first, second) => { <br />
-                    return first + second;<br />
-                    };</code
-                  >
+
                 </article>
                 <article class="small-subarticle">
                   <h3>Implicit Return Statements</h3>
-                  <p>
-                    The advantage of arrow functions are possible shorter
-                    notations when certain criteria apply
-                  </p>
-                  <ul>
-                    <li>
-                      <p>
-                        1.-Omit the round brackets around the parameters: This
-                        is possible, if there is only one input
-                      </p>
-                      <code
-                        >const addOne = (number) => { <br />return number + 1;
-                        <br />
-                        };</code
-                      >
-                      <p>can be rewrite as:</p>
-                      <code>const addOne = number => number + 1;</code>
-                    </li>
-                    <li>
-                      <p>
-                        2.-Implicit return statements: If the function consists
-                        only of a return statement, the curly brackets and the
-                        return keyword can be omitted
-                      </p>
 
-                      <code
-                        >const addNumbers = (first, second) => { <br />
-                        return first + second; };</code
-                      >
-                      <p>can be rewrite as:</p>
-                      <code
-                        >const addNumbers = (first, second) => first +
-                        second;</code
-                      >
                     </li>
                   </ul>
                 </article>
