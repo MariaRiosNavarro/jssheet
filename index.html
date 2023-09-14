@@ -274,8 +274,145 @@
         <article class="subarticle">
           <h3>Conditional statements</h3>
           <div class="small-subarticle">
-            <h4></h4>
+            <h4>Truthy and Falsy Values</h4>
+            <p>
+              Sometimes you want to have a condition depending on another
+              type of value. JavaScript can transform any value into a
+              boolean with type coercion. That means that some values act as
+              if they were true and others as if they were false: Truthy
+              values become true, falsy values become false.
+            </p>
+            <div class="xsm-container">
+              <p><code>truthy </code>values:</p>
+              <ul>
+                <li>non zero numbers: 1, 2, -3, etc.</li>
+                <li>non empty strings: "hello"</li>
+                <li>true</li>
+              </ul>
+              <p><code>falsy </code>values:</p>
+              <ul>
+                <li>0 / -0</li>
+                <li>null</li>
+                <li>false</li>
+                <li>undefined</li>
+                <li>empty string: ""</li>
+              </ul>
+            </div>
           </div>
+          <div class="small-subarticle">
+            <h4>Comparison Operators</h4>
+            <div class="xsm-container">
+              <code>A === B</code><br />->strict equal: is true if both
+              values are equal (including their type).
+            </div>
+            <div class="xsm-container">
+              <code>A !== B</code><br />->strict not equal: is true if
+              both values are not equal (including their type).
+            </div>
+            <div class="xsm-container">
+              <code>A > B</code><br />->strictly greater than: is true if
+              A is greater than B.
+            </div>
+            <div class="xsm-container">
+              <code>A < B</code><br />->strictly less than: is true if A
+              is less than B.
+            </div>
+            <div class="xsm-container">
+              <code>A >= B</code><br />->greater than or equal: is true if
+              A is greater than or equal B.
+            </div>
+            <div class="xsm-container">
+              <code>A <= B</code><br />-> less than or equal: is true if A
+              is less than or equal B.
+            </div>
+            <div class="xsm-container">
+              IMPORTANT: === and !== are strict equality operators. This
+              is what you need almost always. Strict equality checks if
+              type and value are the same: "3" === 3 is false.
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Logical Operators</h4>
+            <p class="intro">
+              You can combine logical operators with brackets to define
+              which operator should be evaluated first.
+            </p>
+            <div class="xsm-container">                    
+              <code>!A</code><br />->not: flips a true value to false and
+              vice versa.
+            </div>
+            <div class="xsm-container">                    
+              <code>A || B</code><br />->or: is true if either A or B is
+              true.
+            </div>
+            <div class="xsm-container">                    
+              <code>A && B</code><br />->and: is true if both A and B is
+              true.
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Control Flow: if / (else if) else</h4>
+
+            <div class="xsm-container">
+              <p>        
+                With an if statement we can control whether a part of our code
+                is executed or not, based on a condition.
+              </p>
+              <p> The <code>else</code> block is executed only if the condition is
+                false.
+              </p>
+              <br>
+              <code>
+                if (hour < 12) { <br />
+                console.log("Good Morning."); <br />
+                } else if (hour < 18) { <br />
+                console.log("Good afternoon.");<br />
+                } else if (hour === 24) { <br />
+                console.log("Good night."); <br />
+                } else { <br />
+                console.log("Good evening."); <br />
+                }
+              </code>
+            </div>
+            <div class="xsm-container">
+              <p>
+                If the condition is not a boolean, it is converted into one by
+                type coercion. This can be used to check whether a value is
+                not 0 or an empty string:
+              </p>
+              <br>
+              <code>
+                const name = "Alex";<br />
+                if (name) {<br />
+                console.log("Hi " + name + "!");
+                <br />
+                } // only executed if name is not an empty string
+              </code>
+            </div>
+
+          </div>
+        <div class="small-subarticle">
+            <h4>Ternary Operator  ? : </h4>
+            <p>
+              With if / else statements whole blocks of code can be
+              controlled. The ternary operator can be used if you want to
+              decide between two expressions, e.g. which value should be
+              stored in a variable:
+            </p>
+            <br>
+            <code>condition ? expressionIfTrue : expressionIfFalse;</code>
+            <br>
+            <br>
+            <p>->If the condition is true, the first expression is evaluated,
+            otherwise the second expression.</p>
+            <br>
+            <code
+              >const greetingText = time < 12 ? "Good morning." : "Good
+              afternoon.";
+            </code>
+        </div>
+
+
         </article>
         <article class="subarticle">
           <h3>Loops</h3>
@@ -751,143 +888,19 @@
         <h2 class="heading-section">Conditions and Booleans</h2>
         <article>
           <ul>
-            <li>
-              <article class="subarticle">
-                <h4>Truthy and Falsy Values</h4>
-                <p>
-                  Sometimes you want to have a condition depending on another
-                  type of value. JavaScript can transform any value into a
-                  boolean with type coercion. That means that some values act as
-                  if they were true and others as if they were false: Truthy
-                  values become true, falsy values become false.
-                </p>
-                <p><code>truthy </code>values:</p>
-                <ul>
-                  <li>non zero numbers: 1, 2, -3, etc.</li>
-                  <li>non empty strings: "hello"</li>
-                  <li>true</li>
-                </ul>
-                <p><code>falsy </code>values:</p>
-                <ul>
-                  <li>0 / -0</li>
-                  <li>null</li>
-                  <li>false</li>
-                  <li>undefined</li>
-                  <li>empty string: ""</li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h4>Comparison Operators</h4>
-                <ul>
-                  <li>
-                    <code>A === B</code><br />->strict equal: is true if both
-                    values are equal (including their type).
-                  </li>
-                  <li>
-                    <code>A !== B</code><br />->strict not equal: is true if
-                    both values are not equal (including their type).
-                  </li>
-                  <li>
-                    <code>A > B</code><br />->strictly greater than: is true if
-                    A is greater than B.
-                  </li>
-                  <li>
-                    <code>A < B</code><br />->strictly less than: is true if A
-                    is less than B.
-                  </li>
-                  <li>
-                    <code>A >= B</code><br />->greater than or equal: is true if
-                    A is greater than or equal B.
-                  </li>
-                  <li>
-                    <code>A <= B</code><br />-> less than or equal: is true if A
-                    is less than or equal B.
-                  </li>
-                  <li>
-                    IMPORTANT: === and !== are strict equality operators. This
-                    is what you need almost always. Strict equality checks if
-                    type and value are the same: "3" === 3 is false.
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h4>Logical Operators</h4>
-                <p>
-                  You can combine logical operators with brackets to define
-                  which operator should be evaluated first.
-                </p>
-                <ul>
-                  <li>
-                    <code>!A</code><br />->not: flips a true value to false and
-                    vice versa.
-                  </li>
-                  <li>
-                    <code>A || B</code><br />->or: is true if either A or B is
-                    true.
-                  </li>
-                  <li>
-                    <code>A && B</code><br />->and: is true if both A and B is
-                    true.
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
+   
               <article class="subarticle">
                 <h4>Control Flow: if / (else if) else</h4>
-                <p>
-                  With an if statement we can control whether a part of our code
-                  is executed or not, based on a condition. The
-                  <code>else</code> block is executed only if the condition is
-                  false.
-                </p>
-                <code>
-                  if (hour < 12) { <br />
-                  console.log("Good Morning."); <br />
-                  } else if (hour < 18) { <br />
-                  console.log("Good afternoon.");<br />
-                  } else if (hour === 24) { <br />
-                  console.log("Good night."); <br />
-                  } else { <br />
-                  console.log("Good evening."); <br />
-                  }
-                </code>
-                <p>
-                  If the condition is not a boolean, it is converted into one by
-                  type coercion. This can be used to check whether a value is
-                  not 0 or an empty string:
-                </p>
-                <code>
-                  const name = "Alex";<br />
-                  if (name) {<br />
-                  console.log("Hi " + name + "!");
-                  <br />
-                  } // only executed if name is not an empty string
-                </code>
+
+
+
+
               </article>
             </li>
             <li>
               <article class="subarticle">
                 <h4>Ternary Operator: ? :</h4>
-                <p>
-                  With if / else statements whole blocks of code can be
-                  controlled. The ternary operator can be used if you want to
-                  decide between two expressions, e.g. which value should be
-                  stored in a variable:
-                </p>
-                <code>condition ? expressionIfTrue : expressionIfFalse;</code>
-                <br />
-                ->If the condition is true, the first expression is evaluated,
-                otherwise the second expression.
 
-                <code
-                  >const greetingText = time < 12 ? "Good morning." : "Good
-                  afternoon.";</code
-                >
               </article>
             </li>
           </ul>
