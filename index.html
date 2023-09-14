@@ -11,223 +11,376 @@
     <header>
       <h1>Javascript Cheat Sheet</h1>
       <nav>
+        <!-- ! ----------------------------NAVIGATION ----------------------------------------------------->
         <ul class="nav-list">
           <li class="nav-list-item">
-            <a class="nav-link" href="#basic">Variables and Data Types</a>
+            <a class="nav-link" href="#basic">Basic</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Operators and Expresion</a>
+            <a class="nav-link" href="#operators">Operators and Expresion</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Control Flow</a>
+            <a class="nav-link" href="#control">Control Flow</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Functions</a>
+            <a class="nav-link" href="#functions">Functions</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Objects & Arrays</a>
+            <a class="nav-link" href="#objects">Objects & Arrays</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Scope & Clousure</a>
+            <a class="nav-link" href="#scope">Scope & Clousure</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Event Handling</a>
+            <a class="nav-link" href="#event">Event Handling</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Asynchronous programming</a>
+            <a class="nav-link" href="#error">Error Handling</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">DOM Manipulation</a>
+            <a class="nav-link" href="#async">Asynchronous programming</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">ES6+ features</a>
+            <a class="nav-link" href="#dom">DOM Manipulation</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Modules and Import/export</a>
+            <a class="nav-link" href="#es6">ES6+ features</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Web APIs and fetch</a>
+            <a class="nav-link" href="#modules">Modules and Import/export</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Texting and debugging</a>
+            <a class="nav-link" href="#apis">Web APIs and fetch</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Best Practices</a>
+            <a class="nav-link" href="#testing">Texting and debugging</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-link" href="#practices">Best Practices</a>
           </li>
         </ul>
       </nav>
     </header>
+    <!-- ! -----------------------------------------------MAIN----------------------------------------------------->
     <main>
-      <section>
+      <!-- * ---------------------------------Variables and Data Types ------------------------------------------------------>
+      <section id="basic">
+        <h2 class="heading-section">Basics: Terminal, script, Variables & Types</h2>
+        <!--  -->
+        <article class="subarticle">
+          <h3>Connect a JavaScript file with &lt;script&gt;&lt;/script&gt;</h3>
+            <div class="intro">
+              <code>script</code> -> two attributes:
+              <code>src="./index.js</code> and <code>defer</code>
+              <p>
+                (tells the browser to delay the loading of the script until all
+                HTML elements are loaded. Alternative: script tag at the end of
+                the body element, so defer attribute is not necessary. Less
+                modern.)
+              </p>
+            </div>
+        </article>
+        <!--  -->
+        <article class="subarticle">
+          <h3>Console</h3>
+            <div class="intro">
+              <code>console.log("Hello World!")</code>-> logs into console
+            </div>
+            
+            <div class="small-subarticle">
+                <h4 class="sub">Use</h4>
+                <code> let number = 33;</code> <br />
+                <code>console.log("number is", number)</code>
+                ->with a expresion-help before ("number is") to
+                orientation in the console<br />
+                <code>console.log("the number is" + number)</code> ->
+                concatenation <br />
+                <code>console.log({number})</code>-> destruckturing to
+                see the object in the console <br />
+                <code>console.log(`the number is ${number}`)</code> ->
+                string literal
+            </div>
+              
+            <div div class="small-subarticle">
+                <h4 class="sub">Other:</h4>
+                <code>console.clear()</code> -> clears console <br>
+                <code>console.error("Error!")</code> -> logs as error into
+                    console
+            </div>  
+              
+        </article>    
+          <!--  -->
+        <article class="subarticle">
+            <h3>Variables</h3>
+            <div class="small-subarticle">
+              <h4>const</h4>
+              <code>const</code> -> declares a constant, the value can't
+              be changed. Default way to declare variables
+            </div>
+            <div class="small-subarticle">
+              <h4>let</h4>
+              <code>let</code> -> declares a variable, the value can be
+              changed. Only used when reassigning a new value is
+              necessary.
+            </div>
+            <div class="small-subarticle">
+              <h4>var</h4>
+              <code>var</code> -> outdated, not used anymore.
+            </div>
+            <div class="small-subarticle">
+              <h4>Assignation</h4>
+              IMPORTANT Assignation with <code>=</code> <br />
+              <code>let counter = 0;</code>
+            </div>
+            <div class="small-subarticle">
+             <h4>Variable Naming</h4>
+              <code>let myFirstVariable = "hello"</code> -> use camel case. Be very specific, longer names are better than shorter:
+              <code>updatedFollowerCounter</code> instead of
+              <code>counter</code>
+            </div>
+        </article>
+          <!--  -->
+        <article class="subarticle">
+            <h3>Data Types</h3>
+            <div class="small-subarticle">
+              <h4 class="sub">Primitive Data Types(7)</h4>
+              <ul>
+                <li>
+                  <code>string</code> -> a sequence of characters: "abcd"
+                  (with " ")
+                </li>
+
+                <li><code>number</code> -> a number: 1234 (without " ")</li>
+
+                <li>
+                  <code>boolean</code> -> a binary statement, can be
+                  <code>true</code> or <code>false</code> (without " ")
+                </li>
+                <li>
+                  <code>null</code> -> represents "nothing", is a value used
+                  in JavaScript to indicate that a variable has been
+                  deliberately set to "no value". It is an explicit value that
+                  you can assign to a variable to show that it is empty or has
+                  no value.
+                </li>
+                <li>
+                  <code>undefined</code> -> represents the state of "not
+                  existing". means that a variable has been declared, but no
+                  value has been assigned to it yet. If you access an
+                  uninitialised variable, it is set to undefined by default.
+                </li>
+                <li>
+                  <code>BigInt</code> -> uncommon, used for integers larger
+                  than 9007199254740991
+                </li>
+                <li>
+                  <code>Symbol</code> -> uncommon, used for creating unique
+                  elements
+                </li>
+              </ul>
+              <h4>Other (not PDT!!) </h4>
+                <p> <code>NaN</code> -> occurs when you perform mathematical
+                  operations on values that do not represent valid numbers.
+                  For example, if you try to divide a number by a string or
+                  perform an invalid mathematical calculation, you will get
+                  NaN as the result.</p>
+            </div>
+          </div>
+        
+      </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="operators">
         <h2 class="heading-section"></h2>
         <article class="subarticle">
-          <h3></h3>
+          <h3>Operators and Expresion</h3>
           <div class="small-subarticle">
-            <h4></h4>
+            <h4>Arithmetic operators</h4>
+          </div>
+          <div class="small-subarticle">
+            <h4>Comparision operators</h4>
           </div>
         </article>
       </section>
-
-      <!-------------------------------------#OLD -->
-      <!-------------------------------------#OLD -->
-      <!-------------------------------------#OLD -->
-      <!-------------------------------------#OLD -->
-      <!-------------------------------------#OLD -->
-      <!-------------------------------------#OLD -->
-      <!-------------------------------------#OLD -->
-      <section id="basic">
-        <h2 class="heading-section">Basic</h2>
-        <article>
-          <ul>
-            <li>
-              <article class="subarticle">
-                <h3>
-                  Connect a JavaScript file with &lt;script&gt;&lt;/script&gt;
-                </h3>
-                <ul>
-                  <li>
-                    <code>script</code> -> two attributes:
-                    <code>src="./index.js</code> and <code>defer</code>
-                    <br />(tells the browser to delay the loading of the script
-                    until all HTML elements are loaded. Alternative: script tag
-                    at the end of the body element, so defer attribute is not
-                    necessary. Less modern.)
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>The Console</h3>
-                <ul>
-                  <li>
-                    <p>
-                      <code>console.log("Hello World!")</code> -> logs into
-                      console
-                    </p>
-                    <ul>
-                      <span class="bold"> Use</span>
-                      console.log:
-                      <li>
-                        <code> let number = 33;</code> <br />
-                        <code>console.log("number is", number)</code>
-                        ->with a expresion-help before ("number is") to
-                        orientation in the console<br />
-                        <code>console.log("the number is" + number)</code> ->
-                        concatenation <br />
-                        <code>console.log({number})</code>-> destruckturing to
-                        see the object in the console <br />
-                        <code>console.log(`the number is ${number}`)</code> ->
-                        string literal
-                      </li>
-                    </ul>
-                  </li>
-                  <li>Others:</li>
-                  <li><code>console.clear()</code> -> clears console</li>
-                  <li>
-                    <code>console.error("Error!")</code> -> logs as error into
-                    console
-                  </li>
-                </ul>
-              </article>
-            </li>
-          </ul>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="control">
+        <h2 class="heading-section"></h2>
+        <article class="subarticle">
+          <h3>Control flow</h3>
+          <div class="small-subarticle">
+            <h4>Conditional statements</h4>
+          </div>
+          <div class="small-subarticle">
+            <h4>Loops</h4>
+          </div>
         </article>
       </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="functions">
+        <h2 class="heading-section"></h2>
+        <article class="subarticle">
+          <h3>Functions</h3>
+          <div class="small-subarticle">
+            <h4>Declarationa and expression</h4>
+          </div>
+          <div class="small-subarticle">
+            <h4>Arrow syntax</h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="objects">
+        <h2 class="heading-section"></h2>
+        <article class="subarticle">
+          <h3>Objects and arrays</h3>
+          <div class="small-subarticle">
+            <h4>Objects</h4>
+          </div>
+          <div class="small-subarticle">
+            <h4>Arrays</h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="scope">
+        <h2 class="heading-section"></h2>
+        <article class="subarticle">
+          <h3>Scope and closures</h3>
+          <div class="small-subarticle">
+            <h4>Scope</h4>
+          </div>
+          <div class="small-subarticle">
+            <h4>Closures</h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="event">
+        <h2 class="heading-section"></h2>
+        <article class="subarticle">
+          <h3>Event handling</h3>
+          <div class="small-subarticle">
+            <h4>Events</h4>
+          </div>
+          <div class="small-subarticle">
+            <h4>Events listeners</h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="error">
+        <h2 class="heading-section"></h2>
+        <article class="subarticle">
+          <h3>Error handling</h3>
+          <div class="small-subarticle">
+            <h4>Try, catch, finally</h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="async">
+        <h2 class="heading-section"></h2>
+        <article class="subarticle">
+          <h3>Asynchronous programing</h3>
+          <div class="small-subarticle">
+            <h4>Callbacks</h4>
+          </div>
+          <div class="small-subarticle">
+            <h4>Promises</h4>
+          </div>
+          <div class="small-subarticle">
+            <h4>Async/await</h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="dom">
+        <h2 class="heading-section"></h2>
+        <article class="subarticle">
+          <h3>DOM manipulation</h3>
+          <div class="small-subarticle">
+            <h4>Selecting elements</h4>
+          </div>
+          <div class="small-subarticle">
+            <h4>Modifiying content</h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="es6">
+        <h2 class="heading-section"></h2>
+        <article class="subarticle">
+          <h3>ES6+ features</h3>
+          <div class="small-subarticle">
+            <h4>Template literals</h4>
+          </div>
+          <div class="small-subarticle">
+            <h4>Destructuring</h4>
+          </div>
+          <div class="small-subarticle">
+            <h4>Spread operator</h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="modules">
+        <h2 class="heading-section"></h2>
+        <article class="subarticle">
+          <h3>Modules and Import/Export</h3>
+          <div class="small-subarticle">
+            <h4>Modules</h4>
+          </div>
+          <div class="small-subarticle">
+            <h4>Import/export</h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="apis">
+        <h2 class="heading-section"></h2>
+        <article class="subarticle">
+          <h3>Web Apis and Fetch</h3>
+          <div class="small-subarticle">
+            <h4>Web Apis</h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="testing">
+        <h2 class="heading-section"></h2>
+        <article class="subarticle">
+          <h3>Testing and debugging</h3>
+          <div class="small-subarticle">
+            <h4>Console methods</h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="practices">
+        <h2 class="heading-section"></h2>
+        <article class="subarticle">
+          <h3>Best practices</h3>
+          <div class="small-subarticle">
+            <h4>Code Style</h4>
+          </div>
+        </article>
+      </section>
+      <!-- -------------------------------------end -->
+
+      <!-------------------------------------#OLD -->
+      <!-------------------------------------#OLD -->
+      <!-------------------------------------#OLD -->
+      <!-------------------------------------#OLD -->
+      <!-------------------------------------#OLD -->
+      <!-------------------------------------#OLD -->
+      <!-------------------------------------#OLD -->
+
       <!-------------------------------------------! VAriables and Numbers -->
-      <section>
-        <h2 class="heading-section">Variables and Numbers</h2>
-        <article>
-          <ul>
-            <li>
-              <article class="subarticle">
-                <h3>Variable Declarations</h3>
-                <ul>
-                  <li>
-                    <code>const</code> -> declares a constant, the value can't
-                    be changed. Default way to declare variables
-                  </li>
 
-                  <li>
-                    <code>let</code> -> declares a variable, the value can be
-                    changed. Only used when reassigning a new value is
-                    necessary.
-                  </li>
-
-                  <li><code>var</code> -> outdated, not used anymore.</li>
-
-                  <li>
-                    IMPORTANT Assignation with <code>=</code> <br />
-                    <code>let counter = 0;</code>
-                  </li>
-                </ul>
               </article>
             </li>
             <li>
               <article class="subarticle">
-                <h3>Primitive Data Types(7)</h3>
-                <p>
-                  IMPORTANT: JS is case sensitiv
-                  <span class="underline">let a != let A</span>
-                </p>
-                <ul>
-                  <li>
-                    <code>string</code> -> a sequence of characters: "abcd"
-                    (with " ")
-                  </li>
 
-                  <li><code>number</code> -> a number: 1234 (without " ")</li>
-
-                  <li>
-                    <code>boolean</code> -> a binary statement, can be
-                    <code>true</code> or <code>false</code> (without " ")
-                  </li>
-                  <li>
-                    <code>null</code> -> represents "nothing", is a value used
-                    in JavaScript to indicate that a variable has been
-                    deliberately set to "no value". It is an explicit value that
-                    you can assign to a variable to show that it is empty or has
-                    no value.
-                  </li>
-                  <li>
-                    <code>undefined</code> -> represents the state of "not
-                    existing". means that a variable has been declared, but no
-                    value has been assigned to it yet. If you access an
-                    uninitialised variable, it is set to undefined by default.
-                  </li>
-                  <li>
-                    <code>BigInt</code> -> uncommon, used for integers larger
-                    than 9007199254740991
-                  </li>
-                  <li>
-                    <code>Symbol</code> -> uncommon, used for creating unique
-                    elements
-                  </li>
-                  <hr />
-                  <li>Other (not PDT!!):</li>
-                  <li>
-                    <code>NaN</code> -> occurs when you perform mathematical
-                    operations on values that do not represent valid numbers.
-                    For example, if you try to divide a number by a string or
-                    perform an invalid mathematical calculation, you will get
-                    NaN as the result.
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Variable Naming</h3>
-                <ul>
-                  <li>
-                    <code>let myFirstVariable = "hello"</code> -> use camel case
-                  </li>
-
-                  <li>
-                    be very specific, longer names are better than shorter:
-                    <code>updatedFollowerCounter</code> instead of
-                    <code>counter</code>
-                  </li>
                 </ul>
               </article>
               <article class="subarticle">
