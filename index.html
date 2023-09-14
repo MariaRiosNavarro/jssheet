@@ -389,20 +389,6 @@
                       <p>console.log(mainElement.baseURI)</p>
                     </article>
                   </li>
-                  <li>
-                    <article class="subarticle">
-                      <h4>Style selected elements</h4>
-                      <p>
-                        Use .style and the css propierty in without - in
-                        camelCase;
-                      </p>
-                      <p>
-                        const mainElement = document.querySelector("#main");
-                      </p>
-                      <p>mainElement.style.backgroundColor = "yellow";</p>
-                      <p>mainElement.style.fontSize = "20px"</p>
-                    </article>
-                  </li>
                 </ul>
               </article>
             </li>
@@ -432,10 +418,24 @@
                       console.log("Yeah"); });</code
                     >
                   </li>
-                  <li>Add/remove & toggle classes: <code>.classList</code></li>
-                  <li>
-                    Add (add a style(class) to main, when button is clicked):
-                    <br />
+                </ul>
+              </article>
+            </li>
+            <li>
+              <article class="subarticle">
+                <h4>Style selected elements</h4>
+                <article class="small-subarticle">
+                  <p>
+                    Use <code>.style </code>and the css propierty in without -
+                    in camelCase;
+                  </p>
+                  <p>const mainElement = document.querySelector("#main");</p>
+                  <p>mainElement.style.backgroundColor = "yellow";</p>
+                  <p>mainElement.style.fontSize = "20px"</p>
+                </article>
+                <article class="small-subarticle">
+                  <p>Add/remove & toggle classes: <code>.classList</code></p>
+                  <div>
                     <code
                       >const main = document.querySelector('[data-js="main"]'); </code
                     ><br /><code>
@@ -443,13 +443,14 @@
                       document.querySelector('[data-js="button"]');</code
                     ><br />
                     <code>button.addEventListener("click", () => { </code><br />
+                    <br />
                     <code>main.classList.add("page--primary"); });</code><br />
                     Toggle: <br />
                     <code>main.classList.toggle("page--primary");</code><br />
                     Remove: <br />
                     <code>main.classList.remove("page--primary");</code>
-                  </li>
-                </ul>
+                  </div>
+                </article>
               </article>
             </li>
             <li>
