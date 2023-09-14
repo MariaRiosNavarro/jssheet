@@ -178,13 +178,39 @@
                   elements
                 </li>
               </ul>
-              <h4>Other (not PDT!!) </h4>
+              <div class="xsm-container">
+                <h4 class="sub">Other (not PDT!!) </h4>
                 <p> <code>NaN</code> -> occurs when you perform mathematical
                   operations on values that do not represent valid numbers.
                   For example, if you try to divide a number by a string or
                   perform an invalid mathematical calculation, you will get
                   NaN as the result.</p>
+              </div>
             </div>
+          </div>
+          <div class="small-subarticle">
+            <h4 class="sub">String methods</h4>
+            <ul>
+              <li><code>length</code> -> let firstName = "John";
+                firstName.length // 4</li>
+              <li>                    <code>indexOf</code> -> const text = "Hello World";<br />
+                let letterHIndex = text.indexOf("H");
+                console.log(letterHIndex) // 0 ;<br />
+                let letterAIndex = text.indexOf("a");
+                console.log(letterAIndex) //-1 ; <br />
+                //in the order starting from 0, spaces are inclusive</li>
+              <li>                    <code>search</code> -> const message = "Hello John!";<br />
+                let positionJ = message.search("John");
+                console.log(positionJ) // 6 <br />
+                let positionM = message.search("Martha");
+                console.log(positionM) // -1 <br />
+                //in the order starting from 0, spaces are inclusive</li>
+              <li>
+                <code> -1 </code> is normally used for the representation of
+                non-existence or non-detection
+              </li>
+            </ul>
+          
           </div>
         
       </section>
@@ -193,8 +219,46 @@
         <h2 class="heading-section">Operators and Expresion</h2>
         <article class="subarticle">
           <h3>Arithmetic operators</h3>
+          <p class="intro">let a = 1; let b = 2 ; let c = 3; let result = 0</p>
           <div class="small-subarticle">
-            <h4></h4>
+            <code>+</code> -><code
+            >console.log ("a + b =", (a += b)) ;
+          </code>
+          // or use = a+b
+          </div>
+          <div class="small-subarticle">
+            <code>-</code> -><code
+            >console.log("a - b =", (a -= b));
+          </code>
+          // or use = a-b
+          </div>
+          <div class="small-subarticle">
+            <code>*</code> -><code
+            >console.log("a * b =", (a *= b));</code
+          >
+          // or use = a*b
+          </div>
+          <div class="small-subarticle">
+            <code>/</code> -><code
+            >console.log("a / b =", (a /= b));</code
+          >
+          // or use = a/b
+          </div>
+          <div class="small-subarticle">
+            <code>%</code> -><code
+            >console.log("a % b =", (a %= b));</code
+          >// or use = a%b
+          </div>
+          <div class="small-subarticle">
+            <code>**</code> ->
+            <code>console.log("a ** b =", (a **= b));</code> //or use
+            a**b;
+          </div>
+          <div class="small-subarticle">
+            Incrementation (1) <code>a++</code>
+          </div>
+          <div class="small-subarticle">
+            Decrementation (1) <code>a- -</code>
           </div>
         </article>
         <article class="subarticle">
@@ -424,90 +488,9 @@
 
       <!-------------------------------------------! VAriables and Numbers -->
 
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-
-                </ul>
-              </article>
-              <article class="subarticle">
-                <h3>Strings methods</h3>
-                <ul>
-                  <li>
-                    <code>length</code> -> let firstName = "John";
-                    firstName.length // 4
-                  </li>
-
-                  <li>
-                    <code>indexOf</code> -> const text = "Hello World";<br />
-                    let letterHIndex = text.indexOf("H");
-                    console.log(letterHIndex) // 0 ;<br />
-                    let letterAIndex = text.indexOf("a");
-                    console.log(letterAIndex) //-1 ; <br />
-                    //in the order starting from 0, spaces are inclusive
-                  </li>
-
-                  <li>
-                    <code>search</code> -> const message = "Hello John!";<br />
-                    let positionJ = message.search("John");
-                    console.log(positionJ) // 6 <br />
-                    let positionM = message.search("Martha");
-                    console.log(positionM) // -1 <br />
-                    //in the order starting from 0, spaces are inclusive
-                  </li>
-                  <li>
-                    <code> -1 </code> is normally used for the representation of
-                    non-existence or non-detection
-                  </li>
-                </ul>
-              </article>
-              <article class="subarticle">
-                <h3>Numbers</h3>
-                <p>let a = 1; let b = 2 ; let c = 3; let result = 0</p>
-                <ul>
-                  <li>
-                    <code>+</code> -><code
-                      >console.log ("a + b =", (a += b)) ;
-                    </code>
-                    // or use = a+b
-                  </li>
-                  <li>
-                    <code>-</code> -><code
-                      >console.log("a - b =", (a -= b));
-                    </code>
-                    // or use = a-b
-                  </li>
-                  <li>
-                    <code>*</code> -><code
-                      >console.log("a * b =", (a *= b));</code
-                    >
-                    // or use = a*b
-                  </li>
-                  <li>
-                    <code>/</code> -><code
-                      >console.log("a / b =", (a /= b));</code
-                    >
-                    // or use = a/b
-                  </li>
-                  <li>
-                    <code>%</code> -><code
-                      >console.log("a % b =", (a %= b));</code
-                    >// or use = a%b
-                  </li>
-                  <li>
-                    <code>**</code> ->
-                    <code>console.log("a ** b =", (a **= b));</code> //or use
-                    a**b;
-                  </li>
-                  <li>Incrementation (1) <code>a++</code></li>
-                  <li>Decrementation (1) <code>a- -</code></li>
-                </ul>
-              </article>
-            </li>
-          </ul>
-        </article>
-      </section>
+ 
+          
+       
       <!-------------------------------------------! DOM MANIPULATION -->
       <section>
         <h2 class="heading-section">DOM Manipulation</h2>
