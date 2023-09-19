@@ -705,13 +705,218 @@
         <article class="subarticle">
           <h3>Selecting elements</h3>
           <div class="small-subarticle">
-            <h4></h4>
+            <h4>.querySelector()</h4>
+            <p class="intro">Before we can add interactivity, we need to select the
+              necessary HTML-Elements. A good practice is to use a data-*
+              attribute, like that:</p>
+            <code>const mainElement =
+              document.querySelector('[data-js="main"]');</code>
+            <p>Other css selectors work as well, but the data-* attribute
+              selectors should be preferred.</p>
+            <div class="xsm-container">
+              <div>
+                <code
+                >const mainElement = document.querySelector("main");</code
+              ><br />
+              ->tag as identifier
+              </div>
+              <div>
+                >const mainElement =
+                document.querySelector(".main");</code
+              ><br />
+              ->class as identifier
+              </div>
+              <div>
+                <code
+                >const mainElement =
+                document.querySelector("#main");</code
+              ><br />-> id as identifier
+              </div>
+            </div>
+            <div class="xsm-container">
+              <p>Other posibilities:</p>
+              <code> querySelector('elementA + elementB');</code><br />
+              <code> querySelector('elementA ~ elementB');</code><br />
+              <code> querySelector('[attribut="value"]');</code><br />
+              <code> querySelector(':pseudo');</code><br />
+              <code> querySelector('::pseudo-element');</code><br />
+              <code> querySelector(':pseudo');</code><br />
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Other methods to select:</h4>
+            <p>
+              .querySelectorAll() allows you to find and select
+              multiple elements in the DOM based on these selectors
+            </p>
+            <p>
+              <code> querySelectorAll('element')</code><br />
+              ->Selects all elements of the specified type.
+            </p>
+            <p>
+              <code> querySelectorAll('.classname')</code><br />
+              -> Selects all elements with the specified CSS class.
+            </p>
+            <p>
+              <code> querySelectorAll('#id')</code><br />
+              -> Selects the element with the specified ID (Note: IDs
+              should be unique)
+            </p>
+            <p>
+              <code> querySelectorAll('[attribute="value"]')</code>
+              <br />
+              -> Selects all elements with the specified attribute and
+              value.
+            </p>
+            <p>
+              <code> querySelectorAll(':pseudo-class')</code> <br />
+              -> Selects all elements that match the specified
+              pseudo-class, like :hover or :nth-child(n).
+            </p>
+            <p>
+              <code>querySelectorAll('element.classname')</code><br />
+              ->to select all elements of a specific type with a
+              certain class.
+            </p>
+            <p>
+              <code>getElementById</code><br />
+              -> Selects an element by its unique ID attribute.
+            </p>
+            <p>
+              <code>getElementsByClassName</code><br />
+              -> Selects elements by their class attribute.
+            </p>
+            <p>
+              <code>getElementsByTagName</code><br />
+              -> Selects elements by their HTML tag name.
+            </p>
+            <p>
+              <code>getElementsByName</code><br />
+              -> Selects elements by their name attribute.
+            </p>
           </div>
         </article>
         <article class="subarticle">
-          <h3>Modifiying content</h3>
+          <h3>Modifiying and use content</h3>
+          <p class="intro">
+            You can access in the console to all the propierties of
+            the element:
+          </p>
+          <p>
+            const mainElement = document.querySelector("#main");
+          </p>
+          <p>console.log(mainElement.innerHTML)</p>
+          <p>console.log(mainElement.clientWidth)</p>
+          <p>console.log(mainElement.baseURI)</p>
           <div class="small-subarticle">
-            <h4></h4>
+            <h4>Output in HTML</h4>
+            <div class="xsm-container">
+              <h4 class="sub">document.write</h4>
+              <p>
+                <code>document.write("Hallo People!")</code> -> Add text
+                at the <span class="underline">END</span> of our HTML
+              </p>
+
+              <code
+                >document.write("&lt;h2 class="test" style="color:
+                red"&gt;Warning&lt;/h2&gt;")</code
+              >
+            </div>
+            <div class="xsm-container">
+              <h4 class="sub">POP UPS</h4>
+              <div>
+                <code>window.prompt()</code>
+                ->text with input (and placeholder). e.g:
+                <br />
+                let windowInput = window.prompt("What´s is yout name?",
+                "please, write here your name")
+              </div>
+              <div>
+                <code>window.confirm()</code>-> text with 2 buttons
+                yes/no
+                <br />
+                let confirmStatus = window.confirm("Agree to the
+                cookies?);<br />
+                // console.log(confirmStatus);
+              </div>
+            </div>
+            <div class="xsm-container">
+              <h4 class="sub">innerHTML</h4>
+              <div>
+                <code>
+                  const content = document.querySelector("h1") <br />
+                  content.innerHTML += "Hello World!" 
+                </code>
+                <br />
+                <p>//-> With += add a the new text to the old. </p><br />
+                <p>//-> With = rewrite all the content !!.</p>
+                <code>
+                const container = document.querySelector(".container")
+                <br />
+                container.innerHTML += "&lt;h3&gt; This is a new
+                  headline &lt;/h3&gt;"; 
+                </code>
+                <br />
+                <p>//-> Add new HTML Elements</p>
+              </div>
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Interaction</h4>
+            <div class="xsm-container">
+              <h4 class="sub">.addEventListener()</h4>
+              <p>The method addEventListener is used to react to events.
+                There different events you can listen to:</p>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/Events#event_listing">List
+              </a>
+              <p>
+                First you specify the kind of event, e.g. click, then you
+                define what code should be executed when the event is
+                triggered. You write that code between the {} brackets, e.g.
+                a console.log.
+              </p>
+              <code>
+              const button =
+              document.querySelector('[data-js="button"]');
+              button.addEventListener("click", () => {
+              console.log("Yeah"); });
+              </code>
+            </div>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h4>Change style</h4>
+          <div class="small-subarticle">
+            <h4>.style</h4>
+            <p>
+              Use <code>.style </code>and the css propierty in without -
+              in camelCase;
+            </p>
+            <p>const mainElement = document.querySelector("#main");</p>
+            <p>mainElement.style.backgroundColor = "yellow";</p>
+            <p>mainElement.style.fontSize = "20px"</p>
+          </div>
+          <div class="small-subarticle">
+            <h4>.classList</h4>
+            <p>Add/remove & toggle classes:</p>
+            <div class="xsm-container">
+                <code>const main = document.querySelector('[data-js="main"]'); </code>
+                <br />
+                <br />
+                <code>const button = document.querySelector('[data-js="button"]');</code>
+                <br />
+                <br />
+                <code>button.addEventListener("click", () => { </code>
+                <br />
+              
+                <code>main.classList.add("page--primary"); });</code>
+                <br />
+                <p>Toggle:</p> 
+                <code>main.classList.toggle("page--primary");</code>
+                <br />
+                <p>Remove: </p>
+                <code>main.classList.remove("page--primary");</code>
+            </div>
           </div>
         </article>
       </section>
