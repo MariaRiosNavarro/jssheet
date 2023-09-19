@@ -133,7 +133,7 @@
               <code>let counter = 0;</code>
             </div>
             <div class="small-subarticle">
-             <h4>Variable Naming</h4>
+            <h4>Variable Naming</h4>
               <code>let myFirstVariable = "hello"</code> -> use camel case. Be very specific, longer names are better than shorter:
               <code>updatedFollowerCounter</code> instead of
               <code>counter</code>
@@ -189,22 +189,47 @@
             </div>
           </div>
           <div class="small-subarticle">
-            <h4 class="sub">String methods</h4>
+            <h4 class="sub">String methods & propierties</h4>
             <ul>
               <li><code>length</code> -> let firstName = "John";
-                firstName.length // 4</li>
-              <li>                    <code>indexOf</code> -> const text = "Hello World";<br />
+                firstName.length // 4
+              <p>length is a propierty</p>
+              </li>
+              <li><code>indexOf</code> -> const text = "Hello World";<br />
                 let letterHIndex = text.indexOf("H");
                 console.log(letterHIndex) // 0 ;<br />
                 let letterAIndex = text.indexOf("a");
                 console.log(letterAIndex) //-1 ; <br />
                 //in the order starting from 0, spaces are inclusive</li>
-              <li>                    <code>search</code> -> const message = "Hello John!";<br />
+              <li><code>search</code> -> const message = "Hello John!";<br />
                 let positionJ = message.search("John");
                 console.log(positionJ) // 6 <br />
                 let positionM = message.search("Martha");
                 console.log(positionM) // -1 <br />
-                //in the order starting from 0, spaces are inclusive</li>
+                //in the order starting from 0, spaces are inclusive
+              </li>
+              <li><code>concat()</code> concatenates strings.
+                string.concat("moreText") //Variable are posible too
+              </li>
+              <li><code>charAt()</code> returns the character at a specific position in a string, starting at 0.
+               string.charAt(0) // The first character of the string</li>
+              <li><code>includes()</code> checks if a word/character is present in the string.
+                string.includes("hello")// true or false</li>
+              <li><code>replace()</code> replaces a portion of a string and returns the result.
+                string.replace("john", "jane")// string include the first time the word jane, not john</li>
+              <li><code>replaceAll()</code> replaces all occurrences, not just the first one.
+                string.replace("john", "jane")// string replace all "john" for "jane"</li>
+              <li><code>slice()</code> cuts the string up to the specified index and returns the remaining characters.
+                string.slice(1)// the string without the first Word <br>
+                string.slice(1,2)// the string from the character in index 1 to character in index 2</li> 
+              <li><code>substring()</code> also cuts the string based on specified indices (the same as slice, but dont work with negativ values).
+              </li>
+              <li><code>toLowerCase()</code> converts the string to lowercase.
+              </li>
+              <li><code>toUpperCase()</code> converts the string to uppercase.
+              </li>
+              <li><code>toString()</code> converts numbers into strings.
+              </li>
               <li>
                 <code> -1 </code> is normally used for the representation of
                 non-existence or non-detection
