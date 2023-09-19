@@ -133,7 +133,7 @@
               <code>let counter = 0;</code>
             </div>
             <div class="small-subarticle">
-             <h4>Variable Naming</h4>
+            <h4>Variable Naming</h4>
               <code>let myFirstVariable = "hello"</code> -> use camel case. Be very specific, longer names are better than shorter:
               <code>updatedFollowerCounter</code> instead of
               <code>counter</code>
@@ -189,22 +189,47 @@
             </div>
           </div>
           <div class="small-subarticle">
-            <h4 class="sub">String methods</h4>
+            <h4 class="sub">String methods & propierties</h4>
             <ul>
               <li><code>length</code> -> let firstName = "John";
-                firstName.length // 4</li>
-              <li>                    <code>indexOf</code> -> const text = "Hello World";<br />
+                firstName.length // 4
+              <p>length is a propierty</p>
+              </li>
+              <li><code>indexOf</code> -> const text = "Hello World";<br />
                 let letterHIndex = text.indexOf("H");
                 console.log(letterHIndex) // 0 ;<br />
                 let letterAIndex = text.indexOf("a");
                 console.log(letterAIndex) //-1 ; <br />
                 //in the order starting from 0, spaces are inclusive</li>
-              <li>                    <code>search</code> -> const message = "Hello John!";<br />
+              <li><code>search</code> -> const message = "Hello John!";<br />
                 let positionJ = message.search("John");
                 console.log(positionJ) // 6 <br />
                 let positionM = message.search("Martha");
                 console.log(positionM) // -1 <br />
-                //in the order starting from 0, spaces are inclusive</li>
+                //in the order starting from 0, spaces are inclusive
+              </li>
+              <li><code>concat()</code> concatenates strings.
+                string.concat("moreText") //Variable are posible too
+              </li>
+              <li><code>charAt()</code> returns the character at a specific position in a string, starting at 0.
+               string.charAt(0) // The first character of the string</li>
+              <li><code>includes()</code> checks if a word/character is present in the string.
+                string.includes("hello")// true or false</li>
+              <li><code>replace()</code> replaces a portion of a string and returns the result.
+                string.replace("john", "jane")// string include the first time the word jane, not john</li>
+              <li><code>replaceAll()</code> replaces all occurrences, not just the first one.
+                string.replace("john", "jane")// string replace all "john" for "jane"</li>
+              <li><code>slice()</code> cuts the string up to the specified index and returns the remaining characters.
+                string.slice(1)// the string without the first Word <br>
+                string.slice(1,2)// the string from the character in index 1 to character in index 2</li> 
+              <li><code>substring()</code> also cuts the string based on specified indices (the same as slice, but dont work with negativ values).
+              </li>
+              <li><code>toLowerCase()</code> converts the string to lowercase.
+              </li>
+              <li><code>toUpperCase()</code> converts the string to uppercase.
+              </li>
+              <li><code>toString()</code> converts numbers into strings.
+              </li>
               <li>
                 <code> -1 </code> is normally used for the representation of
                 non-existence or non-detection
@@ -351,9 +376,9 @@
             </div>
           </div>
           <div class="small-subarticle">
-            <h4>Control Flow: if / (else if) else</h4>
-
+            <h4>Conditionals:</h4>
             <div class="xsm-container">
+              <h4> if / (else if) else</h4>
               <p>        
                 With an if statement we can control whether a part of our code
                 is executed or not, based on a condition.
@@ -373,46 +398,79 @@
                 console.log("Good evening."); <br />
                 }
               </code>
+              <div class="xsm-container">
+                <p>
+                  If the condition is not a boolean, it is converted into one by
+                  type coercion. This can be used to check whether a value is
+                  not 0 or an empty string:
+                </p>
+                <br>
+                <code>
+                  const name = "Alex";<br />
+                  if (name) {<br />
+                  console.log("Hi " + name + "!");
+                  <br />
+                  } // only executed if name is not an empty string
+                </code>
+              </div>
             </div>
             <div class="xsm-container">
+              <h4>Ternary Operator  ? : </h4>
               <p>
-                If the condition is not a boolean, it is converted into one by
-                type coercion. This can be used to check whether a value is
-                not 0 or an empty string:
-              </p>
-              <br>
-              <code>
-                const name = "Alex";<br />
-                if (name) {<br />
-                console.log("Hi " + name + "!");
-                <br />
-                } // only executed if name is not an empty string
-              </code>
-            </div>
-
-          </div>
-        <div class="small-subarticle">
-            <h4>Ternary Operator  ? : </h4>
-            <p>
               With if / else statements whole blocks of code can be
               controlled. The ternary operator can be used if you want to
               decide between two expressions, e.g. which value should be
               stored in a variable:
-            </p>
-            <br>
-            <code>condition ? expressionIfTrue : expressionIfFalse;</code>
-            <br>
-            <br>
-            <p>->If the condition is true, the first expression is evaluated,
-            otherwise the second expression.</p>
-            <br>
-            <code
-              >const greetingText = time < 12 ? "Good morning." : "Good
-              afternoon.";
-            </code>
-        </div>
-
-
+              </p>
+              <br>
+              <code>condition ? expressionIfTrue : expressionIfFalse;</code>
+              <br>
+              <br>
+              <p>->If the condition is true, the first expression is evaluated,
+              otherwise the second expression.</p>
+              <br>
+              <code>const greetingText = time < 12 ? "Good morning." : "Good afternoon.";
+              </code>
+            </div>
+            <div class="xsm-container">
+              <h4>switch</h4>
+              <p>
+                The "break" statement is necessary in a switch-case statement to exit the switch block after executing the code for a matched case, preventing the execution of subsequent case statements and ensuring that only one case is executed.</p>
+              <div>
+                <p>We can not put conditions inside switch(), becouse dont work, we need to use a boolean. Only inside the case works the condition</p>
+                <p>let number = 100;</p>
+                <code>
+                  switch (true) {<br>
+                    case num > 50:<br>
+                    console.log("Number is bigger to 50");<br>
+                    break;<br>
+                    case num < 50:<br>
+                    console.log("Number is small as 50");<br>
+                    break;<br>
+                    default:<br>
+                    console.log("Number is 50");<br>
+                    break;<br>
+                    }<br>
+                </code>
+                <p>With strings:</p>
+                let acount = "Admin"
+                <code>
+                  switch (account) { <br>
+                  case "Admin":<br>
+                  console.log("You have all the privileges.");<br>
+                  case "Moderator":<br>
+                  console.log("You have all the rights.");<br>
+                  break;<br>
+                  case "User":<br>
+                  console.log("As a user, you can read and comment on posts. Limited rights.");<br>
+                  break;<br>
+                  default:<br>
+                  console.log("Please log in.");<br>
+                  }<br>
+                </code>
+              </div>
+            </div>
+          </div>
         </article>
         <article class="subarticle">
           <h3>Loops</h3>
@@ -926,7 +984,11 @@
         <article class="subarticle">
           <h3>Template literals</h3>
           <div class="small-subarticle">
-            <h4></h4>
+            <code>let firstName = "Jane";</code><br>
+            <code>let lastName = "Doe";</code><br>
+            <code>let city = "Los Angeles";</code><br>
+            <code>let concatenation = firstName + lastName + " is from " + city;</code><br>
+            <code>let templateLiteral = `${firstName} ${lastName} is from ${city}`;</code><br>
           </div>
         </article>
         <article class="subarticle">
@@ -995,279 +1057,6 @@
         </article>
       </section>
       <!-- -------------------------------------end -->
-
-      <!-------------------------------------#OLD -->
-      <!-------------------------------------#OLD -->
-      <!-------------------------------------#OLD -->
-      <!-------------------------------------#OLD -->
-      <!-------------------------------------#OLD -->
-      <!-------------------------------------#OLD -->
-      <!-------------------------------------#OLD -->
-
-      <!-------------------------------------------! VAriables and Numbers -->
-
- 
-          
-       
-      <!-------------------------------------------! DOM MANIPULATION -->
-      <section>
-        <h2 class="heading-section">DOM Manipulation</h2>
-        <article>
-          <ul>
-            <li>
-              <article class="subarticle">
-                <h3>
-                  Selecting HTML Elements: <br /><code>.querySelector()</code>
-                </h3>
-
-                <ul>
-                  <li>
-                    Before we can add interactivity, we need to select the
-                    necessary HTML-Elements. A good practice is to use a data-*
-                    attribute, like that:
-                  </li>
-                  <li>
-                    <code>
-                      const mainElement =
-                      document.querySelector('[data-js="main"]');
-                    </code>
-                    <p></p>
-                  </li>
-                  <li>
-                    Other css selectors work as well, but the data-* attribute
-                    selectors should be preferred.
-                  </li>
-                  <li>
-                    <code
-                      >const mainElement = document.querySelector("main");</code
-                    ><br />
-                    ->tag as identifier
-                  </li>
-                  <li>
-                    <code
-                      >const mainElement =
-                      document.querySelector(".main");</code
-                    ><br />
-                    ->class as identifier
-                  </li>
-                  <li>
-                    <code
-                      >const mainElement =
-                      document.querySelector("#main");</code
-                    ><br />-> id as identifier
-                  </li>
-                  <li>
-                    Other posibilities:
-                    <code> querySelector('elementA + elementB');</code><br />
-                    <code> querySelector('elementA ~ elementB');</code><br />
-                    <code> querySelector('[attribut="value"]');</code><br />
-                    <code> querySelector(':pseudo');</code><br />
-                    <code> querySelector('::pseudo-element');</code><br />
-                    <code> querySelector(':pseudo');</code><br />
-                  </li>
-                  <li>
-                    <article class="subarticle">
-                      <h4>Other methods to select:</h4>
-                      <p>
-                        .querySelectorAll() allows you to find and select
-                        multiple elements in the DOM based on these selectors
-                      </p>
-                      <p>
-                        <code> querySelectorAll('element')</code><br />
-                        ->Selects all elements of the specified type.
-                      </p>
-                      <p>
-                        <code> querySelectorAll('.classname')</code><br />
-                        -> Selects all elements with the specified CSS class.
-                      </p>
-                      <p>
-                        <code> querySelectorAll('#id')</code><br />
-                        -> Selects the element with the specified ID (Note: IDs
-                        should be unique)
-                      </p>
-                      <p>
-                        <code> querySelectorAll('[attribute="value"]')</code>
-                        <br />
-                        -> Selects all elements with the specified attribute and
-                        value.
-                      </p>
-                      <p>
-                        <code> querySelectorAll(':pseudo-class')</code> <br />
-                        -> Selects all elements that match the specified
-                        pseudo-class, like :hover or :nth-child(n).
-                      </p>
-                      <p>
-                        <code>querySelectorAll('element.classname')</code><br />
-                        ->to select all elements of a specific type with a
-                        certain class.
-                      </p>
-                      <p>
-                        <code>getElementById</code><br />
-                        -> Selects an element by its unique ID attribute.
-                      </p>
-                      <p>
-                        <code>getElementsByClassName</code><br />
-                        -> Selects elements by their class attribute.
-                      </p>
-                      <p>
-                        <code>getElementsByTagName</code><br />
-                        -> Selects elements by their HTML tag name.
-                      </p>
-                      <p>
-                        <code>getElementsByName</code><br />
-                        -> Selects elements by their name attribute.
-                      </p>
-                    </article>
-                  </li>
-                  <li>
-                    <article class="subarticle">
-                      <h4>Use selected elements</h4>
-                      <p>
-                        You can access in the console to all the propierties of
-                        the element:
-                      </p>
-                      <p>
-                        const mainElement = document.querySelector("#main");
-                      </p>
-                      <p>console.log(mainElement.innerHTML)</p>
-                      <p>console.log(mainElement.clientWidth)</p>
-                      <p>console.log(mainElement.baseURI)</p>
-                    </article>
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Add Interaction: <code>.addEventListener()</code></h3>
-                <ul>
-                  <li>
-                    The method addEventListener is used to react to events.
-                    There different events you can listen to:
-                    <a
-                      href="https://developer.mozilla.org/en-US/docs/Web/Events#event_listing"
-                      >List</a
-                    >
-                  </li>
-                  <li>
-                    First you specify the kind of event, e.g. click, then you
-                    define what code should be executed when the event is
-                    triggered. You write that code between the {} brackets, e.g.
-                    a console.log.
-                  </li>
-                  <li>
-                    <code
-                      >const button =
-                      document.querySelector('[data-js="button"]');
-                      button.addEventListener("click", () => {
-                      console.log("Yeah"); });</code
-                    >
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h4>Style selected elements</h4>
-                <article class="small-subarticle">
-                  <p>
-                    Use <code>.style </code>and the css propierty in without -
-                    in camelCase;
-                  </p>
-                  <p>const mainElement = document.querySelector("#main");</p>
-                  <p>mainElement.style.backgroundColor = "yellow";</p>
-                  <p>mainElement.style.fontSize = "20px"</p>
-                </article>
-                <article class="small-subarticle">
-                  <p>Add/remove & toggle classes: <code>.classList</code></p>
-                  <div>
-                    <code
-                      >const main = document.querySelector('[data-js="main"]'); </code
-                    ><br /><code>
-                      const button =
-                      document.querySelector('[data-js="button"]');</code
-                    ><br />
-                    <code>button.addEventListener("click", () => { </code><br />
-                    <br />
-                    <code>main.classList.add("page--primary"); });</code><br />
-                    Toggle: <br />
-                    <code>main.classList.toggle("page--primary");</code><br />
-                    Remove: <br />
-                    <code>main.classList.remove("page--primary");</code>
-                  </div>
-                </article>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Output in HTML</h3>
-                <ul>
-                  <li>
-                    <h4 class="bold" style="text-align: center">
-                      document.write
-                    </h4>
-                    <div class="small-subarticle">
-                      <p>
-                        <code>document.write("Hallo People!")</code> -> Add text
-                        at the <span class="underline">END</span> of our HTML
-                      </p>
-
-                      <code
-                        >document.write("&lt;h2 class="test" style="color:
-                        red"&gt;Warning&lt;/h2&gt;")</code
-                      >
-                    </div>
-                  </li>
-                  <li>
-                    <h4 class="bold" style="text-align: center">POP UPS</h4>
-                    <div class="small-subarticle">
-                      <div>
-                        <code>window.prompt()</code>
-                        ->text with input (and placeholder). e.g:
-                        <br />
-                        let windowInput = window.prompt("What´s is yout name?",
-                        "please, write here your name")
-                      </div>
-                      <div>
-                        <code>window.confirm()</code>-> text with 2 buttons
-                        yes/no
-                        <br />
-                        let confirmStatus = window.confirm("Agree to the
-                        cookies?);<br />
-                        // console.log(confirmStatus);
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <h4 class="bold" style="text-align: center">innerHTML</h4>
-                    <div class="small-subarticle">
-                      <div>
-                        <code
-                          >const content = document.querySelector("h1") <br />
-                          content.innerHTML += "Hello World!" </code
-                        ><br />
-                        //-> With += add a the new text to the old. <br />
-                        //-> With = rewrite all the content !!.
-                        <code>
-                          const container = document.querySelector(".container")
-                          <br />
-                          container.innerHTML += "&lt;h3&gt; This is a new
-                          headline &lt;/h3&gt;"; </code
-                        ><br />
-                        //-> Add new HTML Elements
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </article>
-            </li>
-          </ul>
-        </article>
-      </section>
-
-
-      <!-- ! -->
-
     </main>
     <script src="./assets/js/main.js"></script>
   </body>
