@@ -429,8 +429,24 @@
               <p>->If the condition is true, the first expression is evaluated,
               otherwise the second expression.</p>
               <br>
+              <p>We ALWAYS need an alternative value to true, no matter which: undefined, null, ""</p>
               <code>const greetingText = time < 12 ? "Good morning." : "Good afternoon.";
               </code>
+              <div>
+                <code>And other example:</code><br>
+                <code>let number = 4;</code><br>
+                <code>function isEven(number) {</code><br>
+                <code>if (number % 2 === 0) {</code><br>
+                <code>return true;</code><br>
+                <code>} else {</code><br>
+                <code>return false;</code><br>
+                <code>}</code><br>
+                <code>}</code><br>
+                <br>
+                <code> let resultA = isEven(number)</code><br>
+                <code>? `The number ${number} is even`</code><br>
+                <code>: `The number ${number} is odd`;</code><br>
+              </div>
             </div>
             <div class="xsm-container">
               <h4>switch</h4>
