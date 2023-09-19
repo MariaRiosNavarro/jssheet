@@ -288,17 +288,56 @@
         </article>
         <article class="subarticle">
           <h3>Comparision operators</h3>
-          <div class="small-subarticle">
-            <h4></h4>
-          </div>
+            <div class="small-subarticle">
+              <code>A === B</code><br />->strict equal: is true if both
+              values are equal (including their type).
+            </div>
+            <div class="small-subarticle">
+              <code>A !== B</code><br />->strict not equal: is true if
+              both values are not equal (including their type).
+            </div>
+            <div class="small-subarticle">
+              <code>A > B</code><br />->strictly greater than: is true if
+              A is greater than B.
+            </div>
+            <div class="small-subarticle">
+              <code>A < B</code><br />->strictly less than: is true if A
+              is less than B.
+            </div>
+            <div class="small-subarticle">
+              <code>A >= B</code><br />->greater than or equal: is true if
+              A is greater than or equal B.
+            </div>
+            <div class="small-subarticle">
+              <code>A <= B</code><br />-> less than or equal: is true if A
+              is less than or equal B.
+            </div>
+            <div class="small-subarticle">
+              IMPORTANT: === and !== are strict equality operators. This
+              is what you need almost always. Strict equality checks if
+              type and value are the same: "3" === 3 is false.
+            </div>
         </article>
-      </section>
-      <!-- * ---------------------------------control ------------------------------------------------------>
-      <section id="control">
-        <h2 class="heading-section">Control flow</h2>
         <article class="subarticle">
-          <h3>Conditional statements</h3>
-          <div class="small-subarticle">
+          <h3>Logical Operators</h3>
+          <p class="intro">
+              You can combine logical operators with brackets to define
+              which operator should be evaluated first.
+          </p>
+            <div class="small-subarticle">                    
+              <code>!A</code><br />->not: flips a true value to false and
+              vice versa.
+            </div>
+            <div class="small-subarticle">                    
+              <code>A || B</code><br />->or: is true if either A or B is
+              true.
+            </div>
+            <div class="small-subarticle">                    
+              <code>A && B</code><br />->and: is true if both A and B is
+              true.
+            </div>
+        </article>
+        <article class="subarticle">
             <h4>Truthy and Falsy Values</h4>
             <p>
               Sometimes you want to have a condition depending on another
@@ -307,7 +346,7 @@
               if they were true and others as if they were false: Truthy
               values become true, falsy values become false.
             </p>
-            <div class="xsm-container">
+            <div class="small-subarticle">
               <p><code>truthy </code>values:</p>
               <ul>
                 <li>non zero numbers: 1, 2, -3, etc.</li>
@@ -323,61 +362,14 @@
                 <li>empty string: ""</li>
               </ul>
             </div>
-          </div>
-          <div class="small-subarticle">
-            <h4>Comparison Operators</h4>
-            <div class="xsm-container">
-              <code>A === B</code><br />->strict equal: is true if both
-              values are equal (including their type).
-            </div>
-            <div class="xsm-container">
-              <code>A !== B</code><br />->strict not equal: is true if
-              both values are not equal (including their type).
-            </div>
-            <div class="xsm-container">
-              <code>A > B</code><br />->strictly greater than: is true if
-              A is greater than B.
-            </div>
-            <div class="xsm-container">
-              <code>A < B</code><br />->strictly less than: is true if A
-              is less than B.
-            </div>
-            <div class="xsm-container">
-              <code>A >= B</code><br />->greater than or equal: is true if
-              A is greater than or equal B.
-            </div>
-            <div class="xsm-container">
-              <code>A <= B</code><br />-> less than or equal: is true if A
-              is less than or equal B.
-            </div>
-            <div class="xsm-container">
-              IMPORTANT: === and !== are strict equality operators. This
-              is what you need almost always. Strict equality checks if
-              type and value are the same: "3" === 3 is false.
-            </div>
-          </div>
-          <div class="small-subarticle">
-            <h4>Logical Operators</h4>
-            <p class="intro">
-              You can combine logical operators with brackets to define
-              which operator should be evaluated first.
-            </p>
-            <div class="xsm-container">                    
-              <code>!A</code><br />->not: flips a true value to false and
-              vice versa.
-            </div>
-            <div class="xsm-container">                    
-              <code>A || B</code><br />->or: is true if either A or B is
-              true.
-            </div>
-            <div class="xsm-container">                    
-              <code>A && B</code><br />->and: is true if both A and B is
-              true.
-            </div>
-          </div>
-          <div class="small-subarticle">
-            <h4>Conditionals:</h4>
-            <div class="xsm-container">
+        </article>
+      </section>
+      <!-- * ---------------------------------control ------------------------------------------------------>
+      <section id="control">
+        <h2 class="heading-section">Control flow</h2>
+        <article class="subarticle">
+          <h3>Conditional statements</h3>
+            <div class="small-subarticle">
               <h4> if / (else if) else</h4>
               <p>        
                 With an if statement we can control whether a part of our code
@@ -398,7 +390,7 @@
                 console.log("Good evening."); <br />
                 }
               </code>
-              <div class="xsm-container">
+              <div class="small-subarticle">
                 <p>
                   If the condition is not a boolean, it is converted into one by
                   type coercion. This can be used to check whether a value is
@@ -414,7 +406,7 @@
                 </code>
               </div>
             </div>
-            <div class="xsm-container">
+            <div class="small-subarticle">
               <h4>Ternary Operator  ? : </h4>
               <p>
               With if / else statements whole blocks of code can be
@@ -448,7 +440,7 @@
                 <code>: `The number ${number} is odd`;</code><br>
               </div>
             </div>
-            <div class="xsm-container">
+            <div class="small-subarticle">
               <h4>switch</h4>
               <p>
                 The "break" statement is necessary in a switch-case statement to exit the switch block after executing the code for a matched case, preventing the execution of subsequent case statements and ensuring that only one case is executed.</p>
@@ -486,7 +478,6 @@
                 </code>
               </div>
             </div>
-          </div>
         </article>
         <article class="subarticle">
           <h3>Loops</h3>
