@@ -351,9 +351,9 @@
             </div>
           </div>
           <div class="small-subarticle">
-            <h4>Control Flow: if / (else if) else</h4>
-
+            <h4>Conditionals:</h4>
             <div class="xsm-container">
+              <h4> if / (else if) else</h4>
               <p>        
                 With an if statement we can control whether a part of our code
                 is executed or not, based on a condition.
@@ -373,46 +373,79 @@
                 console.log("Good evening."); <br />
                 }
               </code>
+              <div class="xsm-container">
+                <p>
+                  If the condition is not a boolean, it is converted into one by
+                  type coercion. This can be used to check whether a value is
+                  not 0 or an empty string:
+                </p>
+                <br>
+                <code>
+                  const name = "Alex";<br />
+                  if (name) {<br />
+                  console.log("Hi " + name + "!");
+                  <br />
+                  } // only executed if name is not an empty string
+                </code>
+              </div>
             </div>
             <div class="xsm-container">
+              <h4>Ternary Operator  ? : </h4>
               <p>
-                If the condition is not a boolean, it is converted into one by
-                type coercion. This can be used to check whether a value is
-                not 0 or an empty string:
-              </p>
-              <br>
-              <code>
-                const name = "Alex";<br />
-                if (name) {<br />
-                console.log("Hi " + name + "!");
-                <br />
-                } // only executed if name is not an empty string
-              </code>
-            </div>
-
-          </div>
-        <div class="small-subarticle">
-            <h4>Ternary Operator  ? : </h4>
-            <p>
               With if / else statements whole blocks of code can be
               controlled. The ternary operator can be used if you want to
               decide between two expressions, e.g. which value should be
               stored in a variable:
-            </p>
-            <br>
-            <code>condition ? expressionIfTrue : expressionIfFalse;</code>
-            <br>
-            <br>
-            <p>->If the condition is true, the first expression is evaluated,
-            otherwise the second expression.</p>
-            <br>
-            <code
-              >const greetingText = time < 12 ? "Good morning." : "Good
-              afternoon.";
-            </code>
-        </div>
-
-
+              </p>
+              <br>
+              <code>condition ? expressionIfTrue : expressionIfFalse;</code>
+              <br>
+              <br>
+              <p>->If the condition is true, the first expression is evaluated,
+              otherwise the second expression.</p>
+              <br>
+              <code>const greetingText = time < 12 ? "Good morning." : "Good afternoon.";
+              </code>
+            </div>
+            <div class="xsm-container">
+              <h4>switch</h4>
+              <p>
+                The "break" statement is necessary in a switch-case statement to exit the switch block after executing the code for a matched case, preventing the execution of subsequent case statements and ensuring that only one case is executed.</p>
+              <div>
+                <p>We can not put conditions inside switch(), becouse dont work, we need to use a boolean. Only inside the case works the condition</p>
+                <p>let number = 100;</p>
+                <code>
+                  switch (true) {<br>
+                    case num > 50:<br>
+                    console.log("Number is bigger to 50");<br>
+                    break;<br>
+                    case num < 50:<br>
+                    console.log("Number is small as 50");<br>
+                    break;<br>
+                    default:<br>
+                    console.log("Number is 50");<br>
+                    break;<br>
+                    }<br>
+                </code>
+                <p>With strings:</p>
+                let acount = "Admin"
+                <code>
+                  switch (account) { <br>
+                  case "Admin":<br>
+                  console.log("You have all the privileges.");<br>
+                  case "Moderator":<br>
+                  console.log("You have all the rights.");<br>
+                  break;<br>
+                  case "User":<br>
+                  console.log("As a user, you can read and comment on posts. Limited rights.");<br>
+                  break;<br>
+                  default:<br>
+                  console.log("Please log in.");<br>
+                  }<br>
+                </code>
+              </div>
+            </div>
+          </div>
         </article>
         <article class="subarticle">
           <h3>Loops</h3>
@@ -926,7 +959,11 @@
         <article class="subarticle">
           <h3>Template literals</h3>
           <div class="small-subarticle">
-            <h4></h4>
+            <code>let firstName = "Jane";</code><br>
+            <code>let lastName = "Doe";</code><br>
+            <code>let city = "Los Angeles";</code><br>
+            <code>let concatenation = firstName + lastName + " is from " + city;</code><br>
+            <code>let templateLiteral = `${firstName} ${lastName} is from ${city}`;</code><br>
           </div>
         </article>
         <article class="subarticle">
