@@ -63,14 +63,19 @@ header {
   top: 0;
   background-color: rgb(226, 221, 208);
   box-shadow: -1px 1px 10px rgb(182, 182, 175);
+  width: 100vw;
 }
 
 .nav-list {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   list-style: none;
   gap: 0.5rem;
   font-size: 12px;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .nav-link {
@@ -94,7 +99,7 @@ main {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  width: 1440px;
+  max-width: 1440px;
 }
 
 section {
@@ -183,6 +188,10 @@ h4 {
 .intro {
   margin-bottom: 1rem;
 }
+
+.intro-big {
+  margin: 1rem;
+}
 /* mobile */
 
 @media screen and (max-width: 767px) {
@@ -213,13 +222,21 @@ h4 {
   }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1199px) and (orientation: landscape) {
+@media screen and (min-width: 820px) and (max-width: 1199px) and (orientation: landscape) {
   main {
-    width: 1199px;
+    width: 100%;
     margin: 0;
   }
 
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .nav-list {
+    margin-bottom: 1.5rem;
+  }
+
   section {
-    width: 30%;
+    width: 45%;
   }
 }
