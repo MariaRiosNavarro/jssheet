@@ -11,286 +11,1004 @@
     <header>
       <h1>Javascript Cheat Sheet</h1>
       <nav>
+        <!-- ! ----------------------------NAVIGATION ----------------------------------------------------->
         <ul class="nav-list">
           <li class="nav-list-item">
-            <a class="nav-link" href="#basic">Variables and Data Types</a>
+            <a class="nav-link" href="#basic">Basic</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Operators and Expresion</a>
+            <a class="nav-link" href="#operators">Operators and Expresion</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Control Flow</a>
+            <a class="nav-link" href="#control">Control Flow</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Functions</a>
+            <a class="nav-link" href="#functions">Functions</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Objects & Arrays</a>
+            <a class="nav-link" href="#objects">Objects & Arrays</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Scope & Clousure</a>
+            <a class="nav-link" href="#scope">Scope & Clousure</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Event Handling</a>
+            <a class="nav-link" href="#event">Event Handling</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Asynchronous programming</a>
+            <a class="nav-link" href="#error-handling">Error Handling</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">DOM Manipulation</a>
+            <a class="nav-link" href="#async">Asynchronous programming</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">ES6+ features</a>
+            <a class="nav-link" href="#dom">DOM Manipulation</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Modules and Import/export</a>
+            <a class="nav-link" href="#es6">ES6+ features</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Web APIs and fetch</a>
+            <a class="nav-link" href="#modules">Modules and Import/export</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Texting and debugging</a>
+            <a class="nav-link" href="#apis">Web APIs and fetch</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#">Best Practices</a>
+            <a class="nav-link" href="#testing">Texting and debugging</a>
+          </li>
+          <li class="nav-list-item">
+            <a class="nav-link" href="#practices">Best Practices</a>
           </li>
         </ul>
       </nav>
     </header>
+    <!-- ! -----------------------------------------------MAIN----------------------------------------------------->
     <main>
-      <!-------------------------------------!Basic -->
+      <!-- * ---------------------------------Basic Variables and Data Types ------------------------------------------------------>
       <section id="basic">
-        <h2 class="heading-section">Basic</h2>
-        <article>
-          <ul>
-            <li>
-              <article class="subarticle">
-                <h3>
-                  Connect a JavaScript file with &lt;script&gt;&lt;/script&gt;
-                </h3>
-                <ul>
-                  <li>
-                    <code>script</code> -> two attributes:
-                    <code>src="./index.js</code> and <code>defer</code>
-                    <br />(tells the browser to delay the loading of the script
-                    until all HTML elements are loaded. Alternative: script tag
-                    at the end of the body element, so defer attribute is not
-                    necessary. Less modern.)
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>The Console</h3>
-                <ul>
-                  <li>
-                    <p>
-                      <code>console.log("Hello World!")</code> -> logs into
-                      console
-                    </p>
-                    <ul>
-                      <span class="bold"> Use</span>
-                      console.log:
-                      <li>
-                        <code> let number = 33;</code> <br />
-                        <code>console.log("number is", number)</code>
-                        ->with a expresion-help before ("number is") to
-                        orientation in the console<br />
-                        <code>console.log("the number is" + number)</code> ->
-                        concatenation <br />
-                        <code>console.log({number})</code>-> destruckturing to
-                        see the object in the console <br />
-                        <code>console.log(`the number is ${number}`)</code> ->
-                        string literal
-                      </li>
-                    </ul>
-                  </li>
-                  <li>Others:</li>
-                  <li><code>console.clear()</code> -> clears console</li>
-                  <li>
-                    <code>console.error("Error!")</code> -> logs as error into
+        <h2 class="heading-section">Basics: Terminal, script, Variables & Types</h2>
+        <!--  -->
+        <article class="subarticle">
+          <h3>Connect a JavaScript file with &lt;script&gt;&lt;/script&gt;</h3>
+            <div class="intro">
+              <code>script</code> -> two attributes:
+              <code>src="./index.js</code> and <code>defer</code>
+              <p>
+                (tells the browser to delay the loading of the script until all
+                HTML elements are loaded. Alternative: script tag at the end of
+                the body element, so defer attribute is not necessary. Less
+                modern.)
+              </p>
+            </div>
+        </article>
+        <!--  -->
+        <article class="subarticle">
+          <h3>Console</h3>
+            <div class="intro">
+              <code>console.log("Hello World!")</code>-> logs into console
+            </div>
+            
+            <div class="small-subarticle">
+                <h4 class="sub">Use</h4>
+                <code> let number = 33;</code> <br />
+                <code>console.log("number is", number)</code>
+                ->with a expresion-help before ("number is") to
+                orientation in the console<br />
+                <code>console.log("the number is" + number)</code> ->
+                concatenation <br />
+                <code>console.log({number})</code>-> destruckturing to
+                see the object in the console <br />
+                <code>console.log(`the number is ${number}`)</code> ->
+                string literal
+            </div>
+              
+            <div div class="small-subarticle">
+                <h4 class="sub">Other:</h4>
+                <code>console.clear()</code> -> clears console <br>
+                <code>console.error("Error!")</code> -> logs as error into
                     console
-                  </li>
-                </ul>
-              </article>
-            </li>
-          </ul>
+            </div>  
+              
+        </article>    
+          <!--  -->
+        <article class="subarticle">
+            <h3>Variables</h3>
+            <div class="small-subarticle">
+              <h4>const</h4>
+              <code>const</code> -> declares a constant, the value can't
+              be changed. Default way to declare variables
+            </div>
+            <div class="small-subarticle">
+              <h4>let</h4>
+              <code>let</code> -> declares a variable, the value can be
+              changed. Only used when reassigning a new value is
+              necessary.
+            </div>
+            <div class="small-subarticle">
+              <h4>var</h4>
+              <code>var</code> -> outdated, not used anymore.
+            </div>
+            <div class="small-subarticle">
+              <h4>Assignation</h4>
+              IMPORTANT Assignation with <code>=</code> <br />
+              <code>let counter = 0;</code>
+            </div>
+            <div class="small-subarticle">
+             <h4>Variable Naming</h4>
+              <code>let myFirstVariable = "hello"</code> -> use camel case. Be very specific, longer names are better than shorter:
+              <code>updatedFollowerCounter</code> instead of
+              <code>counter</code>
+            </div>
+        </article>
+          <!--  -->
+        <article class="subarticle">
+            <h3>Data Types</h3>
+            <div class="small-subarticle">
+              <h4 class="sub">Primitive Data Types(7)</h4>
+              <ul>
+                <li>
+                  <code>string</code> -> a sequence of characters: "abcd"
+                  (with " ")
+                </li>
+
+                <li><code>number</code> -> a number: 1234 (without " ")</li>
+
+                <li>
+                  <code>boolean</code> -> a binary statement, can be
+                  <code>true</code> or <code>false</code> (without " ")
+                </li>
+                <li>
+                  <code>null</code> -> represents "nothing", is a value used
+                  in JavaScript to indicate that a variable has been
+                  deliberately set to "no value". It is an explicit value that
+                  you can assign to a variable to show that it is empty or has
+                  no value.
+                </li>
+                <li>
+                  <code>undefined</code> -> represents the state of "not
+                  existing". means that a variable has been declared, but no
+                  value has been assigned to it yet. If you access an
+                  uninitialised variable, it is set to undefined by default.
+                </li>
+                <li>
+                  <code>BigInt</code> -> uncommon, used for integers larger
+                  than 9007199254740991
+                </li>
+                <li>
+                  <code>Symbol</code> -> uncommon, used for creating unique
+                  elements
+                </li>
+              </ul>
+              <div class="xsm-container">
+                <h4 class="sub">Other (not PDT!!) </h4>
+                <p> <code>NaN</code> -> occurs when you perform mathematical
+                  operations on values that do not represent valid numbers.
+                  For example, if you try to divide a number by a string or
+                  perform an invalid mathematical calculation, you will get
+                  NaN as the result.</p>
+              </div>
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4 class="sub">String methods</h4>
+            <ul>
+              <li><code>length</code> -> let firstName = "John";
+                firstName.length // 4</li>
+              <li>                    <code>indexOf</code> -> const text = "Hello World";<br />
+                let letterHIndex = text.indexOf("H");
+                console.log(letterHIndex) // 0 ;<br />
+                let letterAIndex = text.indexOf("a");
+                console.log(letterAIndex) //-1 ; <br />
+                //in the order starting from 0, spaces are inclusive</li>
+              <li>                    <code>search</code> -> const message = "Hello John!";<br />
+                let positionJ = message.search("John");
+                console.log(positionJ) // 6 <br />
+                let positionM = message.search("Martha");
+                console.log(positionM) // -1 <br />
+                //in the order starting from 0, spaces are inclusive</li>
+              <li>
+                <code> -1 </code> is normally used for the representation of
+                non-existence or non-detection
+              </li>
+            </ul>
+          
+          </div>
+        
+      </section>
+      <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
+      <section id="operators">
+        <h2 class="heading-section">Operators and Expresion</h2>
+        <article class="subarticle">
+          <h3>Arithmetic operators</h3>
+          <p class="intro">let a = 1; let b = 2 ; let c = 3; let result = 0</p>
+          <div class="small-subarticle">
+            <code>+</code> -><code
+            >console.log ("a + b =", (a += b)) ;
+          </code>
+          // or use = a+b
+          </div>
+          <div class="small-subarticle">
+            <code>-</code> -><code
+            >console.log("a - b =", (a -= b));
+          </code>
+          // or use = a-b
+          </div>
+          <div class="small-subarticle">
+            <code>*</code> -><code
+            >console.log("a * b =", (a *= b));</code
+          >
+          // or use = a*b
+          </div>
+          <div class="small-subarticle">
+            <code>/</code> -><code
+            >console.log("a / b =", (a /= b));</code
+          >
+          // or use = a/b
+          </div>
+          <div class="small-subarticle">
+            <code>%</code> -><code
+            >console.log("a % b =", (a %= b));</code
+          >// or use = a%b
+          </div>
+          <div class="small-subarticle">
+            <code>**</code> ->
+            <code>console.log("a ** b =", (a **= b));</code> //or use
+            a**b;
+          </div>
+          <div class="small-subarticle">
+            Incrementation (1) <code>a++</code>
+          </div>
+          <div class="small-subarticle">
+            Decrementation (1) <code>a- -</code>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3>Comparision operators</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
         </article>
       </section>
+      <!-- * ---------------------------------control ------------------------------------------------------>
+      <section id="control">
+        <h2 class="heading-section">Control flow</h2>
+        <article class="subarticle">
+          <h3>Conditional statements</h3>
+          <div class="small-subarticle">
+            <h4>Truthy and Falsy Values</h4>
+            <p>
+              Sometimes you want to have a condition depending on another
+              type of value. JavaScript can transform any value into a
+              boolean with type coercion. That means that some values act as
+              if they were true and others as if they were false: Truthy
+              values become true, falsy values become false.
+            </p>
+            <div class="xsm-container">
+              <p><code>truthy </code>values:</p>
+              <ul>
+                <li>non zero numbers: 1, 2, -3, etc.</li>
+                <li>non empty strings: "hello"</li>
+                <li>true</li>
+              </ul>
+              <p><code>falsy </code>values:</p>
+              <ul>
+                <li>0 / -0</li>
+                <li>null</li>
+                <li>false</li>
+                <li>undefined</li>
+                <li>empty string: ""</li>
+              </ul>
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Comparison Operators</h4>
+            <div class="xsm-container">
+              <code>A === B</code><br />->strict equal: is true if both
+              values are equal (including their type).
+            </div>
+            <div class="xsm-container">
+              <code>A !== B</code><br />->strict not equal: is true if
+              both values are not equal (including their type).
+            </div>
+            <div class="xsm-container">
+              <code>A > B</code><br />->strictly greater than: is true if
+              A is greater than B.
+            </div>
+            <div class="xsm-container">
+              <code>A < B</code><br />->strictly less than: is true if A
+              is less than B.
+            </div>
+            <div class="xsm-container">
+              <code>A >= B</code><br />->greater than or equal: is true if
+              A is greater than or equal B.
+            </div>
+            <div class="xsm-container">
+              <code>A <= B</code><br />-> less than or equal: is true if A
+              is less than or equal B.
+            </div>
+            <div class="xsm-container">
+              IMPORTANT: === and !== are strict equality operators. This
+              is what you need almost always. Strict equality checks if
+              type and value are the same: "3" === 3 is false.
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Logical Operators</h4>
+            <p class="intro">
+              You can combine logical operators with brackets to define
+              which operator should be evaluated first.
+            </p>
+            <div class="xsm-container">                    
+              <code>!A</code><br />->not: flips a true value to false and
+              vice versa.
+            </div>
+            <div class="xsm-container">                    
+              <code>A || B</code><br />->or: is true if either A or B is
+              true.
+            </div>
+            <div class="xsm-container">                    
+              <code>A && B</code><br />->and: is true if both A and B is
+              true.
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Control Flow: if / (else if) else</h4>
+
+            <div class="xsm-container">
+              <p>        
+                With an if statement we can control whether a part of our code
+                is executed or not, based on a condition.
+              </p>
+              <p> The <code>else</code> block is executed only if the condition is
+                false.
+              </p>
+              <br>
+              <code>
+                if (hour < 12) { <br />
+                console.log("Good Morning."); <br />
+                } else if (hour < 18) { <br />
+                console.log("Good afternoon.");<br />
+                } else if (hour === 24) { <br />
+                console.log("Good night."); <br />
+                } else { <br />
+                console.log("Good evening."); <br />
+                }
+              </code>
+            </div>
+            <div class="xsm-container">
+              <p>
+                If the condition is not a boolean, it is converted into one by
+                type coercion. This can be used to check whether a value is
+                not 0 or an empty string:
+              </p>
+              <br>
+              <code>
+                const name = "Alex";<br />
+                if (name) {<br />
+                console.log("Hi " + name + "!");
+                <br />
+                } // only executed if name is not an empty string
+              </code>
+            </div>
+
+          </div>
+        <div class="small-subarticle">
+            <h4>Ternary Operator  ? : </h4>
+            <p>
+              With if / else statements whole blocks of code can be
+              controlled. The ternary operator can be used if you want to
+              decide between two expressions, e.g. which value should be
+              stored in a variable:
+            </p>
+            <br>
+            <code>condition ? expressionIfTrue : expressionIfFalse;</code>
+            <br>
+            <br>
+            <p>->If the condition is true, the first expression is evaluated,
+            otherwise the second expression.</p>
+            <br>
+            <code
+              >const greetingText = time < 12 ? "Good morning." : "Good
+              afternoon.";
+            </code>
+        </div>
+
+
+        </article>
+        <article class="subarticle">
+          <h3>Loops</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------functions ------------------------------------------------------>
+      <section id="functions">
+        <h2 class="heading-section">Functions</h2>
+        <div class="intro-big"> They contain a set of statements - in other words: They contain
+          JavaScript code. Functions have to be defined. When a function is
+          defined it can be called an arbitrary number of times.</div>
+        <article class="subarticle">
+          <h3>Declarationa and expression</h3>
+          <div class="small-subarticle">
+            <h4>Function Declarations</h4>
+            <div class="xsm-container">
+              <p>
+                Declaration which consists of:<br />
+                -the function keyword <br />
+                -the function name <br />
+                -the function body (JavaScript statements / JavaScript code)
+              </p>
+              <code
+                >function greet() {<br />
+                console.log("Hi Friends!");<br />
+                console.log("Nice to be here.");<br />
+                }</code
+              >
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Function Parameters</h4>
+            <div class="xsm-container">
+              <p>
+                Functions can accept parameters. Parameters can be used like
+                predefined variables inside the function body. When declaring
+                a function we are free to choose a name for the parameters,
+                but descriptive, short names should be chosen.
+              </p>
+              <code
+                >function printLetter(name) { <br />
+                console.log("Hi " + name + ", hope you are fine. Love,
+                Johnny");<br />
+                }</code
+              ><br /><br />
+              <code>
+                function printSum(first, second, third) {<br />
+                const sum = first + second + third;<br />
+                console.log("The sum of your numbers is: " + sum);<br />
+                }</code
+              >
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Function Calls</h4>
+            <div class="xsm-container">
+              <p>
+                When functions are defined you can call them by writing their
+                name, followed by parentheses ("round brackets").
+              </p>
+              <code>greet();</code><br /><br />
+              <code>
+                printLetter("Max");<br />
+                printLetter("Jordan");</code
+              ><br /><br />
+              <code
+                >printSum(1, 2, 3);<br />
+                printSum(3, 4, 5);</code
+              ><br />
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Return Statements</h4>
+            <p>
+              A function can return a value back to the place where it was
+              called. This is done via a return statement. A function can
+              return only one expression value, but can have multiple return
+              statements, in combination with if else statements for
+            </p>
+            <code
+              >function add3Numbers(first, second, third) <br />{ const sum
+              = first + second + third; <br />
+              return sum;<br />
+              } <br />
+              const firstSum = add3Numbers(1, 2, 3); // the return value is
+              stored in "firstSum", namely 6</code
+            >
+            <br /><br />
+            <code
+              >function checkInputLength(inputString) { <br />if
+              (inputString.length > 3) { <br />
+              return true; <br />
+              } else { <br />
+              return false;<br />
+              } <br />}</code
+            >
+            <div class="xsm-container">
+              <h4 class="sub">Early Return Statements</h4>
+              <p>
+                As soon as a return statement is reached in a function call,
+                the function execution is ended.This behavior can be used to
+                our advantage as early return statements (A return statement
+                can be left empty, the returned value is then undefined).
+              </p>
+              <code
+                >function setBackgroundColor(color) { <br />
+                <span class="bold">// first condition</span><br />
+                if(typeOf color !== 'String') { <br />return; <br />}<br />
+                <span class="bold">// second condition </span><br />
+                if(!color.startsWith('#')) {<br />
+                return; <br />} <br /><span class="bold"
+                  >// only if all 2 conditions are passed the final line of
+                  code is executed.</span
+                ><br />
+                body.style.backgroundColor = color; <br />}</code
+              >
+            </div>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3>Arrow Function Expression</h3>
+          <code>const addNumbers = (first, second) => { <br />
+          return first + second;<br />
+          };</code
+        >
+          <div class="small-subarticle">
+            <h4>Implicit Return Statements</h4>
+            <div class="xsm-container">
+              <p>
+                The advantage of arrow functions are possible shorter
+                notations when certain criteria apply
+              </p>
+              <ul>
+                <li>
+                  <p>
+                    1.-Omit the round brackets around the parameters: This
+                    is possible, if there is only one input
+                  </p>
+                  <code
+                    >const addOne = (number) => { <br />return number + 1;
+                    <br />
+                    };</code
+                  >
+                  <p>can be rewrite as:</p>
+                  <code>const addOne = number => number + 1;</code>
+                </li>
+                <li>
+                  <p>
+                    2.-Implicit return statements: If the function consists
+                    only of a return statement, the curly brackets and the
+                    return keyword can be omitted
+                  </p>
+
+                  <code
+                    >const addNumbers = (first, second) => { <br />
+                    return first + second; };</code
+                  >
+                  <p>can be rewrite as:</p>
+                  <code
+                    >const addNumbers = (first, second) => first +
+                    second;</code
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------objects ------------------------------------------------------>
+      <section id="objects">
+        <h2 class="heading-section">Objects and arrays</h2>
+        <article class="subarticle">
+          <h3>Objects</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3>Arrays</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------scope ------------------------------------------------------>
+      <section id="scope">
+        <h2 class="heading-section">Scope and closures</h2>
+        <article class="subarticle">
+          <h3>Scope</h3>
+          <p class="intro">
+            The scope defines where variables are visible and where they
+            can be referenced: global scope vs function scope
+          </p>
+          <div class="small-subarticle">
+            <h4>Function scope</h4>
+            <div class="xsm-container">
+                <span class="bold">Function scope </span>
+                <p>-> Variables
+                  defined inside a function are not accessible from outside.
+                  But all variables outside of the function can be accessed
+                  from inside the function body</p> 
+                <code>function myFunction() { <br />
+                const localVariable = true;<br />
+                console.log(localVariable);<br />
+                } <br />
+                myFunction() // true console.log(localVariable); // Error!
+                Variable not available outside of function</code
+              >
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Global scope</h4>
+            <div class="xsm-container">
+              <span class="bold">Global scope </span>
+              <p>-> A variable is in
+                the global scope when it is declared outside of any
+                function, in a JavaScript file. Global variables are visible
+                and can be accessed from anywhere in that JavaScript file
+                after declaration.</p> 
+            </div>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3>Closures</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------event ------------------------------------------------------>
+      <section id="event">
+        <h2 class="heading-section">Event handling</h2>
+        <article class="subarticle">
+          <h3>Events</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3>Events listener</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------error-handling ------------------------------------------------------>
+      <section id="error-handling">
+        <h2 class="heading-section">Error handling</h2>
+        <article class="subarticle">
+          <h3>Try, catch, finally</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3>???</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------async ------------------------------------------------------>
+      <section id="async">
+        <h2 class="heading-section">Asynchronous programing</h2>
+        <article class="subarticle">
+          <h3>Callbacks</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3>Promises</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3>Async/await</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------dom ------------------------------------------------------>
+      <section id="dom">
+        <h2 class="heading-section">DOM manipulation</h2>
+        <article class="subarticle">
+          <h3>Selecting elements</h3>
+          <div class="small-subarticle">
+            <h4>.querySelector()</h4>
+            <p class="intro">Before we can add interactivity, we need to select the
+              necessary HTML-Elements. A good practice is to use a data-*
+              attribute, like that:</p>
+            <code>const mainElement =
+              document.querySelector('[data-js="main"]');</code>
+            <p>Other css selectors work as well, but the data-* attribute
+              selectors should be preferred.</p>
+            <div class="xsm-container">
+              <div>
+                <code
+                >const mainElement = document.querySelector("main");</code
+              ><br />
+              ->tag as identifier
+              </div>
+              <div>
+                >const mainElement =
+                document.querySelector(".main");</code
+              ><br />
+              ->class as identifier
+              </div>
+              <div>
+                <code
+                >const mainElement =
+                document.querySelector("#main");</code
+              ><br />-> id as identifier
+              </div>
+            </div>
+            <div class="xsm-container">
+              <p>Other posibilities:</p>
+              <code> querySelector('elementA + elementB');</code><br />
+              <code> querySelector('elementA ~ elementB');</code><br />
+              <code> querySelector('[attribut="value"]');</code><br />
+              <code> querySelector(':pseudo');</code><br />
+              <code> querySelector('::pseudo-element');</code><br />
+              <code> querySelector(':pseudo');</code><br />
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Other methods to select:</h4>
+            <p>
+              .querySelectorAll() allows you to find and select
+              multiple elements in the DOM based on these selectors
+            </p>
+            <p>
+              <code> querySelectorAll('element')</code><br />
+              ->Selects all elements of the specified type.
+            </p>
+            <p>
+              <code> querySelectorAll('.classname')</code><br />
+              -> Selects all elements with the specified CSS class.
+            </p>
+            <p>
+              <code> querySelectorAll('#id')</code><br />
+              -> Selects the element with the specified ID (Note: IDs
+              should be unique)
+            </p>
+            <p>
+              <code> querySelectorAll('[attribute="value"]')</code>
+              <br />
+              -> Selects all elements with the specified attribute and
+              value.
+            </p>
+            <p>
+              <code> querySelectorAll(':pseudo-class')</code> <br />
+              -> Selects all elements that match the specified
+              pseudo-class, like :hover or :nth-child(n).
+            </p>
+            <p>
+              <code>querySelectorAll('element.classname')</code><br />
+              ->to select all elements of a specific type with a
+              certain class.
+            </p>
+            <p>
+              <code>getElementById</code><br />
+              -> Selects an element by its unique ID attribute.
+            </p>
+            <p>
+              <code>getElementsByClassName</code><br />
+              -> Selects elements by their class attribute.
+            </p>
+            <p>
+              <code>getElementsByTagName</code><br />
+              -> Selects elements by their HTML tag name.
+            </p>
+            <p>
+              <code>getElementsByName</code><br />
+              -> Selects elements by their name attribute.
+            </p>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3>Modifiying and use content</h3>
+          <p class="intro">
+            You can access in the console to all the propierties of
+            the element:
+          </p>
+          <p>
+            const mainElement = document.querySelector("#main");
+          </p>
+          <p>console.log(mainElement.innerHTML)</p>
+          <p>console.log(mainElement.clientWidth)</p>
+          <p>console.log(mainElement.baseURI)</p>
+          <div class="small-subarticle">
+            <h4>Output in HTML</h4>
+            <div class="xsm-container">
+              <h4 class="sub">document.write</h4>
+              <p>
+                <code>document.write("Hallo People!")</code> -> Add text
+                at the <span class="underline">END</span> of our HTML
+              </p>
+
+              <code
+                >document.write("&lt;h2 class="test" style="color:
+                red"&gt;Warning&lt;/h2&gt;")</code
+              >
+            </div>
+            <div class="xsm-container">
+              <h4 class="sub">POP UPS</h4>
+              <div>
+                <code>window.prompt()</code>
+                ->text with input (and placeholder). e.g:
+                <br />
+                let windowInput = window.prompt("What´s is yout name?",
+                "please, write here your name")
+              </div>
+              <div>
+                <code>window.confirm()</code>-> text with 2 buttons
+                yes/no
+                <br />
+                let confirmStatus = window.confirm("Agree to the
+                cookies?);<br />
+                // console.log(confirmStatus);
+              </div>
+            </div>
+            <div class="xsm-container">
+              <h4 class="sub">innerHTML</h4>
+              <div>
+                <code>
+                  const content = document.querySelector("h1") <br />
+                  content.innerHTML += "Hello World!" 
+                </code>
+                <br />
+                <p>//-> With += add a the new text to the old. </p><br />
+                <p>//-> With = rewrite all the content !!.</p>
+                <code>
+                const container = document.querySelector(".container")
+                <br />
+                container.innerHTML += "&lt;h3&gt; This is a new
+                  headline &lt;/h3&gt;"; 
+                </code>
+                <br />
+                <p>//-> Add new HTML Elements</p>
+              </div>
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Interaction</h4>
+            <div class="xsm-container">
+              <h4 class="sub">.addEventListener()</h4>
+              <p>The method addEventListener is used to react to events.
+                There different events you can listen to:</p>
+              <a href="https://developer.mozilla.org/en-US/docs/Web/Events#event_listing">List
+              </a>
+              <p>
+                First you specify the kind of event, e.g. click, then you
+                define what code should be executed when the event is
+                triggered. You write that code between the {} brackets, e.g.
+                a console.log.
+              </p>
+              <code>
+              const button =
+              document.querySelector('[data-js="button"]');
+              button.addEventListener("click", () => {
+              console.log("Yeah"); });
+              </code>
+            </div>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h4>Change style</h4>
+          <div class="small-subarticle">
+            <h4>.style</h4>
+            <p>
+              Use <code>.style </code>and the css propierty in without -
+              in camelCase;
+            </p>
+            <p>const mainElement = document.querySelector("#main");</p>
+            <p>mainElement.style.backgroundColor = "yellow";</p>
+            <p>mainElement.style.fontSize = "20px"</p>
+          </div>
+          <div class="small-subarticle">
+            <h4>.classList</h4>
+            <p>Add/remove & toggle classes:</p>
+            <div class="xsm-container">
+                <code>const main = document.querySelector('[data-js="main"]'); </code>
+                <br />
+                <br />
+                <code>const button = document.querySelector('[data-js="button"]');</code>
+                <br />
+                <br />
+                <code>button.addEventListener("click", () => { </code>
+                <br />
+              
+                <code>main.classList.add("page--primary"); });</code>
+                <br />
+                <p>Toggle:</p> 
+                <code>main.classList.toggle("page--primary");</code>
+                <br />
+                <p>Remove: </p>
+                <code>main.classList.remove("page--primary");</code>
+            </div>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------es6 ------------------------------------------------------>
+      <section id="es6">
+        <h2 class="heading-section">ES6+ features</h2>
+        <article class="subarticle">
+          <h3>Template literals</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3>Destructuring</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3>Spread operator</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------modules ------------------------------------------------------>
+      <section id="modules">
+        <h2 class="heading-section">Modules and Import/Export</h2>
+        <article class="subarticle">
+          <h3>Modules</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3>Import/export</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------apis ------------------------------------------------------>
+      <section id="apis">
+        <h2 class="heading-section">Web Apis and Fetch</h2>
+        <article class="subarticle">
+          <h3>Web Apis</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3> Fetch</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------testing ------------------------------------------------------>
+      <section id="testing">
+        <h2 class="heading-section">Testing and debugging</h2>
+        <article class="subarticle">
+          <h3>Console methods</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+      </section>
+      <!-- * ---------------------------------practices ------------------------------------------------------>
+      <section id="practices">
+        <h2 class="heading-section">Best practices</h2>
+        <article class="subarticle">
+          <h3>Code Style</h3>
+          <div class="small-subarticle">
+            <h4></h4>
+          </div>
+        </article>
+      </section>
+      <!-- -------------------------------------end -->
+
+      <!-------------------------------------#OLD -->
+      <!-------------------------------------#OLD -->
+      <!-------------------------------------#OLD -->
+      <!-------------------------------------#OLD -->
+      <!-------------------------------------#OLD -->
+      <!-------------------------------------#OLD -->
+      <!-------------------------------------#OLD -->
+
       <!-------------------------------------------! VAriables and Numbers -->
-      <section>
-        <h2 class="heading-section">Variables and Numbers</h2>
-        <article>
-          <ul>
-            <li>
-              <article class="subarticle">
-                <h3>Variable Declarations</h3>
-                <ul>
-                  <li>
-                    <code>const</code> -> declares a constant, the value can't
-                    be changed. Default way to declare variables
-                  </li>
 
-                  <li>
-                    <code>let</code> -> declares a variable, the value can be
-                    changed. Only used when reassigning a new value is
-                    necessary.
-                  </li>
-
-                  <li><code>var</code> -> outdated, not used anymore.</li>
-
-                  <li>
-                    IMPORTANT Assignation with <code>=</code> <br />
-                    <code>let counter = 0;</code>
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Primitive Data Types(7)</h3>
-                <p>
-                  IMPORTANT: JS is case sensitiv
-                  <span class="underline">let a != let A</span>
-                </p>
-                <ul>
-                  <li>
-                    <code>string</code> -> a sequence of characters: "abcd"
-                    (with " ")
-                  </li>
-
-                  <li><code>number</code> -> a number: 1234 (without " ")</li>
-
-                  <li>
-                    <code>boolean</code> -> a binary statement, can be
-                    <code>true</code> or <code>false</code> (without " ")
-                  </li>
-                  <li>
-                    <code>null</code> -> represents "nothing", is a value used
-                    in JavaScript to indicate that a variable has been
-                    deliberately set to "no value". It is an explicit value that
-                    you can assign to a variable to show that it is empty or has
-                    no value.
-                  </li>
-                  <li>
-                    <code>undefined</code> -> represents the state of "not
-                    existing". means that a variable has been declared, but no
-                    value has been assigned to it yet. If you access an
-                    uninitialised variable, it is set to undefined by default.
-                  </li>
-                  <li>
-                    <code>BigInt</code> -> uncommon, used for integers larger
-                    than 9007199254740991
-                  </li>
-                  <li>
-                    <code>Symbol</code> -> uncommon, used for creating unique
-                    elements
-                  </li>
-                  <hr />
-                  <li>Other (not PDT!!):</li>
-                  <li>
-                    <code>NaN</code> -> occurs when you perform mathematical
-                    operations on values that do not represent valid numbers.
-                    For example, if you try to divide a number by a string or
-                    perform an invalid mathematical calculation, you will get
-                    NaN as the result.
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Variable Naming</h3>
-                <ul>
-                  <li>
-                    <code>let myFirstVariable = "hello"</code> -> use camel case
-                  </li>
-
-                  <li>
-                    be very specific, longer names are better than shorter:
-                    <code>updatedFollowerCounter</code> instead of
-                    <code>counter</code>
-                  </li>
-                </ul>
-              </article>
-              <article class="subarticle">
-                <h3>Strings methods</h3>
-                <ul>
-                  <li>
-                    <code>length</code> -> let firstName = "John";
-                    firstName.length // 4
-                  </li>
-
-                  <li>
-                    <code>indexOf</code> -> const text = "Hello World";<br />
-                    let letterHIndex = text.indexOf("H");
-                    console.log(letterHIndex) // 0 ;<br />
-                    let letterAIndex = text.indexOf("a");
-                    console.log(letterAIndex) //-1 ; <br />
-                    //in the order starting from 0, spaces are inclusive
-                  </li>
-
-                  <li>
-                    <code>search</code> -> const message = "Hello John!";<br />
-                    let positionJ = message.search("John");
-                    console.log(positionJ) // 6 <br />
-                    let positionM = message.search("Martha");
-                    console.log(positionM) // -1 <br />
-                    //in the order starting from 0, spaces are inclusive
-                  </li>
-                  <li>
-                    <code> -1 </code> is normally used for the representation of
-                    non-existence or non-detection
-                  </li>
-                </ul>
-              </article>
-              <article class="subarticle">
-                <h3>Numbers</h3>
-                <p>let a = 1; let b = 2 ; let c = 3; let result = 0</p>
-                <ul>
-                  <li>
-                    <code>+</code> -><code
-                      >console.log ("a + b =", (a += b)) ;
-                    </code>
-                    // or use = a+b
-                  </li>
-                  <li>
-                    <code>-</code> -><code
-                      >console.log("a - b =", (a -= b));
-                    </code>
-                    // or use = a-b
-                  </li>
-                  <li>
-                    <code>*</code> -><code
-                      >console.log("a * b =", (a *= b));</code
-                    >
-                    // or use = a*b
-                  </li>
-                  <li>
-                    <code>/</code> -><code
-                      >console.log("a / b =", (a /= b));</code
-                    >
-                    // or use = a/b
-                  </li>
-                  <li>
-                    <code>%</code> -><code
-                      >console.log("a % b =", (a %= b));</code
-                    >// or use = a%b
-                  </li>
-                  <li>
-                    <code>**</code> ->
-                    <code>console.log("a ** b =", (a **= b));</code> //or use
-                    a**b;
-                  </li>
-                  <li>Incrementation (1) <code>a++</code></li>
-                  <li>Decrementation (1) <code>a- -</code></li>
-                </ul>
-              </article>
-            </li>
-          </ul>
-        </article>
-      </section>
+ 
+          
+       
       <!-------------------------------------------! DOM MANIPULATION -->
       <section>
         <h2 class="heading-section">DOM Manipulation</h2>
@@ -546,416 +1264,10 @@
           </ul>
         </article>
       </section>
+
+
       <!-- ! -->
-      <section>
-        <h2 class="heading-section">Conditions and Booleans</h2>
-        <article>
-          <ul>
-            <li>
-              <article class="subarticle">
-                <h4>Truthy and Falsy Values</h4>
-                <p>
-                  Sometimes you want to have a condition depending on another
-                  type of value. JavaScript can transform any value into a
-                  boolean with type coercion. That means that some values act as
-                  if they were true and others as if they were false: Truthy
-                  values become true, falsy values become false.
-                </p>
-                <p><code>truthy </code>values:</p>
-                <ul>
-                  <li>non zero numbers: 1, 2, -3, etc.</li>
-                  <li>non empty strings: "hello"</li>
-                  <li>true</li>
-                </ul>
-                <p><code>falsy </code>values:</p>
-                <ul>
-                  <li>0 / -0</li>
-                  <li>null</li>
-                  <li>false</li>
-                  <li>undefined</li>
-                  <li>empty string: ""</li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h4>Comparison Operators</h4>
-                <ul>
-                  <li>
-                    <code>A === B</code><br />->strict equal: is true if both
-                    values are equal (including their type).
-                  </li>
-                  <li>
-                    <code>A !== B</code><br />->strict not equal: is true if
-                    both values are not equal (including their type).
-                  </li>
-                  <li>
-                    <code>A > B</code><br />->strictly greater than: is true if
-                    A is greater than B.
-                  </li>
-                  <li>
-                    <code>A < B</code><br />->strictly less than: is true if A
-                    is less than B.
-                  </li>
-                  <li>
-                    <code>A >= B</code><br />->greater than or equal: is true if
-                    A is greater than or equal B.
-                  </li>
-                  <li>
-                    <code>A <= B</code><br />-> less than or equal: is true if A
-                    is less than or equal B.
-                  </li>
-                  <li>
-                    IMPORTANT: === and !== are strict equality operators. This
-                    is what you need almost always. Strict equality checks if
-                    type and value are the same: "3" === 3 is false.
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h4>Logical Operators</h4>
-                <p>
-                  You can combine logical operators with brackets to define
-                  which operator should be evaluated first.
-                </p>
-                <ul>
-                  <li>
-                    <code>!A</code><br />->not: flips a true value to false and
-                    vice versa.
-                  </li>
-                  <li>
-                    <code>A || B</code><br />->or: is true if either A or B is
-                    true.
-                  </li>
-                  <li>
-                    <code>A && B</code><br />->and: is true if both A and B is
-                    true.
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h4>Control Flow: if / (else if) else</h4>
-                <p>
-                  With an if statement we can control whether a part of our code
-                  is executed or not, based on a condition. The
-                  <code>else</code> block is executed only if the condition is
-                  false.
-                </p>
-                <code>
-                  if (hour < 12) { <br />
-                  console.log("Good Morning."); <br />
-                  } else if (hour < 18) { <br />
-                  console.log("Good afternoon.");<br />
-                  } else if (hour === 24) { <br />
-                  console.log("Good night."); <br />
-                  } else { <br />
-                  console.log("Good evening."); <br />
-                  }
-                </code>
-                <p>
-                  If the condition is not a boolean, it is converted into one by
-                  type coercion. This can be used to check whether a value is
-                  not 0 or an empty string:
-                </p>
-                <code>
-                  const name = "Alex";<br />
-                  if (name) {<br />
-                  console.log("Hi " + name + "!");
-                  <br />
-                  } // only executed if name is not an empty string
-                </code>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h4>Ternary Operator: ? :</h4>
-                <p>
-                  With if / else statements whole blocks of code can be
-                  controlled. The ternary operator can be used if you want to
-                  decide between two expressions, e.g. which value should be
-                  stored in a variable:
-                </p>
-                <code>condition ? expressionIfTrue : expressionIfFalse;</code>
-                <br />
-                ->If the condition is true, the first expression is evaluated,
-                otherwise the second expression.
 
-                <code
-                  >const greetingText = time < 12 ? "Good morning." : "Good
-                  afternoon.";</code
-                >
-              </article>
-            </li>
-          </ul>
-        </article>
-      </section>
-      <!-- ! -->
-      <section>
-        <h2 class="heading-section">FUNCTIONS.</h2>
-        <article>
-          <p>
-            They contain a set of statements - in other words: They contain
-            JavaScript code. Functions have to be defined. When a function is
-            defined it can be called an arbitrary number of times.
-          </p>
-          <ul>
-            <li>
-              <article class="subarticle">
-                <h3>Function Declarations</h3>
-                <p>
-                  Declaration which consists of:<br />
-                  -the function keyword <br />
-                  -the function name <br />
-                  -the function body (JavaScript statements / JavaScript code)
-                </p>
-                <code
-                  >function greet() {<br />
-                  console.log("Hi Friends!");<br />
-                  console.log("Nice to be here.");<br />
-                  }</code
-                >
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Function Parameters</h3>
-                <p>
-                  Functions can accept parameters. Parameters can be used like
-                  predefined variables inside the function body. When declaring
-                  a function we are free to choose a name for the parameters,
-                  but descriptive, short names should be chosen.
-                </p>
-                <code
-                  >function printLetter(name) { <br />
-                  console.log("Hi " + name + ", hope you are fine. Love,
-                  Johnny");<br />
-                  }</code
-                ><br /><br />
-                <code>
-                  function printSum(first, second, third) {<br />
-                  const sum = first + second + third;<br />
-                  console.log("The sum of your numbers is: " + sum);<br />
-                  }</code
-                >
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Function Calls</h3>
-                <p>
-                  When functions are defined you can call them by writing their
-                  name, followed by parentheses ("round brackets").
-                </p>
-                <code>greet();</code><br /><br />
-                <code>
-                  printLetter("Max");<br />
-                  printLetter("Jordan");</code
-                ><br /><br />
-                <code
-                  >printSum(1, 2, 3);<br />
-                  printSum(3, 4, 5);</code
-                ><br />
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Scope</h3>
-                <p>
-                  The scope defines where variables are visible and where they
-                  can be referenced: global scope vs function scope
-                </p>
-                <ul>
-                  <li>
-                    <span class="bold">Function scope </span> -> Variables
-                    defined inside a function are not accessible from outside.
-                    But all variables outside of the function can be accessed
-                    from inside the function body
-                  </li>
-                  <code
-                    >function myFunction() { <br />
-                    const localVariable = true;<br />
-                    console.log(localVariable);<br />
-                    } <br />
-                    myFunction() // true console.log(localVariable); // Error!
-                    Variable not available outside of function</code
-                  >
-                  <li>
-                    <span class="bold">Global scope </span> -> A variable is in
-                    the global scope when it is declared outside of any
-                    function, in a JavaScript file. Global variables are visible
-                    and can be accessed from anywhere in that JavaScript file
-                    after declaration.
-                  </li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Return Statements</h3>
-                <p>
-                  A function can return a value back to the place where it was
-                  called. This is done via a return statement. A function can
-                  return only one expression value, but can have multiple return
-                  statements, in combination with if else statements for
-                </p>
-                <code
-                  >function add3Numbers(first, second, third) <br />{ const sum
-                  = first + second + third; <br />
-                  return sum;<br />
-                  } <br />
-                  const firstSum = add3Numbers(1, 2, 3); // the return value is
-                  stored in "firstSum", namely 6</code
-                >
-                <br /><br />
-                <code
-                  >function checkInputLength(inputString) { <br />if
-                  (inputString.length > 3) { <br />
-                  return true; <br />
-                  } else { <br />
-                  return false;<br />
-                  } <br />}</code
-                >
-
-                <article class="small-subarticle">
-                  <h3>Early Return Statements</h3>
-                  <p>
-                    As soon as a return statement is reached in a function call,
-                    the function execution is ended.This behavior can be used to
-                    our advantage as early return statements (A return statement
-                    can be left empty, the returned value is then undefined).
-                  </p>
-                  <code
-                    >function setBackgroundColor(color) { <br />
-                    <span class="bold">// first condition</span><br />
-                    if(typeOf color !== 'String') { <br />return; <br />}<br />
-                    <span class="bold">// second condition </span><br />
-                    if(!color.startsWith('#')) {<br />
-                    return; <br />} <br /><span class="bold"
-                      >// only if all 2 conditions are passed the final line of
-                      code is executed.</span
-                    ><br />
-                    body.style.backgroundColor = color; <br />}</code
-                  >
-                </article>
-                <article class="small-subarticle">
-                  <h3>Arrow Function Expressions</h3>
-                  <code
-                    >const addNumbers = (first, second) => { <br />
-                    return first + second;<br />
-                    };</code
-                  >
-                </article>
-                <article class="small-subarticle">
-                  <h3>Implicit Return Statements</h3>
-                  <p>
-                    The advantage of arrow functions are possible shorter
-                    notations when certain criteria apply
-                  </p>
-                  <ul>
-                    <li>
-                      <p>
-                        1.-Omit the round brackets around the parameters: This
-                        is possible, if there is only one input
-                      </p>
-                      <code
-                        >const addOne = (number) => { <br />return number + 1;
-                        <br />
-                        };</code
-                      >
-                      <p>can be rewrite as:</p>
-                      <code>const addOne = number => number + 1;</code>
-                    </li>
-                    <li>
-                      <p>
-                        2.-Implicit return statements: If the function consists
-                        only of a return statement, the curly brackets and the
-                        return keyword can be omitted
-                      </p>
-
-                      <code
-                        >const addNumbers = (first, second) => { <br />
-                        return first + second; };</code
-                      >
-                      <p>can be rewrite as:</p>
-                      <code
-                        >const addNumbers = (first, second) => first +
-                        second;</code
-                      >
-                    </li>
-                  </ul>
-                </article>
-              </article>
-            </li>
-          </ul>
-        </article>
-      </section>
-      <!-- ! -->
-      <section>
-        <h2 class="heading-section">Lorem ipsum dolor sit.</h2>
-        <article>
-          <ul>
-            <li>
-              <article class="subarticle">
-                <h3>Lorem, ipsum dolor.</h3>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>lorem3</h3>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Lorem ipsum dolor sit.</h3>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
-              </article>
-            </li>
-            <li>
-              <article class="subarticle">
-                <h3>Lorem ipsum dolor sit.</h3>
-                <ul>
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-
-                  <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-                </ul>
-              </article>
-            </li>
-          </ul>
-        </article>
-      </section>
-      <section>
-        <h2 class="heading-section">Lorem</h2>
-        <article>
-          <ul>
-            <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-            <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-            <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-            <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-            <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-            <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-            <li><code>lorem</code> -> Lorem, ipsum dolor.</li>
-          </ul>
-        </article>
-      </section>
     </main>
     <script src="./assets/js/main.js"></script>
   </body>

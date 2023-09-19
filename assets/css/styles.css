@@ -33,10 +33,9 @@ ul {
   list-style: none;
 }
 
-a {
+nav link a {
   cursor: pointer;
   text-decoration: none;
-  color: rgb(240, 175, 11);
   font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
 }
 
@@ -49,8 +48,8 @@ a:hover,
 
 code {
   font-family: Roboto, Arial, Helvetica, sans-serif;
-  background-color: rgb(240, 175, 11);
-  color: black;
+  background-color: rgb(240, 129, 11);
+  color: white;
   padding: 0.1rem 0.3rem;
   border-radius: 5px;
   display: inline-block;
@@ -64,18 +63,23 @@ header {
   top: 0;
   background-color: rgb(226, 221, 208);
   box-shadow: -1px 1px 10px rgb(182, 182, 175);
+  width: 100vw;
 }
 
 .nav-list {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   list-style: none;
   gap: 0.5rem;
   font-size: 12px;
+  flex-wrap: wrap;
+  width: 100vw;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 .nav-link {
-  color: black;
+  color: #d65709;
   text-decoration: none;
   cursor: pointer;
   font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
@@ -95,7 +99,7 @@ main {
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  width: 1440px;
+  max-width: 1440px;
 }
 
 section {
@@ -124,31 +128,48 @@ li {
 }
 
 .subarticle {
-  padding-left: 0.5rem;
-  padding-bottom: 1rem;
-  -webkit-box-shadow: -1px -1px 10px -5px rgb(240, 175, 11);
-  box-shadow: -1px -1px 10px -5px rgb(240, 175, 11);
+  padding: 1rem;
+  -webkit-box-shadow: -1px -1px 19px -5px rgb(240, 91, 11);
+  box-shadow: -1px -1px 19px -5px rgb(240, 91, 11);
   border-radius: 8px;
+  margin: 1rem;
 }
 
 .small-subarticle {
-  padding-left: 0.3rem;
-  padding-bottom: 0.5rem;
+  margin: 1rem auto;
+  padding: 0.7rem;
   -webkit-box-shadow: -1px -1px 10px -5px #f0720b;
   box-shadow: -1px -1px 10px -5px #f0720b;
   border-radius: 8px;
 }
 
+.xsm-container {
+  padding: 1rem;
+  border: 1px solid #f0720b55;
+  border-radius: 8px;
+  margin: 1rem auto;
+}
+
 h3 {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   font-family: Roboto-Bold;
   text-align: center;
   padding-bottom: 1rem;
-  text-decoration: underline #f0720b;
+  color: #d65709;
 }
 
 h4 {
+  margin-top: 1rem;
+  font-size: 12.5px;
+  font-weight: 400;
+  font-family: Roboto-Bold;
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.sub {
+  margin-top: 1rem;
   font-size: 12px;
   font-weight: 400;
   font-family: Roboto-Bold;
@@ -162,6 +183,14 @@ h4 {
 
 .bold {
   font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
+}
+
+.intro {
+  margin-bottom: 1rem;
+}
+
+.intro-big {
+  margin: 1rem;
 }
 /* mobile */
 
@@ -193,13 +222,21 @@ h4 {
   }
 }
 
-@media screen and (min-width: 992px) and (max-width: 1199px) and (orientation: landscape) {
+@media screen and (min-width: 820px) and (max-width: 1199px) and (orientation: landscape) {
   main {
-    width: 1199px;
+    width: 100%;
     margin: 0;
   }
 
+  h1 {
+    margin-bottom: 1.5rem;
+  }
+
+  .nav-list {
+    margin-bottom: 1.5rem;
+  }
+
   section {
-    width: 30%;
+    width: 45%;
   }
 }
