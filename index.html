@@ -723,6 +723,8 @@
         <h2 class="heading-section">Event handling</h2>
         <article class="subarticle">
           <h3>Events</h3>
+          <p>The event Object and event.target. The event object is created whenever an event is triggered.</p>
+          <p>More info about <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event#properties">Event</a></p>
           <div class="small-subarticle">
             <h4></h4>
           </div>
@@ -730,7 +732,23 @@
         <article class="subarticle">
           <h3>Events listener</h3>
           <div class="small-subarticle">
-            <h4></h4>
+                <h4 class="sub">.addEventListener()</h4>
+                <p>The method addEventListener is used to react to events.
+                  There different events you can listen to:</p>
+                <a href="https://developer.mozilla.org/en-US/docs/Web/Events#event_listing">List
+                </a>
+                <p>
+                  First you specify the kind of event, e.g. click, then you
+                  define what code should be executed when the event is
+                  triggered. You write that code between the {} brackets, e.g.
+                  a console.log.
+                </p>
+                <code>
+                const button =
+                document.querySelector('[data-js="button"]');
+                button.addEventListener("click", () => {
+                console.log("Yeah"); });
+                </code>
           </div>
         </article>
       </section>
@@ -932,29 +950,6 @@
                 <br />
                 <p>//-> Add new HTML Elements</p>
               </div>
-            </div>
-          </div>
-
-          <div class="small-subarticle">
-            <h4>Interaction</h4>
-            <div class="xsm-container">
-              <h4 class="sub">.addEventListener()</h4>
-              <p>The method addEventListener is used to react to events.
-                There different events you can listen to:</p>
-              <a href="https://developer.mozilla.org/en-US/docs/Web/Events#event_listing">List
-              </a>
-              <p>
-                First you specify the kind of event, e.g. click, then you
-                define what code should be executed when the event is
-                triggered. You write that code between the {} brackets, e.g.
-                a console.log.
-              </p>
-              <code>
-              const button =
-              document.querySelector('[data-js="button"]');
-              button.addEventListener("click", () => {
-              console.log("Yeah"); });
-              </code>
             </div>
           </div>
           <div class="small-subarticle">

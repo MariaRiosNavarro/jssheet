@@ -151,6 +151,13 @@ li {
   margin: 1rem auto;
 }
 
+.mini {
+  padding: 0.3rem;
+  border: 1px solid #f0d10b55;
+  border-radius: 8px;
+  margin: 0.3rem auto;
+}
+
 h3 {
   font-size: 13px;
   font-weight: 700;
