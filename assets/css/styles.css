@@ -133,6 +133,7 @@ li {
   box-shadow: -1px -1px 19px -5px rgb(240, 91, 11);
   border-radius: 8px;
   margin: 1rem;
+  width: 100%;
 }
 
 .small-subarticle {
@@ -218,7 +219,11 @@ h4 {
   }
   section {
     width: 100vw;
-    padding: 0 4rem;
+    padding: 0 2rem;
+  }
+  .subarticle {
+    width: 95%;
+    margin: 1rem auto;
   }
 }
 
@@ -238,5 +243,11 @@ h4 {
 
   section {
     width: 45%;
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .subarticle {
+    width: 95%;
+    margin: 1rem auto;
   }
 }
