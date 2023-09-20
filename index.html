@@ -213,11 +213,11 @@
               </li>
               <li><code>charAt()</code> returns the character at a specific position in a string, starting at 0.
                string.charAt(0) // The first character of the string</li>
-              <li><code>includes()</code> checks if a word/character is present in the string.
+              <li><code>includes(subString)</code> returns true if the string contains the subString.
                 string.includes("hello")// true or false</li>
-              <li><code>replace()</code> replaces a portion of a string and returns the result.
+              <li><code>replace(oldString, newString)</code> replaces a portion of a string and returns the result.
                 string.replace("john", "jane")// string include the first time the word jane, not john</li>
-              <li><code>replaceAll()</code> replaces all occurrences, not just the first one.
+              <li><code>replaceAll(oldString, newString)</code> replaces all occurrences, not just the first one.
                 string.replace("john", "jane")// string replace all "john" for "jane"</li>
               <li><code>slice()</code> cuts the string up to the specified index and returns the remaining characters.
                 string.slice(1)// the string without the first Word <br>
@@ -229,6 +229,14 @@
               <li><code>toUpperCase()</code> converts the string to uppercase.
               </li>
               <li><code>toString()</code> converts numbers into strings.
+              </li>
+              <li><code>trim()</code> returns a string with all whitespace removed from the beginning and end.
+              </li>
+              <li><code>startsWith(subString)</code> returns true if the string starts with subString..
+              </li>
+              <li><code>endsWith(subString)</code> returns true if the string ends with subString.
+              </li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#instance_properties">More Methods:MDN</a>
               </li>
               <li>
                 <code> -1 </code> is normally used for the representation of
@@ -926,6 +934,7 @@
               </div>
             </div>
           </div>
+
           <div class="small-subarticle">
             <h4>Interaction</h4>
             <div class="xsm-container">
@@ -948,7 +957,117 @@
               </code>
             </div>
           </div>
+          <div class="small-subarticle">
+            <h4>Inputs & Forms</h4>
+            <div class="xsm-container">
+              <h4>Inputs</h4>
+              <p class="intro">Every input field in HTML holds a value in form of a string. You can access the value by using <code>.value</code>  on.You can also change the value of the input by assigning a new value to this input property:</p>
+              <code>
+                const textInput = document.querySelector('[data-js="textInput"]');<br>
+                textInput.value = "changed value!";
+              </code>
+              <br>
+              <p>This change is immediately visible on the website.</p>
+              <p>For example, you can enforce all uppercase letters in a form by combining this functionality with an input event listener on the input element:</p>
+              <code>
+                // transform on every change the input value to uppercase letters <br><br>
+                textInput.addEventListener("input", () => {
+                const oldValue = textInput.value;<br>
+                const newValue = oldValue.toUpperCase();<br>
+                textInput.value = newValue;<br>
+                });<br>
+              </code>
+            </div>
+            <div class="xsm-container">
+              <h4>Forms</h4>
+              <p class="intro">To prevent the default behavior we can use: </p>
+              <ul>
+                  <li>in HTML form we need <code>; return false</code></li>
+                  <li><code>&lt;form onsubmit="function(); return false"&gt;&lt;/form&gt;</code></li>                
+                  <li>Or in JS use <code>.preventDefault()</code></li>
+                  <li> <code>
+                    const form = document.querySelector('[data-js="form"]');<br><br>
+                    form.addEventListener("submit", (event) => { <br>
+                    event.preventDefault();
+                    console.log(event.target);<br>
+                    });<br>
+                  </code></li>
+              </ul>
+              <div class="mini">
+                <h4>The event Object and <code>event.target</code></h4>
+                <p>The event Object and event.target. The event object is created whenever an event is triggered.</p>
+                <p>event.target is a reference to the element to which the event originated from - in this case - the form.</p>
+                <p>More info about <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event#properties">Event</a></p>
+              </div>
+              <div class="mini">
+                <h4>Accessing Interactive Fields: event.target.elements and the name Attribute</h4>
+                <p>While event.target represents the entire form, event.target.elements is a collection of all form elements (form fields, field sets and buttons.You get access to a specific form field via its <code>name</code> (&lt;input name="firstName"/&gt;) attribute and dot notation:</p>
+                <code>
+                  form.addEventListener("submit", (event) => {<br>
+                    event.preventDefault();<br>
+                    const formElements = event.target.elements;<br>
+                    console.log(formElements.firstName);<br>
+                    console.log(formElements.firstName.value);<br>
+                  });<br>
+                </code>
+              </div>
+              <div class="mini">
+                <h4>Using Input Values</h4>
+                <p>You can access all input values of the form by using FormData(). This constructor uses event.target and can be transformed into a usable object afterwards:</p>
+                <code>
+                  form.addEventListener("submit", (event) => {<br>
+                    event.preventDefault();<br>
+                    const formData = new FormData(event.target);<br>
+                    const data = Object.fromEntries(formData);<br>
+                    console.log(data);<br>
+                  });
+                </code>
+              </div>
+              <div class="mini">
+                <h4>Exception: Reading Values from Checkboxes</h4>
+                <p>You can access the checkbox's state via the <code>.checked </code> property instead.</p>
+                <code>
+                  console.log(formElements.colorBlue.checked);<br> // output: true or false <br>
+                  console.log(formElements.colorBlue.value);<br> // output (always): blue <br>
+                </code>
+              </div>
+              <div class="mini">
+                <h4>The input Event</h4>
+                <p>The input event is fired every time when the value of a form field has been changed. For example, a &lt;textarea /&gt; will fire this event with every keystroke.</p>
+                <code>
+                  const messageField = document.querySelector('[data-js="message"]'); <br><br>
+                  messageField.addEventListener("input", (event) => {<br>
+                  console.log(event.target.value);<br>
+                  });<br>
+                </code>
+                <p> Don't confuse the input event with the change event, which is only fired after a field's content has been committed by the user by pressing enter or moving the focus to the next field.</p>
+              </div>
+              <div class="mini">
+                <h4>Focus Input Fields <code>.focus()</code></h4>
+                <p>This can be used to improve the user experience after submitting a form</p>
+                <code>messageField.focus();</code>
+                <p>Instead of querying the input element using querySelector, it can also be obtained via the event.target.elements collection:</p>
+                <code>event.target.elements.message.focus();</code>
+              </div>
+              <div class="mini">
+                <h4>Resetting Forms <code>.reset()</code></h4>
+                <code>
+                  form.addEventListener("submit", (event) => { <br>
+                    event.preventDefault();<br>
+                    // [...] handle form data<br>
+                    event.target.reset();<br>
+                  });
+                </code>
+                <p>This often comes in handy in combination with <code>.focus()</code>. After the message was send, the input field is cleared and re-focussed, so users can write the next message.</p>
+              </div>
+
+
+
+
+            </div>
+          </div>
         </article>
+        
         <article class="subarticle">
           <h4>Change style</h4>
           <div class="small-subarticle">
@@ -996,6 +1115,13 @@
             <code>let city = "Los Angeles";</code><br>
             <code>let concatenation = firstName + lastName + " is from " + city;</code><br>
             <code>let templateLiteral = `${firstName} ${lastName} is from ${city}`;</code><br>
+          </div>
+          <div class="small-subarticle">
+            <p>Any expression can be placed into these placeholders:</p>
+            <code>const greeting = `Hello ${ <br>
+            name !== null ? name : "mysterious person"<br>
+            }, good to see you!`;<br>
+          </code>
           </div>
         </article>
         <article class="subarticle">
