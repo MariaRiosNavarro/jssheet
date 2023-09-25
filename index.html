@@ -65,7 +65,7 @@
     <main>
       <!-- * ---------------------------------Basic Variables and Data Types ------------------------------------------------------>
       <section id="basic">
-        <h2 class="heading-section">Basics: Terminal, script, Variables & Types</h2>
+        <h2 class="heading-section">Basics: Terminal, script, Variables, Types & Strings</h2>
         <!--  -->
         <article class="subarticle">
           <h3>Connect a JavaScript file with &lt;script&gt;&lt;/script&gt;</h3>
@@ -249,7 +249,7 @@
       </section>
       <!-- * ---------------------------------Operators and Expresion ------------------------------------------------------>
       <section id="operators">
-        <h2 class="heading-section">Operators and Expresion</h2>
+        <h2 class="heading-section">Operators, Expresion and Number</h2>
         <article class="subarticle">
           <h3>Arithmetic operators</h3>
           <p class="intro">let a = 1; let b = 2 ; let c = 3; let result = 0</p>
@@ -346,7 +346,7 @@
             </div>
         </article>
         <article class="subarticle">
-            <h4>Truthy and Falsy Values</h4>
+            <h3>Truthy and Falsy Values</h3>
             <p>
               Sometimes you want to have a condition depending on another
               type of value. JavaScript can transform any value into a
@@ -371,6 +371,46 @@
               </ul>
             </div>
         </article>
+        <article class="subarticle">
+          <h3>Numbers Methods</h3>
+          let string = "2" // String
+          let numberA = 0.12345 //Number
+          let numberB = 0.56789 //Number
+          <ul>
+            <li><code>Number(string)</code>->transform to number </li>
+            <li><code>.toFixed</code>->round up and down . OUTPUT IS A STRING!!
+            <p>console.log(numberA.toFixed(3)); //0.123</p>
+            <p>console.log(numberB.toFixed()); //1 </p> 
+            <p>console.log(numberB.toFixed(3)); //0.568</p>
+            </li>  
+            <li><code>Math.round()</code>->round up and down . OUTPUT IS A NUMBER!!
+            <p>console.log(Math.round(numberA)); //0</p>
+            <p>console.log(Math.round(numberB)); //1</p>
+            </li>
+            <li><code>Math.ceil()</code>->round ALLWAYS up. OUTPUT IS A NUMBER!!
+              <p>console.log(Math.ceil(numberA)); //1</p>
+              <p>console.log(Math.ceil(numberB)); //1</p>
+              <p></p>
+            </li>
+            <li><code>Math.floor()</code>->round ALLWAYS down. OUTPUT IS A NUMBER!!
+              <p>console.log(Math.floor(numberA)); //0</p>
+              <p>console.log(Math.floor(numberB)); //0</p>
+            </li>
+            <li><code>Math.random()</code>->always gives us a random number between 0 and 1. You can combinate the methods:
+            <p><code>console.log(Math.random() * 10);</code>->Gives us a number between 0 and 10 ( 10 not included)</p>
+            <p><code>console.log(Math.ceil(Math.random() * 10));</code>->Gives us a random number between 1 and 10 (10 Included)</p>
+            <p><code>console.log(Math.round(Math.random() * 10))</code>->radom number from 0 - 10</p>
+            <p><code>console.log(Math.round(Math.random() * 10 + 1));</code>->radom number from 1 - 10</p>
+            <p></p>
+            </li>
+            
+            <li><code>console.log(Math)</code> you see all the Methods</li>
+
+          </ul>
+
+        
+        </article>
+        
       </section>
       <!-- * ---------------------------------control ------------------------------------------------------>
       <section id="control">
