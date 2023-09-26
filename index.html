@@ -709,20 +709,35 @@
             <li>Arrays  are resizable and can contain a mix of different data types</li>
             <li>JavaScript arrays are zero-indexed.</li>
             <li>Last element is at the value of the array's <code>array.length</code> property minus 1.</li>
-            <li>
-              <div class="xsm-container">
-                <h4>Access and change elements of one Array </h4>
-                <code>
-                <p>let array =["a", "b", "c"];</p>
-                <p> console.log(array[1])// "b";</p>
-                <p> array[2]="d";</p>
-                <p>console.log(array);// ["a", "b", "d"]</p>
-                </code>
-              </div>
-            </li>
           </ul>
           <div class="small-subarticle">
-            <h4></h4>
+            <h4>Access and change elements of one Array </h4>
+            <code>
+              <p>let array =["a", "b", "c"];</p>
+              <p> console.log(array[1])// "b";</p>
+              <p> array[2]="d";</p>
+              <p>console.log(array);// ["a", "b", "d"]</p>
+            </code>
+          </div>        
+          <div class="small-subarticle">
+            <h4>Array Methods and propierties</h4>
+            <p>const array = ["a", "b", "c", "d"]</p>
+            <div><code>console.log(array.length);</code><p>// 4 //Output is a number. first element is 1</p></div>
+            <div><code>console.log(array.indexOf("d"));</code><p>// 3 //Output is a number. first Index is 0</p></div>
+            <div><code>console.log(array.push("e", "f"));</code><p>//["a", "b", "c", "d", "e", "f"]// add behind</p></div>
+            <div><code>console.log(array.pop())</code><p>//["a", "b", "c", "d", "e"]// Remove the last one and you can save it in one variable</p></div>
+            <div><code>console.log(array.shift())</code><p>//["b", "c", "d", "e"]// Remove before and you can save it in one variable</p></div>
+            <div><code>console.log(array.unshift("x", "y"))</code> <p> //["x", "y", "b", "c", "d", "e"]// Add before</p></div>
+            <div>const text = "Hello JS friends"</div>
+            <div><code>console.log(text.split())</code><p>//["Hello JS friends"]//Convert to Array</p></div>
+            <div><code>console.log(text.split(""))</code><p>//['H', 'e', 'l', 'l', 'o', ' ', 'J', 'S', ' ', 'f', 'r', 'i', 'e', 'n', 'd', 's']//Every single element, space too</p></div>
+            <div><code>console.log(text.split(" "))</code><p>// ['Hello', 'JS', 'friends']//Separate where space are</p></div>
+            <div><code>console.log(text.split(" ").join(" "))</code><p>"Hello JS friends"</p>//Add the elements with (join) a space (" ") between</div>
+            <div><code></code><p></p></div>
+            <div><code></code><p></p></div>
+            <div><code></code><p></p></div>
+            <div><code></code><p></p></div>
+            <div><code></code><p></p></div>
           </div>
         </article>
         <article class="subarticle">
