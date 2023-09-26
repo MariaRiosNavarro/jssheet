@@ -728,25 +728,25 @@
             <div><code>console.log(array.pop())</code><p>//["a", "b", "c", "d", "e"]// Remove the last one and you can save it in one variable</p></div>
             <div><code>console.log(array.shift())</code><p>//["b", "c", "d", "e"]// Remove before and you can save it in one variable</p></div>
             <div><code>console.log(array.unshift("x", "y"))</code> <p> //["x", "y", "b", "c", "d", "e"]// Add before</p></div>
-            <div>const text = "Hello JS friends"</div>
+            <div><code>const text = "Hello JS friends"</code></div>
             <div><code>console.log(text.split())</code><p>//["Hello JS friends"]//Convert to Array</p></div>
             <div><code>console.log(text.split(""))</code><p>//['H', 'e', 'l', 'l', 'o', ' ', 'J', 'S', ' ', 'f', 'r', 'i', 'e', 'n', 'd', 's']//Every single element, space too</p></div>
             <div><code>console.log(text.split(" "))</code><p>// ['Hello', 'JS', 'friends']//Separate where space are</p></div>
-            <div><code>console.log(text.split(" ").join(" "))</code><p>"Hello JS friends"</p>//Add the elements with (join) a space (" ") between</div>
+            <div><code>console.log(text.split(" ").join(" "))</code><p>"Hello JS friends"</p>//Add the elements with (join) with one space (" ") between</div>
             <div><code>console.log(text.split(" ")</code><p></p></div>
-            <div>const newArray = ["m", "n", "o", "p", "q"] </div>
+            <div><code>const newArray = ["m", "n", "o", "p", "q"]</code></div>
             <div><code>console.log(newArray.slice(1, 3))</code><p>//['n', 'o']//</p>first index is included, last one NO</div>
-            <div>const otherArray = ["i", "j", "k", "l"]</div>
+            <div><code>const otherArray = ["i", "j", "k", "l"]</code></div>
             <div><code>console.log(otherArray.splice(1, 2, "newItem"));</code><p>//['j', 'k'] // array.splice(startIndex, deleteCount(how many), item1, ...) we obtain the rest of the array. After that our Array is changed</p></div>
             <div><code>console.log(otherArray)</code><p>//['i', 'newItem', 'l']</p></div>
-            <div>const numbersArray= [1, 5, 6, 3, 12]</div>
+            <div><code>const numbersArray= [1, 5, 6, 3, 12]</code></div>
             <div><code>console.log(numbersArray.reverse())</code><p>//[12, 3, 6, 5, 1]</p></div>
             <div><code>console.log(numbersArray.sort())</code><p>//[1, 12, 3, 5, 6]//ASCII sort//Change original Array, recomended to use .slice() before .sort to do a copy</p></div>
             <div><code>console.log(numbersArray.sort((a, b) => a - b))</code><p>// [1, 3, 5, 6, 12] //Change original Array, recomended to use .slice() before .sort to do a copy</p>Ascendet</div>
             <div><code>console.log(numbersArray.sort((a, b) => b - a))</code><p>//[12, 6, 5, 3, 1]  //Change original Array, recomended to use .slice() before .sort to do a copy</p>Descendent</div>
             <div>const fruits = ["apple", "banana", "kiwi"];</div>
             <div><code>fruits.forEach((fruit) => console.log(fruit))</code><p>//apple; banana; kiwi;// All items in new lines</p></div>
-            <div>const oddNumbers = [3, 5, 7]</div>
+            <div><code>const oddNumbers = [3, 5, 7]</code></div>
             <div><code>let evenNumbers = oddNumbers.map((element)=> element+1); console.log(evenNumbers) </code><p>//[4, 6, 8]//</p>Return a Value and a new Array</div>
             <div>Other Important: .include(); .filter(); .every(); .find(); .reduce();</div>
           </div>
