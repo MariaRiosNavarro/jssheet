@@ -531,8 +531,65 @@
         </article>
         <article class="subarticle">
           <h3>Loops</h3>
+          <p>A loop executes a respective block of code over and over again until an end criteria is met. In JavaScript, two basic types of loops exist:</p>
+          <p><code>while</code> while loop: are used when a task needs to be executed until a specific criteria is met.</p>
+          <code>
+            <p>let string = "a";</p>
+            <p>while (string.length <= 8) {</p>
+            <p>console.log(string);</p>
+            <p>string = string + string;</p>
+            <p>}</p>
+          </code><br> 
+          <p><code>for</code> loop: are commonly used when a given task needs to be executed x times or for each element in an object / array</p>
           <div class="small-subarticle">
-            <h4></h4>
+            <h4>types of <code>for</code> loops</h4>
+            <div class="xsm-container">
+              <h4><code>for</code></h4>
+              <div>
+                <p>for loops are intended for repeating a task a certain number of times. They consist of three internal parts:</p>
+                <p>- an internal counter which is increased / decreased every iteration.</p>
+                <p>- a criteria which checks the value of the counter. As long as the criteria is true, the loop is executed.</p>
+                <p>- a rule how the counter is increased / decreased (in most cases it is increased by 1)</p>
+                <code>
+                  <p>for (let counter = 0; counter < 4; counter++) {</p>
+                  <p>console.log(counter);</p>
+                  <p>}</p>
+                </code>
+                <p>Output(each number on a new line) // 0; 1; 2; 3;</p>
+              </div>
+            </div>
+            <div class="xsm-container">
+              <h4><code>for...in</code></h4>
+              <div>
+                <p>The for...in is a shorthand notation to loop through all keys of an object:</p>
+                <code>
+                  <p>const user = {</p>
+                  <p>name: "Joe",</p>
+                  <p>age: 28,</p>
+                  <p>email: "joe@mail.com",</p>
+                  <p>};</p><br>
+                  <p>for (const key in user) {</p>
+                  <p>console.log(user[key]);</p>
+                  <p>}</p>
+                </code>
+                <br>
+                <p>Output(each string on a new line) // 'Joe'; 28; 'joe@mail.com'</p>
+              </div>
+            </div>
+            <div class="xsm-container">
+              <h4><code>for...of</code></h4>
+              <div>
+                <p>Similar to for...in the for...of loop is a shorthand notation, but for looping through all items of an array.</p>
+                <code>
+                  <p>const fruits = ["apple", "banana", "melon"];</p>
+                  <p>for (const fruit of fruits) {</p>
+                  <p>console.log(fruit);</p>
+                  <p>}</p>
+                </code>
+                <br>
+                <p>Output (each string on a new line)// 'apple'; 'banana'; 'melon'</p>
+              </div>
+            </div>
           </div>
         </article>
       </section>
