@@ -754,7 +754,33 @@
               </ul>
             </div>
           </div>
-        </article>
+          <div class="small-subarticle">
+            <h3>Call Back Functions</h3>
+            <p>A callback function is a function that is passed as an argument into another function.</p>
+            <p>The outer function can execute this for: when an event is triggered,when the fetched data arrived on your computer, for each element in an array </p>
+            <code>
+              <p>button.addEventListener("click", () => {</p>
+              <p>console.log("Inside the callback function.");</p>
+              <p>});</p>
+            </code> <br>
+            <p>1.- outer function(Higher Order Functions): addEventListener()</p>
+            <p>2.- first argument: 'click'</p>
+            <p>3.- second argument: callback function:</p>
+            <code>
+              <p>() => {</p>
+              <p>console.log("Inside the callback function.");</p>
+              <p>};</p>
+            </code>
+            <p>This type of function is called anonymous function, since it is declared without giving it a name</p>
+            <p>Higher Order Functions: <code>.then</code>,<code>.forEach</code>,<code>.map</code>,<code>.filter</code></p>
+            <p>A callback function can accept parameters:</p>
+            <code>
+              <p>button.addEventListener("click", (event) => {</p>
+              <p>console.log("This button was clicked:", event.target);</p>
+              <p>});</p>
+            </code>
+          </article>
+
       </section>
       <!-- * ---------------------------------objects ------------------------------------------------------>
       <section id="objects">
