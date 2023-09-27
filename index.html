@@ -877,25 +877,117 @@
             </div>
             <div class="xsm-container">
               <h4><code>includes</code></h4>
+              <p>Use array.includes() to check whether the array contains the specified value. If it does, true is returned, otherwise false.</p>
+              <code>
+                <p>const colors = ["red", "yellow", "green"];</p>
+                <p>colors.includes("yellow"); // true</p>
+                <p>colors.includes("blue"); // false</p>
+              </code>
             </div>
             <div class="xsm-container">
               <h4><code>find</code> and <code>findIndex</code></h4>
+              <p>Use find() to receive the first element of the array that satisfies the provided testing function. Otherwise, it returns undefined.</p>
+              <code>
+                <p>const colors = ["red", "yellow", "green"];</p>
+                <p>colors.find((color) => color.startsWith("g")); // 'green'</p>
+                <p>colors.find((color) => color.startsWith("b")); // undefined</p>
+              </code>
+              <p>Use findIndex() to receive the index of the first element of the array that satisfies the provided testing function. If there is no such element, -1 is returned.</p>
+              <code>
+                <p>const colors = ["red", "yellow", "green"];</p>
+                <p>colors.findIndex((color) => color.startsWith("y")); // 1</p>
+                <p>colors.findIndex((color) => color.startsWith("b")); // -1</p>
+              </code>
             </div>
             <div class="xsm-container">
               <h4><code>sort</code> and <code>reverse</code></h4>
+              <div class="mini">
+                <p>Use <code>sort()</code> to sort the elements of an array. You need to provide a callback function in order to tell how the array is sorted.</p>
+                <p>sort() converts the elements into strings, then compares their sequences of UTF-16 Code units values. This is why array.sort() without a callback is mostly useless.</p>
+                <code>
+                  <p>const numbers = [4, 42, 23, 1];</p>
+                  <p>numbers.sort((a, b) => a - b);</p>
+                  <p>// [1, 4, 23, 42]</p>
+                  <p>numbers.sort((a, b) => b - a); </p>
+                  <p>// [42, 23, 4, 1]</p>
+                  <p></p>
+                </code>
+                <p>sort() two things inside of the callback function with strings:</p>
+                <p>1.- lowercase both strings before comparing them (uppercase works as well)</p>
+                <p>2.- using if-statements, be explicit about the return values dependent on the result of the comparison (nameA < nameB and nameA > nameB)</p>
+                <p>(In UTF-16, the upper- and lowercase version of the same letter do not have the same value)</p>
+                <code>
+                <p>const strings = ["Ana", "Peter", "Gaia"];</p>
+                <p>strings.sort((a, b) => {</p>
+                <p>const nameA = a.toLowerCase();</p>
+                <p>const nameB = b.toLowerCase();</p>
+                <p>if (nameA < nameB) {</p>
+                <p>return -1;</p>
+                <p>  }</p>
+                <p> if (nameA > nameB) {</p>
+                <p>return 1;</p>
+                <p>  }</p>
+                <p>  return 0;</p>
+                <p>});</p>
+                <p>console.log(strings); </p>
+                <p>// ['Ana', 'Gaia', 'Peter']</p>
+                </code>
+              </div>
+              <div class="mini">
+              <p>use <code>reduce</code>to reverse an array, simply use array.reverse(). This can be combined with sort() as well:</p>
+                <code>
+                  <p>const numbers = [4, 42, 23, 1];</p>
+                  <p>const reversedNumbers = numbers.reverse();</p>
+                  <p> // [1, 23, 42, 4]</p>
+                </code>
+            </div>
             </div>
             <div class="xsm-container">
               <h4><code>slice</code></h4>
+              <p>It's important to note that some array methods, as sort(), do not create a new array, but mutate the original one.</p>
+              <p>This behaviour will often cause errors. To prevent it, just make a copy of the original array using slice().</p>
+              <code>
+                <p>const numbers = [4, 42, 23, 1];</p>
+                <p>console.log(numbers); // [4, 42, 23, 1]</p>
+                <p>const sortedNumbers = numbers.slice().sort((a, b) => a - b);</p>
+                <p>console.log(sortedNumbers); // [1, 4, 23, 42]</p>
+                <p>console.log(numbers); // [4, 42, 23,</p>
+                <p></p>
+              </code>
             </div>
             <div class="xsm-container">
               <h4><code>some</code> and <code>every</code></h4>
+              <div class="mini">
+                <p>Use some() to test whether at least one element in the array passes the provided test.</p>
+                <code>
+                  <p>const colors = ["red", "yellow", "green"];</p>
+                  <p>colors.some((color) => color.startsWith("g")); // true</p>
+                  <p>colors.some((color) => color.startsWith("i")); // false</p>
+                </code>
+              </div>
+              <div class="mini">
+                <p>In order to check if all elements pass the test, use every().</p>
+                <code>
+                  <p>const colors = ["red", "yellow", "green"];</p>
+                  <p>colors.every((color) => color.length > 2); // true</p>
+                  <p>colors.every((color) => color.length < 1); // false</p>
+                </code>
+              </div>
             </div>
             <div class="xsm-container">
               <h4><code>reduce</code></h4>
+              <p> is an array method to reduce a list of values into a single value.</p>
+              <p>It's main use case is to calculate the sum of an array of numbers.</p>
+              <p>starting from the beginning, it executes the callback function on each element of the array, the return value of each calculation is passed to the next calculation (i.e. it becomes the new starting value for the next iteration through the array)the final result is a single value.</p>
+              <code>
+                <p>const numbers = [4, 42, 23, 1];</p>
+                <p>numbers.reduce((a, b) => a + b);</p>
+                <p>console.log(numbers); // 70</p>
+              </code>
             </div>
           </div>       
           <div class="small-subarticle">
-            <h4>Other Methods and propierties</h4>
+            <h4>How to use the Methods and propierties</h4>
             <p>const array = ["a", "b", "c", "d"]</p>
             <div><code>console.log(array.length);</code><p>// 4 //Output is a number. first element is 1 // length is a property</p></div>
             <div><code>console.log(array.indexOf("d"));</code><p>// 3 //Output is a number. first Index is 0</p></div>
