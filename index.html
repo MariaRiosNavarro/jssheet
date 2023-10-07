@@ -1408,16 +1408,12 @@
                 </code>
                 <p>This often comes in handy in combination with <code>.focus()</code>. After the message was send, the input field is cleared and re-focussed, so users can write the next message.</p>
               </div>
-
-
-
-
             </div>
           </div>
         </article>
         
         <article class="subarticle">
-          <h4>Change style</h4>
+          <h3>Change style</h3>
           <div class="small-subarticle">
             <h4>.style</h4>
             <p>
@@ -1450,6 +1446,44 @@
                 <code>main.classList.remove("page--primary");</code>
             </div>
           </div>
+        </article>
+        <article class="subarticle">
+          <h3>HTML collection & NodeList</h3>
+          <div class="small-subarticle">
+              <h4>Html collection</h4>
+              <p>An HTML collection is an object-like array of HTML element nodes. It is used in JS to access a group of elements in the DOM = (Document Object Model).</p>
+              <p>- HTMLCollections are live! As soon as the HTML changes, so does the collection.</p> 
+              <p>- index based - The first element is 0</p> 
+              <p>- Often used with document.getElementByClassName(), document.getElementByTagName() or elment.children. (there we get a collection back)</p>  
+              <p>How to get access to the individual HTML elements, we have a "form" in Html with the name="loginForm", and 2 input with the names "username" & "email":</p>
+              <code>
+                <p>let myForm = document.forms.loginForm;</p>
+                <p>console.log(myForm.username);</p>
+                <p>console.log(myForm.username.value);</p>
+                <p>console.log(myForm.email.value);</p>
+              </code>  
+          </div>
+          <div class="small-subarticle">
+            <h4>Html collection vs NodeList</h4>
+            <p>A NodeList is a collection of nodes, therefore Nodes. Unlike HTML Collection, Nodelist can contain all kinds of DOM nodes.</p>
+            <p>Nodes can be static or live.</p>
+            <p>- index based - the first element is 0</p>
+            <p>NodeList supports more methods than HTML Collections. For example, you can use forEach methods to loop through the list.</p>
+            <p> NodeList are often received as return values from DOM methods like document.quarySelectorAll() or Node.childeNodes.</p>
+            <p>with the <code>querySelectortAll()</code>  we usually get back a NodeList!</p>
+            <code><p>const liNodelist = document.querySelectorAll("li");</p></code>
+            <p>with the <code>getElementByTagName</code>  we usually get back an HTML Collection.</p>
+            <code><p>const liHTMLCollection = document.getElementsByTagName("li");</p></code>
+            <p>Extract Child elements (example):</p>
+            <code><p>console.log(document.body.children[0])</p></code>
+            <code><p>console.log(document.body.children[0].children)</p></code>
+            <code><p>console.log(document.body.children[1].children[2])</p></code>
+            <p>Add a child element:</p></code>
+            <code><p>document.body.children[0].innerHTML += "&lt;p&gt; I am new here &lt;/p&gt;"</p></code>
+            <p>Change Style:</p>
+            <code><p>document.body.children[0].children[0].style.color = "red";</p></code>
+          </div>
+
         </article>
       </section>
       <!-- * ---------------------------------es6 ------------------------------------------------------>
