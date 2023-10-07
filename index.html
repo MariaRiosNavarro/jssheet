@@ -1525,20 +1525,20 @@
                     <p>img.src = "https://..........";</p>
                     <p> img.alt = "alt text";</p>
                     <p>img.className = "img-class"</p>
-
-
-
-
-
                   </code>
             </li>
             <li class="xsm-container">
               <h4>adding the element/tag with <code>.innerHTML +=``</code> </h4>
+              <code>document.body.innerHTML +=
+                '&lt;img class="img-class" src="https:......" alt="test"&gt;';</code>
             </li>
             <li class="xsm-container">
               <h4>adding the element/tag with <code>.insertAdjacentHTML("location", newElement)</code>.</h4>
-              <p>let html=`&lt;p&gt; I am new here &lt;/p&gt;`; document.body.insertAdjacentHTML("afterbegin", html);//the new element will be the first One after body</p> 
-              <p>Other locations possibilities: beforebeginn, afterbeginn, beforeend, afterend</p>
+              <p>the new element will be the first one after body:</p>
+              <code> let html=`&lt;p&gt; I am new here &lt;/p&gt;`; document.body.insertAdjacentHTML("afterbegin", html);</code>
+             
+              <p>Other locations possibilities:</p> 
+              <div><code>beforebeginn</code>, <code>afterbeginn</code> ,<code>beforeend</code>, <code>afterend</code></div>
             </li>
           </ul> 
         </article>
