@@ -1020,11 +1020,114 @@
         </article>
         <article class="subarticle">
           <h3>Objects</h3>
+          Objects are a central powerful function/data type in JS
           <div class="small-subarticle">
-            <h4></h4>
+            <h4>Create objects</h4>
+            <p>We can have all types of values types.</p>
+            <p>keys can be written as in this example or as strings ("name":"Jane"), being strings we can only access them with the bracket notation (see below).</p>
+            <code>
+              <p>const person = {</p>
+              <p>name: "Jane",</p>
+              <p>age: 42,</p>
+              <p>admin: true,</p>
+              <p>hobbies:["code", "cinema", "walking"]</p>
+              <p>socialMedia:{ </p>
+              <p>linkedin: "..."</p>
+              <p>gitHub: "..."</p>
+              <p>},</p>
+              <p>city: "Barcelona",</p>
+              <p>greet: function() {</p>
+              <p>console.log(`Hola, I am ${this.name}`)</p>
+              <p>add: (a,b)=> a+b,</p>
+              <p>};</p>
+            </code>
+            <p></p>
+          </div>
+          <div class="small-subarticle">
+            <h4>Accessing, Change Values, Delete and Functions use</h4>
+            <p>We can use the dot notation & the bracket notation to access to our Object. With the above person object, we habe the same value:</p>
+            <code>
+              <p>console.log(person.name)</p>
+              <p>console.log(person["name"])</p>
+            </code>
+            <p>Wenn keys are strings ("name", "city", etc). We can only use bracket notation <code>person["name"]</code></p>
+            <p>Rewrite Values:</p>
+            <code><p>person.age = 43</p></code>
+            <p>Add neu Value & Key:</p>
+            <code><p>person.job="Developer"</p></code>
+            <p>Delete:</p>
+            <code>delete person.job;</code>
+            <p>Functions:</p>
+            <code>person.greet()//Hola, I am Jane`</code>
+            <code>console.log(person.add(1,2))// 3</code>
+          </div>
+          <div class="small-subarticle">
+            <h4>Dynamical with <code>this</code></h4>
+            <p>We can give the greet function to other object and <code>this</code>will refer to the new object</p>
+            <p>To use this we need allway a traditional function declaration, dont work with arrow funtion</p>
+            <code>
+              <p>person.greet()//Hola, I am Jane</p>
+              <p>let person2 = {</p>
+              <p> name: "John",</p>
+              <p> age : "23",</p>
+              <p>};</p>
+              <p>person2.greet = person.greet;</p>
+              <p>person2.greet();//Hola, I am John</p>  
+            </code>
+          </div>
+          <div class="small-subarticle">
+            <h4>Methods in Objects</h4>
+            <code>
+              <p>const doThings = {</p>
+              <p>add: (a, b) => a + b,</p>
+              <p>sub: (a, b) => a - b,</p>
+              <p>write: (a, b) => `Hello my name is ${a} and i am ${b} old`,</p>
+              <p>},</p>
+              <p>console.log(doThings.add(2, 4));</p>
+              <p>console.log(doThings.sub(10, 1));</p>
+              <p>console.log(doThings.write("Jude", person.age))</p>
+            </code>
+            <h4>MORE METHODS-------------------</h4>
+            <div><code>-----------------</code></div>
+          </div>
+          <div class="small-subarticle">
+            <h4>Work with keys, values and loops</h4>
+            <p>With <code>for...in</code> loop we can extract the keys and the values together</p>
+            <code>
+              <p>for (let key in person) {</p>
+              <p>console.log(person[key]) //Only works with [] notation, not dot notation</p>
+              <p>console.log(key + ": " + person[key]);</p>
+            </code>
+            <h4>Transform Object to Array to use Array methods (map, filter, sort, etc)</h4>
+            <p>Extract keys too with: <code>Object.keys(person)</code></p>
+            <p>Extract values too with <code>Object.values(person)</code></p>
+            <p>Extract entries with <code>const entries = Object.entries(person)</code></p>
+            <p>We have now an Array of Arrays and we can access to values like:</p>
+            <p>console.log(entries[3][1])//cinema</p>
+          </div>
+          <div class="small-subarticle">
+            <h4>Interleaved arrays in objects and viceversa.</h4>
+            <p>Especially arrays of objects are very often used when working with databases. [{},{},{}]</p>
+            <p>Objects in objects are also very frequent.{{},{},{}}</p>
+            <p>We cann access combining dot and bracket notation</p>
+            <p>console.log(person.socialMedia.gitHub)// ist the same as</p>
+            <p>console.log(person.socialMedia["gitHub"]</p>
+            <p>Or: let sozialValues = Object.values(person.socialMedia)</p>
+            <p>sozialValues[1]</p>
+          </div>
+          <div class="small-subarticle">
+            <h4>Loops with Objects</h4>
+            <p>If we habe a Arry of Objects we can use <code>map</code> or <code>forEach</code></p>
+            <p>const people = [ {name:"Jane", city:"Barcelona"}, {name:"Joe", city:"Berlin"}, {name:"Jude", city:"Lima"} ]</p>
+            <p>people.forEach((person) => {</p>
+            <p>const card = `&lt;div style="background-color:red">&lt;/div>`</p>
+            <p>&lt;h2 style="margin:1rem;">${people.name}&lt;/h2&gt;</p>
+            <p>&lt;h2 style="margin:1rem;">${people.city}&lt;/h2&gt;</p>
+            <p>&lt;/div&gt; `;</p>
+            <p>document.body.insertAdjacentHTML("afterbegin", card);</p>
+            <p>});</p>
           </div>
         </article>
-
       </section>
       <!-- * ---------------------------------scope ------------------------------------------------------>
       <section id="scope">
