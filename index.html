@@ -1095,7 +1095,7 @@
             <p>With <code>for...in</code> loop we can extract the keys and the values together</p>
             <code>
               <p>for (let key in person) {</p>
-              <p>console.log(person[key]) //Only works with [] notation, not dot notation</p>
+              <p>console.log(person[key]) //Only works with [..] notation, not dot notation</p>
               <p>console.log(key + ": " + person[key]);</p>
             </code>
             <h4>Transform Object to Array to use Array methods (map, filter, sort, etc)</h4>
@@ -1103,7 +1103,7 @@
             <p>Extract values too with <code>Object.values(person)</code></p>
             <p>Extract entries with <code>const entries = Object.entries(person)</code></p>
             <p>We have now an Array of Arrays and we can access to values like:</p>
-            <p>console.log(entries[3][1])//cinema</p>
+            <p><code>console.log(entries[3][1])//cinema</code></p>
           </div>
           <div class="small-subarticle">
             <h4>Interleaved arrays in objects and viceversa.</h4>
@@ -1119,13 +1119,15 @@
             <h4>Loops with Objects</h4>
             <p>If we habe a Arry of Objects we can use <code>map</code> or <code>forEach</code></p>
             <p>const people = [ {name:"Jane", city:"Barcelona"}, {name:"Joe", city:"Berlin"}, {name:"Jude", city:"Lima"} ]</p>
+           <code>
             <p>people.forEach((person) => {</p>
-            <p>const card = `&lt;div style="background-color:red">&lt;/div>`</p>
-            <p>&lt;h2 style="margin:1rem;">${people.name}&lt;/h2&gt;</p>
-            <p>&lt;h2 style="margin:1rem;">${people.city}&lt;/h2&gt;</p>
-            <p>&lt;/div&gt; `;</p>
-            <p>document.body.insertAdjacentHTML("afterbegin", card);</p>
-            <p>});</p>
+              <p>const card = `&lt;div style="background-color:red">&lt;/div>`</p>
+              <p>&lt;h2 style="margin:1rem;">${people.name}&lt;/h2&gt;</p>
+              <p>&lt;h2 style="margin:1rem;">${people.city}&lt;/h2&gt;</p>
+              <p>&lt;/div&gt; `;</p>
+              <p>document.body.insertAdjacentHTML("afterbegin", card);</p>
+              <p>});</p>
+           </code>
           </div>
         </article>
       </section>
