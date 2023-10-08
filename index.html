@@ -1256,6 +1256,7 @@
       <!-- * ---------------------------------dom ------------------------------------------------------>
       <section id="dom">
         <h2 class="heading-section">DOM manipulation</h2>
+        <p>The Document Object Model is a representation of the HTML document. Each HTML Tag is modelled as a node in a tree structure, which shows how HTML elements are nested. A computer program such as your JavaScript file can access and manipulate the HTML website by changing the DOM via the document object.</p>
         <article class="subarticle">
           <h3>Selecting elements</h3>
           <div class="small-subarticle">
@@ -1605,12 +1606,18 @@
           <p>We can create and add elements with:  </p>
           <ul>
             <li class="xsm-container">
-              <h4><code>.createElement</code> and <code>.appendChild</code></h4>
+              <h4><code>.createElement</code> and <code>.appendChild</code> or <code>.append</code></h4>
                   <code>
                     <p>let div = document.createElement("div");</p>
                     <p>div.textContent = "I am a new Div"</p>
                     <p>div.style.height = "100px";</p>
                     document.body.appendChild(div);
+                  </code>
+                  <code>
+                    <p>const article = document.createElement("article");</p>
+                    <p>const button = document.createElement("button");</p>
+                    <p>document.body.append(article); // placing the created article at the end of the body</p>
+                    <p>article.append(button); // placing the created button into the article</p>
                   </code>
                   <p>We can create and add elements dynamically with <code>forEach</code></p>
                   <code>
@@ -1629,12 +1636,14 @@
                     <p>image.setAttribute("class", "img-class")</p>
                     <p></p>
                   </code>
-                  <p>you can also give it the values directly if the element exists.</p>
+                  <p>You can also give it the values, propiertiers and methods directly if the element exists. You can assign HTML attributes by using the element properties</p>
+                  <p>Common Element Properties and Methods are: <code>classList</code>,<code>textContent</code>,<code>style</code><code>hidden</code><code>focus()</code> <code>hasAttribute()</code>, <code>querySelector()</code></p>
                   <code>
                     <p>let image = document.createElement("img")</p>
                     <p>img.src = "https://..........";</p>
-                    <p> img.alt = "alt text";</p>
+                    <p>img.alt = "alt text";</p>
                     <p>img.className = "img-class"</p>
+                    <p>button.textContent = "Click me!";</p>
                   </code>
             </li>
             <li class="xsm-container">
