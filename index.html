@@ -35,9 +35,6 @@
             <a class="nav-link" href="#event">Event Handling</a>
           </li>
           <li class="nav-list-item">
-            <a class="nav-link" href="#error-handling">Error Handling</a>
-          </li>
-          <li class="nav-list-item">
             <a class="nav-link" href="#async">Asynchronous programming</a>
           </li>
           <li class="nav-list-item">
@@ -1236,23 +1233,7 @@
           </div>
         </article>
       </section>
-      <!-- * ---------------------------------error-handling ------------------------------------------------------>
-      <section id="error-handling">
-        <h2 class="heading-section">Error handling</h2>
-        <article class="subarticle">
-          <h3>Try, catch, finally</h3>
-          <div class="small-subarticle">
-            <h4></h4>
-          </div>
-        </article>
-        <article class="subarticle">
-          <h3>???</h3>
-          <div class="small-subarticle">
-            <h4></h4>
-          </div>
-        </article>
-      </section>
-      <!-- * ---------------------------------async ------------------------------------------------------>
+      <!-- * ---------------------------------async & Error Handling------------------------------------------------------>
       <section id="async">
         <h2 class="heading-section">Asynchronous programing</h2>
         <article class="subarticle">
@@ -1320,9 +1301,11 @@
               <p></p>
             </code>
           </div>
-          <div class="small-subarticle">
-            <h4>Handling Errors</h4>
-            <div class="xsm-container">
+
+        </article>
+        <article class="subarticle">
+          <h3>Handling Errors</h3>
+            <div class="small-subarticle">
               <h4><code>try/catch</code></h4>
               <p>When using Promises, you can use the catch() method to handle errors. Using async functions, you can use the try/catch syntax.</p>
               <code>
@@ -1338,7 +1321,7 @@
               <p>The try block will be executed, and if an error is thrown, the catch block will be executed. The catch block has access to the error that was thrown.
               If any error is thrown in the try block, the catch block will be executed immediately aborting the execution of any further code in the try block:</p>
             </div>
-            <div class="xsm-container">
+            <div class="small-subarticle">
               <h4><code>finally</code></h4>
               <p>You can also use a finally block after any try block to run code after the try block is resolved, regardless of whether it was successful or not:</p>
               <code>
@@ -1359,7 +1342,7 @@
               </code>
               <p>IMPORTANT: The try/catch/(finally) syntax is not limited to async functions, you can use it with any JavaScript code that might throw an error.</p>
             </div>
-            <div class="xsm-container">
+            <div class="small-subarticle">
               <h4>Parallel Promises: <code>Promise.all()</code></h4>
               <p>If you have multiple asynchronous operations that you want to run in parallel, you can use Promise.all(). It takes an array of Promises and returns a Promise that resolves to an array of the results of the Promises in the same order.</p>
               <code>
@@ -1380,7 +1363,6 @@
               <p>This will run all three asynchronous operations in parallel, and wait for all of them to complete before continuing. If any of the asynchronous operations fail, Promise.all() will fail as well.</p>
               <p>There are advanced use cases where you might want to control when to resolve or reject a Promise. <code>Promise.allSettled()</code> (does not care if Promises are rejected or resolved) and <code>Promise.any()</code> (resolves once the first Promise is resolved) are two methods that allow you to do that.</p>
             </div>
-          </div>
         </article>
       </section>
       <!-- * ---------------------------------dom ------------------------------------------------------>
