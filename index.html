@@ -1845,17 +1845,100 @@
       <section id="apis">
         <h2 class="heading-section">Web Apis and Fetch</h2>
         <article class="subarticle">
-          <h3>Web Apis</h3>
+          <h3>Apis</h3>
+          <p>The term API is short for Application Programming Interface.</p>
+          <p>An API provides a way one software (the application) can interact with another software.</p>
+          <p>A browser provides a lot of <a href="https://developer.mozilla.org/en-US/docs/Web/API" target="_blank">Web APIs</a>. Each Web API defines a way on how a JavaScript application can use a feature given by the browser, like:</p>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API" target="_blank">Web Animations API</a></p>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Battery_Status_API" target="_blank">Battery API</a></p>
+          <p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank">Fetch API</a></p>
+          <p>APIs running on a server environment are a different type of API. They are provided by a server, opposing to the APIs provided by the browser (which is also called the client). A common use-case for such APIs is to read / load data. Other operations like writing or deleting data is also possible. There are common approaches regarding the architecture of a serve-side API. One such approach are REST-APIs</p>
           <div class="small-subarticle">
-            <h4></h4>
+            <h4>Fetch API (with async & await)</h4>
+            <p>fetch is a web API to asynchronously fetch (load) resources from the network, like text documents.</p>
+            <code>
+              <p>async function fetchData() {</p>
+              <p>const response = await fetch("/url/to/something");</p>
+              <p>const data = await response.json();</p>
+              <p>return data;</p>
+              <p>}</p>
+            </code>
+            <ol>
+              <li>We mark the function with the async keyword, because we want to use await inside the function.</li>
+              <li>We declare a variable named response. It stores the Response object that is returned by fetch.</li>
+              <li>Once this promise resolves (the network request is finished), we call the .json method on the response variable. This function returns another Promise.</li>
+              <li>This second promise resolves with the actual data (payload) converted from JSON (a formatted string) to a JavaScript value or object. This result is stored in the variable named data.</li>
+              <li>The function returns the value stored in the data variable.</li>
+              <li></li>
+            </ol>
+            <p>The Response object features other useful methods (all returning promises), among which are the following:            </p>
+            <ul>
+            <li><code>response.json()</code> returns a Promise that resolves to the downloaded data JSON-parsed as a JavaScript value or object</li>
+            <li><code>response.text() </code>returns a Promise that resolves to the downloaded data as raw text</li>
+            <li><code>response.formData() </code>returns a Promise that resolves to the downloaded data parsed as FormData</li>
+            <li><code>response.blob() </code>returns a Promise that resolves to the downloaded data as a raw blob (that's a machine readable format using zeros and ones)
+            </li></ul>
+          </div>
+          <div class="small-subarticle">
+            <h4>JSON</h4>
+            <p>structured data based on JavaScript object syntax. It is commonly used for transmitting data between a client (browser) and a server in web applications.</p>
+            <p>JSON is very close to being a subset of JavaScript syntax. Most valid JSON is also valid JavaScript code. This means that you can copy JSON into any .js file, put a const myData = in front, and watch Prettier make it look like real </p>
+            <p>A valid JSON even though it closely resembles JavaScript object literal syntax, it can be used outside of JavaScript. Other programming languages often feature the ability to read (parse) JSON.</p>
+            <p>JSON exists as a  <strong>string</strong> that needs to be converted to a native JavaScript object when you want to access the data. JavaScript provides a global JSON object that features conversion methods in either direction.</p>
+            <div class="xsm-container">
+              <h4>JSON Conversion Methods</h4>
+              <p><code>JSON.parse()</code>-This method parses a JSON string and constructs the JavaScript value or object described by the string.</p>
+              <p><code>JSON.stringify()</code>-This methods converts a JavaScript value or object to a JSON string.</p>
+            </div>
+          </div>
+          <div class="small-subarticle">
+            <h4>HTTP Response Status Codes</h4>
+            <p>HTTP response status codes usually indicate whether a specific HTTP request has been successfully completed. For the most part, any sort of response is considered a successful completion of the request.</p>
+            <p>With the exception of custom server software, these responses are standardized. You can find a list of HTTP response status codes <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status" target="_blank">here</a> .</p>
+            <p>One of the most well-known HTTP response status codes is 404 not found</p>
+          </div>
+          <div class="small-subarticle">
+            <h4>Error Handling</h4>
+            <p>fetch() doesn't throw an error when the server returns a bad HTTP status, e.g. client or server errors.</p>
+            <p>A request will only register as rejected if a response cannot be retrieved. This may be due to network problems, such as no internet connection, the host not being found, or the server not responding.</p>
+            <p>We can separate good from bad HTTP response statuses by relying on the boolean response.ok property. It is set to true only if the HTTP response code is between 200-299.</p>
+            <p>If something goes wrong that causes that we do not receive a response the fetch API throws an error. Once an error is thrown execution stops and JavaScript looks for the closest catch block.</p>
+            <p>Any production fetch call should be inside a <code>try...catch</code> block:</p>
+            <code>
+              <p>async function fetchSomething() {</p>
+              <p> try {</p>
+              <p> const response = await fetch("/bad/url/oops");</p>
+              <p>if (response.ok) {
+              </p>
+              <p> const data = await response.json();// Success (Good Response) </p>
+              <p>return data;</p>
+              <p>    } else {
+              </p>
+              <p> console.error("Bad Response"); // Failure (Bad Response)</p>
+              <p>}</p>
+              <p>  } catch (error) {</p>
+              <p>console.error("An Error occurred"); // Failure (Network error, etc)
+              </p>
+              <p>}</p>
+              <p>}</p>
+            </code>
+          </div>
+          <div class="small-subarticle">
+            <h4>REST(REpresentational State Transfer) API</h4>
+            <p>When you create an API, you need to come up with ideas on how to structure your API, shape the features you provide and which rules to apply. This is referred to as the architecture of your API.</p>
+            <p>REST is a set of architectural constraints, not a protocol or a standard. You as an API developer can implement REST in a variety of ways.</p>
+            <p>The overall idea is like this:</p>
+            <ul>
+              <li>A client requests a resource from a server (like a document containing information on a specific topic)</li>
+              <li>The server formulates a response that represents the resource in a format the client understands (like JSON - other formats like HTML, XML oder plain text are also possible)</li>
+              <li>This transfer of data changes the state of the web application.</li>
+            </ul>
+            <p>Each resource has a unique address. The whole communication is done via HTTP and uses different HTTP methods (like GET/POST/PUT/DELETE) to describe desired actions.</p>
+            <p>More information <a href="https://restfulapi.net/" target="_blank">here</a></p>
+
           </div>
         </article>
-        <article class="subarticle">
-          <h3> Fetch</h3>
-          <div class="small-subarticle">
-            <h4></h4>
-          </div>
-        </article>
+
       </section>
       <!-- * ---------------------------------testing ------------------------------------------------------>
       <section id="testing">
