@@ -1020,7 +1020,7 @@
         </article>
         <article class="subarticle">
           <h3>Objects</h3>
-          Objects are a central powerful function/data type in JS
+          <p>Objects are a central powerful function/data type in JS.Objects are a structured data type, which couple their values not to an index, but to a unique key.You can declare an object using {} curly brackets (object literals):</p>
           <div class="small-subarticle">
             <h4>Create objects</h4>
             <p>We can have all types of values types.</p>
@@ -1076,7 +1076,7 @@
             </code>
           </div>
           <div class="small-subarticle">
-            <h4>Methods in Objects</h4>
+            <h4>Use funtions in  Objects</h4>
             <code>
               <p>const doThings = {</p>
               <p>add: (a, b) => a + b,</p>
@@ -1087,13 +1087,6 @@
               <p>console.log(doThings.sub(10, 1));</p>
               <p>console.log(doThings.write("Jude", person.age))</p>
             </code>
-            <h4>MORE METHODS-------------------</h4>
-            <div><code>-----------------</code></div>
-            <!-- TODO : More Methods!!!!!!!!!!! -->
-            <!-- TODO : More Methods!!!!!!!!!!! -->
-            <!-- TODO : More Methods!!!!!!!!!!! -->
-            <!-- TODO : More Methods!!!!!!!!!!! -->
-            <!-- TODO : More Methods!!!!!!!!!!! -->
           </div>
           <div class="small-subarticle">
             <h4>Work with keys, values and loops</h4>
@@ -1103,12 +1096,6 @@
               <p>console.log(person[key]) //Only works with [..] notation, not dot notation</p>
               <p>console.log(key + ": " + person[key]);</p>
             </code>
-            <h4>Transform Object to Array to use Array methods (map, filter, sort, etc)</h4>
-            <p>Extract keys too with: <code>Object.keys(person)</code></p>
-            <p>Extract values too with <code>Object.values(person)</code></p>
-            <p>Extract entries with <code>const entries = Object.entries(person)</code></p>
-            <p>We have now an Array of Arrays and we can access to values like:</p>
-            <p><code>console.log(entries[3][1])//cinema</code></p>
           </div>
           <div class="small-subarticle">
             <h4>Interleaved arrays in objects and viceversa.</h4>
@@ -1133,6 +1120,40 @@
               <p>document.body.insertAdjacentHTML("afterbegin", card);</p>
               <p>});</p>
            </code>
+          </div>
+          <div class="small-subarticle">  
+            <h4>Methods in Objects: Transform Object to Array to use Array methods (map, filter, sort, etc)</h4>
+            <p>Extract keys too with: <code>Object.keys(person)</code></p>
+            <p>You can use <code>Object.keys().forEach()</code>: </p>
+            <code>
+              <p>Object.keys(person).forEach((key) => {</p>
+              <p>console.log(key + ": " + person[key]);
+              </p>
+              <p>});</p>
+            </code>
+            <p>Extract values too with <code>Object.values(person)</code></p>
+            <p>Extract entries with <code>const entries = Object.entries(person)</code></p>
+            <p>We have now an Array of Arrays and we can access to values like:</p>
+            <p><code>console.log(entries[3][1])//cinema</code></p> 
+            <p>Transform a Array of entries in a Object <code>Object.fromEntries()</code></p>
+            <div class="xsm-container">
+              <h4>Other Methods</h4>
+              <p><code>Object.hasOwnProperty()</code>//check if the key exist, answer is a Boolean</p>
+              <p><code>Object.freeze()</code>Prevents the properties of an object from being modified.</p>
+              <p><code>Object.isFrozen()</code>answer is a Boolean</p>
+              <p><code>Object.seal()</code>Prevents adding or deleting properties of an object, but allows modifying existing properties.</p>
+              <p><code>Object.isSeal()</code>answer is a Boolean</p>
+              <p><code>Object.assign(objectA, objectB)</code>Copies the properties of one object to another object.</p>
+              <!--  -->
+              <p><code>Object.getOwnPropertyNames()</code>Returns an array of all properties of an object, including non-enumerable properties.</p>
+              <p>IMPORTANT:<code>Object.is(valueA, valueB)</code>compares two values and determines whether they are strictly equal. Answer is a Boolean</p>
+              <p>Object.is() is especially useful for avoiding pitfalls that can arise with JavaScript equality comparison, such as comparing NaN to NaN or comparing 0 to -0.</p>
+              <p><code>Object.is(5, 5); // true</code></p>
+              <p><code>Object.is(5, "5"); // false</code></p>
+              <p><code>Object.is(NaN, NaN); // true</code></p>
+              <p><code>Object.is(0, -0); // false </code></p>
+              <p><code>Object.is(null, null); // true</code></p>
+            </div>
           </div>
         </article>
       </section>
