@@ -26,7 +26,7 @@
                 <a class="nav-link" href="#basic">Basic</a>
               </li>
               <li class="nav-list-item">
-                <a class="nav-link" href="#operators">Operators and Expresion</a>
+                <a class="nav-link" href="#operators">Operators, Expresions, Number & Date</a>
               </li>
               <li class="nav-list-item">
                 <a class="nav-link" href="#control">Control Flow</a>
@@ -72,7 +72,7 @@
     <main>
       <!-- * ---------------------------------Basic Variables and Data Types ------------------------------------------------------>
       <section id="basic">
-        <h2 class="heading-section">Basics: Terminal, script, Variables, Types & Strings</h2>
+        <h2 class="heading-section">Basic: Terminal, script, Variables, Types & Strings</h2>
         <!--  -->
         <article class="subarticle">
           <h3>Connect a JavaScript file with &lt;script&gt;&lt;/script&gt;</h3>
@@ -831,6 +831,86 @@
             </code>
           </div>
           </article> 
+          <article class="subarticle">
+            <h3>OPP - CONSTRUCTOR</h3>
+            <p class="intro-big">Through object-oriented programming (OOP) we can create templates, for example for data. Constructors are super important to use, so we make sure that we always build our objects in the same form/type. We create a template, so to speak, which we then only have to fill with parameters.</p>
+            <div class="small-subarticle">
+              <h4>Constructor: Function Version</h4>
+              <code>
+                <p>function Person(nameParameter, ageParameter){</p>
+                <p>this.name = nameParameter;</p>
+                <p>this.age = ageParameter;</p>
+                <p>};</p>
+                <p>const personA = new Person("Jane", 23)</p>
+              </code>
+            </div>
+            <div class="small-subarticle">
+              <h4>Constructor: Class Version</h4>
+              <code>
+                <p>class Person {</p>
+                <p>constructor(name, age) {</p>
+                <p>this.name = name;</p>
+                <p>this.age = age;</p>
+                <p>}</p>
+                <p>greet(){</p>
+                <p>console.log(`Hello, I am ${this.name} and i am ${this.age} years old`);</p>
+                <p>}</p>
+                <p>}</p>
+                <p>const personB = new Person ("Jake", 33)</p>
+                <p>personB.greet() // Hello, I am Jake and i am 33 years old </p>
+              </code>
+            </div>  
+            <div class="small-subarticle">
+              <h4>Class Inheritance with extend & super</h4>
+              <p>we want a new constructor that actually has the same parameters as the person plus a new one:</p>
+              <code>
+                <p>class Student extends Person {</p>
+                <p>constructor(name, age, schoolClass) {</p>
+                <p>super(name, age);</p>
+                <p>this.schoolClass = schoolClass;</p>
+                <p>}</p>
+                <p>}</p>
+                <p>const student = new Student("Tim", 10, 4);</p>
+              </code>
+            </div>
+            <div class="small-subarticle">
+              <h4>Setter method to check properties before writing it</h4>
+              <code>
+                <p>class Client {</p>
+                <p>constructor(name, age) {</p>
+                <p>this.name = name;</p>
+                <p>this.setAge(age);</p>
+                <p>}</p>
+                <p>setAge(age) {</p>
+                <p>if (typeof age === "number") {</p>
+                <p>this.age = age;</p>
+                <p>} else {</p>
+                <p>this.age = "WRONG VALUE";</p>
+                <p>}</p>
+                <p>}</p>
+                <p>descrition() {</p>
+                <p>console.log(`${this.name} is ${this.age} years old`);</p>
+                <p>}</p>
+                <p>setName(newName) {</p>
+                <p>this.name = newName;</p>
+                <p>}</p>
+                <p>}</p>
+              </code>
+              <p>In this way if data is entered into our database we can check if it is correct. </p>
+                <code>
+                  <p>const client1 = new Client("Jade", "55");</p>
+                  <p>const client2 = new Client("Jude", 22);</p>
+                  <p>client1.descrition()// Jade is WRONG VALUE years old</p>
+                  <p>client1.descrition()// Jude is 22 years old</p>
+                </code>
+              <p>With the set method in the constructor we can also change values that already exist.</p>
+              <code>
+                <p>client2.setName("Julia")</p>
+                <p>client2.descrition()// Julia is 22 years old</p>
+              </code>
+              <p>IMPORTANT: It is NOT recommended to use dot notation (client2.name = "Julia") to change values. Set-methods should always be used</p>
+            </div>
+          </article>      
       </section>
       <!-- * ---------------------------------objects ------------------------------------------------------>
       <section id="objects">
