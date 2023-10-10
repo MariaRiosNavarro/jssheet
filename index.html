@@ -1846,14 +1846,13 @@
               <p>return data;</p>
               <p>}</p>
             </code>
-            <ol>
-              <li>We mark the function with the async keyword, because we want to use await inside the function.</li>
-              <li>We declare a variable named response. It stores the Response object that is returned by fetch.</li>
-              <li>Once this promise resolves (the network request is finished), we call the .json method on the response variable. This function returns another Promise.</li>
-              <li>This second promise resolves with the actual data (payload) converted from JSON (a formatted string) to a JavaScript value or object. This result is stored in the variable named data.</li>
-              <li>The function returns the value stored in the data variable.</li>
-              <li></li>
-            </ol>
+            <ul>
+              <li>1.-We mark the function with the async keyword, because we want to use await inside the function.</li>
+              <li>2.-We declare a variable named response. It stores the Response object that is returned by fetch.</li>
+              <li>3.-Once this promise resolves (the network request is finished), we call the .json method on the response variable. This function returns another Promise.</li>
+              <li>4.-This second promise resolves with the actual data (payload) converted from JSON (a formatted string) to a JavaScript value or object. This result is stored in the variable named data.</li>
+              <li>5.-The function returns the value stored in the data variable.</li>
+            </ul>
             <p>The Response object features other useful methods (all returning promises), among which are the following:            </p>
             <ul>
             <li><code>response.json()</code> returns a Promise that resolves to the downloaded data JSON-parsed as a JavaScript value or object</li>
