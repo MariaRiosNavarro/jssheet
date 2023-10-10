@@ -27,6 +27,13 @@ html {
 
 body {
   margin: 0 auto;
+  min-width: 360px;
+  width: 100%;
+}
+
+main {
+  min-width: 360px;
+  width: 100%;
 }
 
 ul {
@@ -65,6 +72,7 @@ header {
   background-color: rgb(226, 221, 208);
   box-shadow: -1px 1px 10px rgb(182, 182, 175);
   width: 100vw;
+  min-width: 375px;
 }
 
 nav {
@@ -266,6 +274,33 @@ h4 {
 .intro-big {
   margin: 1rem;
 }
+
+/* Scroll up */
+/* CSS für den Zurückscroll-Button */
+.scroll-to-top-checkbox {
+  display: none; /* Das Input-Element ausblenden */
+}
+
+.scroll-to-top-label {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #f0720b;
+  opacity: 0.3;
+  font-weight: 3rem;
+  color: #fff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.scroll-to-top-label:hover {
+  opacity: 1;
+}
+
 /* mobile */
 
 @media screen and (max-width: 767px) {
@@ -298,10 +333,15 @@ h4 {
     align-items: center;
     justify-content: center;
     text-align: center;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 1s ease, transform 1s ease;
   }
 
   .display-block {
     display: block;
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
