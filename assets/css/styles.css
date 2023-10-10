@@ -37,6 +37,7 @@ nav link a {
   cursor: pointer;
   text-decoration: none;
   font-family: Roboto-Bold, Arial, Helvetica, sans-serif;
+  transition: color 0.3s ease;
 }
 
 a:hover,
@@ -64,6 +65,71 @@ header {
   background-color: rgb(226, 221, 208);
   box-shadow: -1px 1px 10px rgb(182, 182, 175);
   width: 100vw;
+}
+
+nav {
+  position: relative;
+}
+
+/* hamburger nav - logic */
+
+.hamburger {
+  position: absolute;
+  top: -3.2rem;
+  right: 0.5rem;
+  display: none;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.hamburger span {
+  display: block;
+  margin: 0.3rem;
+  width: 3rem;
+  height: 0.5rem;
+  border-radius: 15px;
+  background-color: #d65709;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
+    opacity 0.55s ease;
+}
+
+.hamburger .upbread {
+  transform-origin: 0% 0%;
+}
+
+.hamburger .underbread {
+  transform-origin: 0% 100%;
+}
+
+.hamburger input:checked ~ .hamburger {
+  left: 2rem;
+}
+
+.hamburger input:checked ~ .upbread {
+  opacity: 1;
+  transform: rotate(45deg) translate(-3.5px, -2px);
+}
+
+.hamburger input:checked ~ .ham {
+  opacity: 0;
+}
+
+.hamburger input:checked ~ .underbread {
+  transform: rotate(-45deg) translate(-2px, 0px);
+}
+
+.toggle .hamburger input {
+  display: block;
+  width: 5rem;
+  height: 3rem;
+  position: absolute;
+  right: -0.7rem;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
 }
 
 .nav-list {
@@ -203,6 +269,14 @@ h4 {
 /* mobile */
 
 @media screen and (max-width: 767px) {
+  h1 {
+    font-size: 1.5rem;
+    text-align: left;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
   main {
     width: 100vw;
     margin: 0;
@@ -212,8 +286,22 @@ h4 {
     width: 100vw;
   }
 
-  nav {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-list {
     display: none;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .display-block {
+    display: block;
   }
 }
 

@@ -10,52 +10,62 @@
   <body>
     <header>
       <h1>Javascript Cheat Sheet</h1>
-      <nav>
+      <nav role="navigation">
+        <div class="toggle">
+            <div class="hamburger">
+          <!--  A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it. -->
+            <input type="checkbox" data-js="hamburger-input"/>
+            <span class="upbread"></span>
+            <span class="ham"></span>
+            <span class="underbread"></span>
+          </div>
         <!-- ! ----------------------------NAVIGATION ----------------------------------------------------->
-        <ul class="nav-list">
-          <li class="nav-list-item">
-            <a class="nav-link" href="#basic">Basic</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#operators">Operators and Expresion</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#control">Control Flow</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#functions">Functions</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#objects">Objects & Arrays</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#scope">Scope & Clousure</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#event">Event Handling</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#async">Asynchronous programming</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#dom">DOM Manipulation</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#es6">ES6+ features</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#modules">Modules and Import/export</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#apis">Web APIs and fetch</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#testing">Texting and debugging</a>
-          </li>
-          <li class="nav-list-item">
-            <a class="nav-link" href="#practices">Best Practices</a>
-          </li>
-        </ul>
+            <ul class="nav-list" data-js="nav-list">
+              <li class="nav-list-item">
+                <a class="nav-link" href="#basic">Basic</a>
+              </li>
+              <li class="nav-list-item">
+                <a class="nav-link" href="#operators">Operators and Expresion</a>
+              </li>
+              <li class="nav-list-item">
+                <a class="nav-link" href="#control">Control Flow</a>
+              </li>
+              <li class="nav-list-item">
+                <a class="nav-link" href="#functions">Functions</a>
+              </li>
+              <li class="nav-list-item">
+                <a class="nav-link" href="#objects">Objects & Arrays</a>
+              </li>
+              <li class="nav-list-item">
+                <a class="nav-link" href="#scope">Scope & Clousure</a>
+              </li>
+              <li class="nav-list-item">
+                <a class="nav-link" href="#event">Event Handling</a>
+              </li>
+              <li class="nav-list-item">
+                <a class="nav-link" href="#async">Asynchronous programming</a>
+              </li>
+              <li class="nav-list-item">
+                <a class="nav-link" href="#dom">DOM Manipulation</a>
+              </li>
+              <li class="nav-list-item">
+                <a class="nav-link" href="#es6">ES6+ features</a>
+              </li>
+              <li class="nav-list-item">
+                <a class="nav-link" href="#modules">Modules and Import/export</a>
+              </li>
+              <li class="nav-list-item">
+                <a class="nav-link" href="#apis">Web APIs and fetch</a>
+              </li>
+              <li class="nav-list-item">
+                <a class="nav-link" href="#testing">Texting and debugging</a>
+              </li>
+              <li class="nav-list-item">
+                <a class="nav-link" href="#practices">Best Practices</a>
+              </li>
+            </ul>
+        </div>
       </nav>
     </header>
     <!-- ! -----------------------------------------------MAIN----------------------------------------------------->
