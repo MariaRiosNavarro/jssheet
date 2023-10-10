@@ -415,12 +415,54 @@
               </div>
             </li>
             <li><code>console.log(Math)</code> you see all the Methods</li>
-
           </ul>
-
-        
         </article>
-        
+        <article class="subarticle">
+          <h3>Date Methods</h3>
+            <div class="small-subarticle"></div>
+            <p><code>const todayDate = new Date();</code> get the Current Time Date back. An Object </p>
+            <p><code>const dateWithParameters = new Date(1977, 3, 10, 16, 12, 57)</code> with the Parameters, gives us a specific date. Remember:the value of the months is given by the index starting with 0, i.e. April is 3 </p>
+            <p>When we calculate we get miliseconds: todayDate - dateWithParameters = ..... miliseconds</p>
+            <div class="xsm-container">
+              <h4>Transform Methods</h4>
+              <p><code>todayDate.toString()</code> to transform to string to be able to use string methods (toLowerCase(), splice()...)</p>
+              <p><code>todayDate.toUTCString()</code>clock in UTC (as in europe day, month, year)</p>
+              <p><code>todayDate.toLocaleDateString()</code>returns a date to a localised representation (look at your computer)</p>
+              <p><code>todayDate.toLocaleString()</code>returns a date to a localised representation</p>
+            </div>
+            <div class="xsm-container">
+              <h4>get Methods</h4>
+              <p><code>todayDate.getTime()</code> Miliseconds since 1.1.1970 0:00</p>
+              <p><code>todayDate.getFullYear()</code>gives us the number of the year</p>
+              <p><code>todayDate.getMonth()</code>gives us the INDEX of the month (January:0)</p>
+              <p><code>todayDate.getDate()</code>gives us the number of the day</p>
+              <p><code>todayDate.getDay()</code>gives us the INDEX of the day (Sunday:0)</p>
+              <p><code>todayDate.getHours()</code>gives us the number of the hour</p>
+              <p><code>todayDate.getSecunde()</code>gives us the number of the seconds</p>
+              <p><code>todayDate.getMilliseconds()</code>gives us the number of the milisecondsr</p>
+            </div>
+            <div class="xsm-container">
+              <h4>set Methods - change Date</h4>
+              <p><code>todayDate.setTime(number)</code></p>
+              <p><code>todayDate.setFullYear(number)</code></p>
+              <p><code>todayDate.setMonth(index)</code></p>
+              <p><code>todayDate.setDate(number)</code></p>
+              <p><code>todayDate.setDay(index)</code></p>
+              <p><code>todayDate.setHours(number)</code></p>
+              <p><code>todayDate.setSecunde(number)</code></p>
+              <p><code>todayDate.setMilliseconds(number)</code></p>
+            </div>
+            <div class="xsm-container">
+              <h4>Get the name of the day of the week</h4>
+              <code>
+                <p>const date = new Date();</p>
+                <p>let weekDayLong = date.toLocaleString("default", { weekday: "long" });// Tuesday</p>
+                <p>let weekDayOneLetter = dayObj.toLocaleString("default", { weekday: "short" });// Tu</p>
+                <p>let weekDayOneLetter = dayObj.toLocaleString("default", { weekday: "narrow" });// T</p>
+              </code>
+            </div>
+            </div>
+        </article>    
       </section>
       <!-- * ---------------------------------control ------------------------------------------------------>
       <section id="control">
