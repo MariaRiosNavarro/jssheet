@@ -2071,19 +2071,27 @@
               <p>async function fetchSomething() {</p>
               <p> try {</p>
               <p> const response = await fetch("/bad/url/oops");</p>
-              <p>if (response.ok) {
-              </p>
+              <p> if(response.ok) { </p>
               <p> const data = await response.json();// Success (Good Response) </p>
               <p>return data;</p>
-              <p>    } else {
-              </p>
+              <p>} else {</p>
               <p> console.error("Bad Response"); // Failure (Bad Response)</p>
               <p>}</p>
-              <p>  } catch (error) {</p>
-              <p>console.error("An Error occurred"); // Failure (Network error, etc)
-              </p>
+              <p>} catch (error) {</p>
+              <p>console.error("An Error occurred"); // Failure (Network error, etc)</p>
               <p>}</p>
               <p>}</p>
+            </code>
+            <p>OLD version and problematic for debugging & not recomended</p>
+            <code>
+              <p>fetch(url)</p>
+              <p>.then((response) => response.json())</p>
+              <p>.then((data) => {</p>
+              <p>console.log(data);</p>
+              <p>})</p>
+              <p>.catch((error) => {</p>
+              <p>console.error("Error Message", error);</p>
+              <p>});</p>
             </code>
           </div>
           <div class="small-subarticle">

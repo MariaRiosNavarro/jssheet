@@ -12,19 +12,3 @@ scroll.addEventListener("change", () => {
     scroll.checked = false;
   }
 });
-
-const fetchAsync = async () => {
-  try {
-    const response = await fetch(url);
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    } else {
-      const data = await response.json();
-      console.log(data);
-    }
-  } catch (error) {
-    console.error("Error Message", error);
-  } finally {
-    console.log("add cleanup code here (if needed it)");
-  }
-};
