@@ -47,7 +47,7 @@
                 <a class="nav-link" href="#async">Asynchronous programming</a>
               </li>
               <li class="nav-list-item">
-                <a class="nav-link" href="#dom">DOM Manipulation</a>
+                <a class="nav-link" href="#dom">DOM & BOM, Inputs Forms, Html  Collection & Node List </a>
               </li>
               <li class="nav-list-item">
                 <a class="nav-link" href="#es6">ES6+ features</a>
@@ -1430,9 +1430,9 @@
               <p>  });</p>
               <p>}
               </p>
-              <p>async functions always return a Promise. If the function returns a value, the Promise will be resolved with that value. Even if you're not using the return keyword the function will return a Promise that resolves to undefined when it reaches the end of it's scope. If the function throws an error, the Promise will be rejected with that error.</p>
               <p></p>
             </code>
+            <p>Async functions always return a Promise. If the function returns a value, the Promise will be resolved with that value. Even if you're not using the return keyword the function will return a Promise that resolves to undefined when it reaches the end of it's scope. If the function throws an error, the Promise will be rejected with that error.</p>
           </div>
 
         </article>
@@ -1905,6 +1905,55 @@
               <div><code>beforebeginn</code>, <code>afterbeginn</code> ,<code>beforeend</code>, <code>afterend</code></div>
             </li>
           </ul> 
+        </article>
+        <article class="subarticle">
+          <h3>BOM & Window Object</h3>
+          <p>the window object represents the opened window in the browser. JS window accesses the browser window with, among other things, width / height of the viewport, events and timers. Important Informations of window:</p>
+          <code>
+            <p>console.log(window)// Everything</p>
+            <p>console.log("innerHeight", window.innerHeight)// Value in px, Browser line and devtools are NOT included </p>
+            <p>console.log("innerWidth", window.innerWidth)//Value in px, Browser line and devtools are NOT included</p>
+            <p>console.log("outerHeight", window.outerHeight)//Value in px, Browser line and devtools are  included</p>
+            <p>console.log("outerWidth", window.outerWidth)//Value in px, Browser line and devtools are  included</p>
+            <p>console.log(window.location)//the URL - address of the current page</p>
+            <p>console.log(window.location.host)//this is how we get the domain back</p>
+            <p>console.log(window.location.pathname)//this is how we get the path back</p>
+          </code>
+          <div class="small-subarticle">
+            <h4>Screen Object</h4>
+            <p>The Screen Object is located in the Window Object. It gives us information about the screen/monitor on which the browser window is open.</p>
+            <code>
+              <p>console.log(window.screen);//</p>
+              <p>console.log("screen height", window.screen.height)//get the height back in px-> total height with taskbar</p>
+              <p>console.log("screenWidth", window.screen.width)//get the width back in px-> total width with taskbar</p>
+              <p>console.log("availHeight", window.screen.availHeight)//we get back the height of the screen WITHOUT the taskbar, i.e. only the usable area</p>
+              <p>console.log("availWidth", window.screen.availWidth)//we get back the width of the screen -> only the usable area</p>
+            </code>
+          </div>
+          <div class="small-subarticle">
+            <h4>Window Methods</h4>
+            <p><code>window.alert("Message")</code>Popup containing a text</p>
+            <p><code>let promtAnswer=window.promt()</code>Opens a popup where the user can enter something, to access the text input we need to store it in a variable</p>
+            <p><code>window.open("url", "_self"/"_blank")</code>With window.open(url) we can redirect to another page. Attention: we can no longer click on the back arrow. By default, the page is always opened in a new tab. History will be deleted</p>
+            <p><code>window.onload = console.log("The page was loaded")</code>when the page has been completely loaded, then something should happen</p>
+            <p><code>window.scrollTo(X,Y)</code>koennen wir zu einem bestimmten Punkt auf der Seite scrollen (See if the html or elements are long enough to the point you choose -check your css).</p>
+            <p><code>window.location.reload()</code>with this we can reload the current page</p>
+            <p><code>window.loacation.replace("url")</code>we can redirect to another URL. History will be no deleted like in window.open()</p>
+            <p><code>window.history</code>For back buttons. For example:</p>
+            <code>
+              <p>backButton.addEventListener("click", () => {</p>
+              <p>history.back();</p>
+              <p>});</p>
+              <p></p>
+            </code>
+          </div>
+          <div class="small-subarticle">
+            <h4>TIME Methods in the Window Object</h4>
+            <p>Window Object allows the execution of code at specific time intervals.the two main methods we use in JS are:</p>
+            <p><code>setTimeout(function, milliseconds)</code>executes a function after waiting a specified number of milliseconds</p>
+            <p><code>let interval = setInterval(function, milliseconds)</code>same as setTimeout(), but repeats the execution of the function continuously.</p>
+            <p><code>clearInterval(interval)</code>deletes an interval again. We have to store the setInterval in a variable so that we can delete it again later.</p>
+          </div>
         </article>
       </section>
       <!-- * ---------------------------------es6 ------------------------------------------------------>
