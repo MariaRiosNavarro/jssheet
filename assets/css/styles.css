@@ -54,6 +54,14 @@ a:hover,
   border-radius: 8px;
 }
 
+a {
+  color: #f98136;
+}
+
+a:visited {
+  color: #d65b09;
+}
+
 code {
   font-family: Roboto, Arial, Helvetica, sans-serif;
   background-color: rgb(240, 129, 11);
