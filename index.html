@@ -1959,6 +1959,7 @@
       <!-- * ---------------------------------es6 ------------------------------------------------------>
       <section id="es6">
         <h2 class="heading-section">ES6+ features</h2>
+        <p>JavaScript isn't done – it is still being developed. The <a href="https://tc39.es/" target="_blank">tc39</a> group is meeting up on a bi-monthly schedule to discuss proposals regarding <a href="https://developer.mozilla.org/en-US/docs/Glossary/ECMAScript" target="_blank">ECMAScript</a> specifications, which JavaScript is based on. <a href="https://github.com/tc39/proposals" target="_blank">Here</a> you can find a list of active proposals that are still in the process of being reviewed. You can take a look at some of the finished proposals over <a href="https://github.com/tc39/proposals/blob/main/finished-proposals.md" target="_blank">here</a>.</p>
         <article class="subarticle">
           <h3>Template literals</h3>
           <div class="small-subarticle">
@@ -1978,10 +1979,29 @@
         </article>
         <article class="subarticle">
           <h3>Destructuring</h3>
+          <p>The destructuring assignment syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables. Destructuring doesn't mutate the original array or object.</p>
           <div class="small-subarticle">
-            <h4></h4>
+            <h4>Destructuring Arrays</h4>
+            <code>
+              <p>const greekLetters = ["alpha", "beta", "gamma", "delta"];</p>
+            </code>
+            <p>If we want to declare the values of greekLetters as distinct variables, accessing them might turn out to be quite tedious.
+              Without Destructuring</p>
+              <code>
+                <p>const firstLetter = greekLetters[0];</p>
+                <p> const secondLetter = greekLetters[1];</p>
+                <p>const thirdLetter = greekLetters[2];</p>
+              </code>
+            <p>With Destructuring</p>
+            <code>
+              <p>const [firstLetter, secondLetter, thirdLetter, fourthLetter] = greekLetters;</p>
+            </code>
           </div>
         </article>
+        <div class="small-subarticle">
+          <h4>Destructuring Objects</h4>
+        </div>
+      </article>
         <article class="subarticle">
           <h3>Spread operator</h3>
           <div class="small-subarticle">
@@ -2075,7 +2095,6 @@
             <p>Shared constants are constants that are used in multiple places in your code.</p>
             <p>Functions and constants can be grouped into files that are named after the functionality they provide. For example math.js could contain functions like add, subtract, multiply and divide.The file should have a named export for each function.</p>
             <p>It is recomended to create a utils folder in your project and put all utility functions in there.</p>
-            <code></code>
           </div>
           <div class="small-subarticle">
             <h4>Vanilla JavaScript Components</h4>
@@ -2085,11 +2104,8 @@
             <p>Each component has a named export for the component function (e.g. export function ButtonGroup())</p>
             <p>Components can take arguments that are called props or properties a convention (e.g. export function ButtonGroup(props))</p>
             <p>Components should not depend on the outside world and create their own DOM elements</p>
-            <p>Components should return a single DOM element</p>
-            <code></code>
+            <p>Components should return a single DOM element</p> 
           </div>
-          <div class="small-subarticle"></div>
-
         </article>
       </section>
       <!-- * ---------------------------------apis ------------------------------------------------------>
