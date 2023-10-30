@@ -1996,17 +1996,193 @@
             <code>
               <p>const [firstLetter, secondLetter, thirdLetter, fourthLetter] = greekLetters;</p>
             </code>
+            <p>If you don't need or want the second and the fourth value in our initial array greekLetters there's an option to skip values during the process of destructuring.</p>
+            <code>
+              <p>const [firstLetter, , thirdLetter] = greekLetters;</p>
+              <p>// firstLetter → 'alpha'</p>
+              <p>// thirdLetter → 'gamma'</p>
+            </code>
+            <p>thirdLetter now contains the third value of greekLetters. The extra comma skips the value at the respective position in greekLetters. The fourth value is ignored because the destructuring assignment ended.</p>
+            <p>Skipping values with extra commas can quickly become unreadable. Imagine wanting to skip 5 values: const [a, , , , , , g] = x;. General advice is to be very mindful with this feature.</p>
+          </div>
+          <div class="small-subarticle">
+            <h4>Destructuring Objects</h4>
+            <code>
+              <p>const coachObject = {</p>
+              <p>name: "Sam",</p>
+              <p>mood: "great",</p>
+              <p>skills: "amazing",</p>
+              <p>};</p>
+            </code>
+            <p>You can use destructuring assignment like this:</p>
+            <code>
+              <p>const { name, mood, skills, score } = coachObject;</p>
+            </code>
+            <p>In contrast to array destructuring the variable names are not arbitrary and do not depend on the order. Here the names of the variables have to match the keys of the object properties. You can rename the variable while destructuring</p>
+            <code>
+              <p>const { name: firstName } = coachObject;</p>
+            </code>
+            <p>You can also set a default value of a property in case it does not exist:</p>
+            <code>
+              <p>const { isAdmin = true } = coachObject;</p>
+              <p>// isAdmin → true</p>
+            </code>
           </div>
         </article>
-        <div class="small-subarticle">
-          <h4>Destructuring Objects</h4>
-        </div>
+
       </article>
         <article class="subarticle">
           <h3>Spread operator</h3>
+          <p>The rest and the spread syntax look deceptively similar. Both are identified by three dots: .... They do two different things though, depending in which context ... is used.</p>
+
+          <div class="small-subarticle">
+            <h4>Rest Syntax  (...)</h4>
+            <p>The rest syntax allows you to say: "Put the rest into this variable" when using destructuring assignment or declaring function parameters.
+              You can use it with arrays:</p>
+              <code>
+                <p>const greekLetters = ["alpha", "beta", "gamma", "delta"];</p>
+                <p>const [firstLetter, ...allTheOtherLetters] = greekLetters;</p>
+                <p>// firstLetter → "alpha"</p>
+                <p>// allTheOtherLetters → ["beta", "gamma", "delta"]</p>
+              </code>
+            <p>Or with objects:</p>
+            <code>
+              <p>const coachObject = {</p>
+              <p>name: "Sam",</p>
+              <p>mood: "great",</p>
+              <p>skills: "amazing",</p>
+              <p>};</p>
+              <p><br></p>
+              <p>const { name, score, ...theRestOfTheCoachObject } = coachObject;</p>
+            </code>
+            <p>And even with function parameters:</p>
+            <code>
+              <p>function logLetters(firstLetter, ...moreLetters) {</p>
+              <p>console.log("the first letter is", firstLetter);</p>
+              <p>console.log("even more letters", moreLetters);</p>
+              <p>}</p>
+              <br>
+              <p>logLetters("alpha", "beta", "gamma", "delta");</p>
+              <p>// the first letter is alpha</p>
+              <p>// even more letters (3) ['beta', 'gamma', 'delta']</p>
+            </code>
+          </div>
+          <div class="small-subarticle">
+            <h4>Spread Syntax (...)</h4>
+            <p>The spread syntax allows you to say: "spread everything inside this variable into here" when declaring array or object literals or calling functions.</p>
+            <p>It works like this with array literal declarations:</p>
+            <code>
+              <p>const greekLetters = ["alpha", "beta", "gamma", "delta"];</p>
+              <p>const moreGreekLetters = [...greekLetters, "epsilon", "zeta"];</p>
+              <p>// moreGreekLetters → ['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta']</p>
+            </code>
+            <p>You can spread two (or more) arrays into another array ...</p>
+            <code>
+              <p>const redColors = ["crimson", "pink", "purple"];</p>
+              <p>const blueColors = ["navy", "teal", "sky"];</p>
+              <p>const mixedColors = [...redColors, ...blueColors];</p>
+              <p>// mixedColors → ['crimson', 'pink', 'purple', 'navy', 'teal', 'sky']</p>
+            </code>
+            <p>... and it matters where respectively you spread one array into another:</p>
+            <code>
+              <p>const cats = ["cat", "cat", "cat"];</p>
+              <p>const dogs = ["dog", "dog", "dog"];</p>
+              <p>const catsAndDogs = [...cats, ...dogs];// catsAndDogs → ['cat', 'cat', 'cat', 'dog', 'dog', 'dog']</p>
+              <p>const dogsAndCats = [...dogs, ...cats];// dogsAndCats → ['dog', 'dog', 'dog', 'cat', 'cat', 'cat']</p>
+              <p>const catsBetweenBirds = ["bird", ...cats, "bird"];// catsBetweenBirds → ['bird', 'cat', 'cat', 'cat', 'bird']</p>
+            </code>
+            <div class="xsm-container">
+              <h4>Spread syntax with object declarations</h4>
+              <code>
+                <p>const circle = { radius: 5, shape: "circle" };</p>
+                <p>const greenCircle = { ...circle, color: "green" };// greenCircle → { radius: 5, shape: 'circle', color: 'green' }</p>
+              </code>
+              <p>Notice that the order of spread operations matters because you can override properties:</p>
+              <code>
+                <p>const circle = { radius: 5, shape: "circle" };</p>
+                <p>const largeCircle = { ...circle, radius: 20 };// largeCircle → { radius: 20, shape: 'circle' }</p>
+                <p>const notALargeCircle = { radius: 20, ...circle };// notALargeCircle → { radius: 5, shape: 'circle' }</p>
+              </code>
+            </div>
+            <div class="xsm-container">
+              <h4>Copy</h4>
+              <p>The spread syntax is very helpful for creating a shallow copy of arrays and objects:</p>
+              <code>
+                <p>const book = { title: "Ulysses", author: "James Joyce" };// book → { title: 'Ulysses', author: 'James Joyce' }</p>
+                <p>const shallowCopyOfBook = { ...book };// shallowCopyOfBook → { title: 'Ulysses', author: 'James Joyce', year: '1920' }</p>
+                <p>shallowCopyOfBook.year = "1920";</p>
+                <br>
+                <p>const greekLetters = ["alpha", "beta", "gamma", "delta", "epsilon", "zeta"];</p>
+                <p>const sortedGreekLetters = [...greekLetters].sort((a, b) => a.localeCompare(b));</p>
+                <p>// this is an alternative to greekLetters.slice() which also creates a shallow copy</p>
+                <p>// greekLetters → ['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'zeta']</p>
+                <p>// sortedGreekLetters → ['alpha', 'beta', 'delta', 'epsilon', 'gamma', 'zeta']</p>
+              </code> 
+            </div>
+            <div class="xsm-container">
+              <h4>spread syntax when calling functions</h4>
+              <code>
+                <p>const numbers = [4534, 3411, 2455, 4952];</p>
+                <p>const smallestNumber = Math.min(...numbers);</p>
+              </code>
+            </div>
+          </div>
+        </article>
+        <article class="subarticle">
+          <h3>Optional Chaining</h3>
+          <p>The optional chaining operator <code>?.</code> is like the chaining operator <code>.</code>, except that instead of throwing an error if a reference is nullish (null or undefined), the expression 'short-circuits' with a value of <code>undefined</code> . This is useful when you're not sure if a property, method or index exists or if something is callable.</p>
+          <code>
+            <p>function feedCats(cats) {</p>
+            <p>return cats.forEach((cat) => console.log(cat, "says meow"));</p>
+            <p>}</p>
+            <p>feedCats(["Garfield", "Tom", "Grumpy Cat"]);// logs:Garfield says meow, Tom says meow, Grumpy Cat says meow</p>
+            <p>feedCats();//// Uncaught TypeError: Cannot read properties of undefined (reading 'forEach')</p>
+          </code>
+          <p>Whith Chaining</p>
+          <code>
+            <p>function feedCats(cats) {</p>
+            <p>return cats?.forEach((cat) => console.log(cat, "says meow"));</p>
+            <p>}</p>
+            <p>feedCats();// logs nothing, but also does not throw</p>
+          </code>
+          <p>The <code>?.</code> short-circuits the expression and evaluates the return statement to undefined. This way the error is avoided without the need to explicitly use if statements or ternaries to check the values. Optional chaining is useful when targeting a property in an object with a deeply nested structure.</p>
+
           <div class="small-subarticle">
             <h4></h4>
           </div>
+        </article>
+        <article class="subarticle">
+          <h3>Nullish Coalescing</h3>
+          <p>The nullish coalescing operator <code>??</code> is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.</p>
+          <code>
+            <p>const chocolate = true;</p>
+            <p>function chocolateCheck() {</p>
+            <p>return chocolate ?? "No chocolate :(";</p>
+            <p>}</p>
+            <p>const result = chocolateCheck();</p>
+          </code>
+          <p>
+            In this example, our function <code>chocolateCheck</code> will return the value of <code>chocolate</code> (in this instance: <code>true</code> ), because the value of chocolate is neither null or undefined.
+          </p>
+          <code>
+            <p>const chocolate = undefined;</p>
+            <p>function chocolateCheck() {</p>
+            <p>return chocolate ?? "No chocolate :(";</p>
+            <p>}</p>
+            <p>const result = chocolateCheck();</p>
+          </code>
+          <p>In this example, our function would return <code>No chocolate :(</code>, seeing as how the value of chocolate is undefined. The same would happen if we declared the variable chocolate with the value <code>null</code>.</p>
+          <p>Written as an if/else statement, the code would look like this:</p>
+          <code>
+            <p>const chocolate = true;</p>
+            <p>function chocolateCheck() {</p>
+            <p>if (chocolate === null || chocolate === undefined) {</p>
+            <p>return "No chocolate :(";</p>
+            <p>  }</p>
+            <p>return true;</p>
+            <p>}</p>
+            <p>const result = chocolateCheck();</p>
+          </code>
         </article>
       </section>
       <!-- * ---------------------------------modules ------------------------------------------------------>
