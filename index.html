@@ -2013,60 +2013,83 @@
                 <p>const age = 26;</p>
                 <p>export { name, age};</p>
               </code>
+              <div class="xsm-container">
+                <h4>default Exports</h4>
+                <p>Default exports are created by using the keyword export default. You can only have one default export per module.
+                   Before a function declaration the syntax is similar to named exports.</p>
+                   <code>
+                    <p>export default function sayHello() {</p>
+                    <p>console.log("Hello");</p>
+                    <p> }</p>
+                   </code>
+                <p>For directly exporting variables as default you only declare the value of the thing you're exporting.</p>
+                <code>
+                  <p>export default "Alex";</p>
+                </code>
+                <p>You can mix named and default exports.</p>
+                <code>
+                  <p>export const name = "Alex";</p>
+                  <p>export default function sayHello() {</p>
+                  <p>console.log("Hello");</p>
+                  <p>}</p>
+                </code>
+              </div>
           </div>
+
           <div class="small-subarticle">
-            <h4>default Exports</h4>
-            <p>Default exports are created by using the keyword export default. You can only have one default export per module.
-               Before a function declaration the syntax is similar to named exports.</p>
-               <code>
-                <p>export default function sayHello() {</p>
-                <p>console.log("Hello");</p>
-                <p> }</p>
-               </code>
-            <p>For directly exporting variables as default you only declare the value of the thing you're exporting.</p>
-            <code>
-              <p>export default "Alex";</p>
-            </code>
-            <p>You can mix named and default exports.</p>
-            <code>
-              <p>export const name = "Alex";</p>
-              <p>export default function sayHello() {</p>
-              <p>console.log("Hello");</p>
-              <p>}</p>
-            </code>
+            <h4>Importing using import Statements</h4>
+            <p>Code from other modules can be imported using the import statement. Import statements should always be placed at the top of the file. Everything that can be exported from a module can also be imported from another module.</p>
+            <div class="xsm-container">
+              <h4>Importing Named Exports</h4>
+              <p>If another module exports a named export you can import it as such.</p>
+              <code>
+                <p>import { name, age } from "./my-module.js";</p>
+              </code>
+            </div>
+            <div class="xsm-container">
+              <h4>Importing default Exports</h4>
+              <p>If another module exports a default export you have to give it a name when importing it.</p>
+              <code>
+                <p>import myModule from "./my-module.js";</p>
+              </code>
+              <p> Notice that the name you give it does not nessesarily have to match the name of the module or the original name of the thing that was exported. For example myModule could have the value of the sayHello function which is not clear from the name. Since you could import the same module in multiple files you can also give it a different name every time.</p>
+            </div>
+            <div class="xsm-container">
+              <h4>Mixing Named and default Imports</h4>
+              <code><p>import myModule, { name, age } from "./my-module.js";</p></code>
+            </div>
+            <div class="xsm-container">
+              <h4>Renaming Named Imports</h4>
+              <p>You can rename named imports explicitly by using the as syntax.</p>
+              <code><p>import { name as firstName, age as yearsSinceBorn } from "./my-module.js";</p></code>
+              <p>The variables firstName and yearsSinceBorn are now available in the current module. This can be useful if the name of an import conflicts with a local variable name.</p>
+            </div>
           </div>
         </article>
         <article class="subarticle">
-          <h3>Importing using import Statements</h3>
-          <p>Code from other modules can be imported using the import statement. Import statements should always be placed at the top of the file. Everything that can be exported from a module can also be imported from another module.</p>
+          <h3>Structuring JavaScript Code</h3>
           <div class="small-subarticle">
-            <h4>Importing Named Exports</h4>
-            <p>If another module exports a named export you can import it as such.</p>
-            <code>
-              <p>import { name, age } from "./my-module.js";</p>
-            </code>
+            <h4>Utility Functions and Constants
+            </h4>
+            <p>Utility functions are functions that are used in multiple places in your code. They are usually smaller functions that are used to perform a specific task. They should be be pure and not have any side effects.</p>
+            <p>Shared constants are constants that are used in multiple places in your code.</p>
+            <p>Functions and constants can be grouped into files that are named after the functionality they provide. For example math.js could contain functions like add, subtract, multiply and divide.The file should have a named export for each function.</p>
+            <p>It is recomended to create a utils folder in your project and put all utility functions in there.</p>
+            <code></code>
           </div>
           <div class="small-subarticle">
-            <h4>Importing default Exports</h4>
-            <p>If another module exports a default export you have to give it a name when importing it.</p>
-            <code>
-              <p>import myModule from "./my-module.js";</p>
-            </code>
-            <p> Notice that the name you give it does not nessesarily have to match the name of the module or the original name of the thing that was exported. For example myModule could have the value of the sayHello function which is not clear from the name. Since you could import the same module in multiple files you can also give it a different name every time.</p>
+            <h4>Vanilla JavaScript Components</h4>
+            <p>Recomendations:</p>
+            <p>Create a folder for each component</p>
+            <p>Make your component file and function names uppercase (PascalCase)</p>
+            <p>Each component has a named export for the component function (e.g. export function ButtonGroup())</p>
+            <p>Components can take arguments that are called props or properties a convention (e.g. export function ButtonGroup(props))</p>
+            <p>Components should not depend on the outside world and create their own DOM elements</p>
+            <p>Components should return a single DOM element</p>
+            <code></code>
           </div>
-          <div class="small-subarticle">
-            <h4>Mixing Named and default Imports</h4>
-            <code><p>import myModule, { name, age } from "./my-module.js";</p></code>
-          </div>
-          <div class="small-subarticle">
-            <h4>Renaming Named Imports</h4>
-            <p>You can rename named imports explicitly by using the as syntax.</p>
-            <code><p>import { name as firstName, age as yearsSinceBorn } from "./my-module.js";</p></code>
-            <p>The variables firstName and yearsSinceBorn are now available in the current module. This can be useful if the name of an import conflicts with a local variable name.</p>
-          </div>
-        </article>
-        <article class="subarticle">
-          <h3>Modules</h3>
+          <div class="small-subarticle"></div>
+
         </article>
       </section>
       <!-- * ---------------------------------apis ------------------------------------------------------>
