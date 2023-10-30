@@ -177,7 +177,7 @@ main {
 }
 
 section {
-  width: 30%;
+  width: 40%;
   /* min-height: 9rem; */
   box-shadow: -1px 1px 10px rgb(182, 182, 175);
   border-radius: 8px;
@@ -377,7 +377,7 @@ h4 {
   }
 
   section {
-    width: 45%;
+    width: 40%;
     padding: 0 1rem 1rem 1rem;
   }
 
