@@ -1064,7 +1064,7 @@
                 </code>
               </div>
               <div class="mini">
-              <p>use <code>reduce</code>to reverse an array, simply use array.reverse(). This can be combined with sort() as well:</p>
+              <p>use <code>reverse</code>to reverse an array, simply use array.reverse(). This can be combined with sort() as well:</p>
                 <code>
                   <p>const numbers = [4, 42, 23, 1];</p>
                   <p>const reversedNumbers = numbers.reverse();</p>
@@ -1107,7 +1107,7 @@
             <div class="xsm-container">
               <h4><code>reduce</code></h4>
               <p> is an array method to reduce a list of values into a single value.</p>
-              <p>It's main use case is to calculate the sum of an array of numbers.</p>
+              <p>It's main use case is to calculate the <strong class="bold">sum of an array of numbers</strong>.</p>
               <p>starting from the beginning, it executes the callback function on each element of the array, the return value of each calculation is passed to the next calculation (i.e. it becomes the new starting value for the next iteration through the array)the final result is a single value.</p>
               <code>
                 <p>const numbers = [4, 42, 23, 1];</p>
@@ -1146,6 +1146,49 @@
             <div><code>const oddNumbers = [3, 5, 7]</code></div>
             <div><code>let evenNumbers = oddNumbers.map((element)=> element+1); console.log(evenNumbers) </code><p>//[4, 6, 8]//</p>Return a Value and a new Array</div>
             <div>Other Important: .include(); .filter(); .every(); .find(); .reduce();</div>
+          </div>
+          <div class="small-subarticle">
+            <h4>3 ways to remove duplicates</h4>
+            <code>
+            <p>const chars = ['A', 'B', 'A', 'C', 'B'];</p>
+            </code>
+            <div class="xsm-container">
+              <h4>Use Set</h4>
+              <code>
+                <p>const uniqueChars = [...new Set(chars)];</p>
+                <p>console.log(uniqueChars);// Output: ['A', 'B', 'C']</p>
+              </code>
+            </div>
+            <div class="xsm-container">
+              <h4>Using the indexOf() and filter() methods</h4>
+              <p>The indexOf() method returns the index of the first occurrence of the element in the array. The duplicate element is the element whose index is different from its indexOf() value. To eliminate duplicates, the filter() method is used to include only the elements whose indexes match their indexOf values, since we know that the filer method returns a new array based on the operations performed on it:</p>
+              <code>
+                <p>const uniqueChars = chars.filter((element, index) => {</p>
+                <p>  return chars.indexOf(element) === index;</p>
+                <p>});</p>
+                <p>console.log(uniqueChars);//Output: ['A', 'B', 'C']</p>
+              </code>
+              <p>And if by chance we need the duplicates, we can modify our function a little, just by changing our rule:</p>
+              <code>
+                <p>const dupChars = chars.filter((element, index) => {</p>
+                <p>return chars.indexOf(element) !== index;</p>
+                <p> });</p>
+                <p>console.log(dupChars);//Output: ['A', 'B']</p>
+              </code>
+            </div>
+            <div class="xsm-container">
+              <h4>Using the includes() and forEach() methods</h4>
+              <p>The include() function returns true if an element is in an array or false if it is not. The following example iterates over the elements of an array and adds to a new array only the elements that are not already there</p>
+              <code>
+                <p>const uniqueChars = [];</p>
+                <p>chars.forEach((element) => {</p>
+                <p>    if (!uniqueChars.includes(element)) {</p>
+                <p>        uniqueChars.push(element);</p>
+                <p>       }</p>
+                <p>});</p>
+                <p>onsole.log(uniqueChars);//Output: ['A', 'B', 'C']</p>
+              </code>
+            </div>
           </div>
         </article>
         <article class="subarticle">
